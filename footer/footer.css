@@ -15,7 +15,7 @@ footer .shopy-footer-section .footer-section > * {
     flex: 1;
 }
 
-footer .shopy-footer-section .about-section .about-content > *:not(:last-child) {
+footer .shopy-footer-section .about-section .about-content > * {
     margin-bottom: 30px;
 }
 
@@ -40,7 +40,7 @@ footer .shopy-footer-section .text-head div {
     align-items: center;
 }
 
-footer .shopy-footer-section .text-head div span {
+footer .shopy-footer-section .text-head .footer-plus-icon span {
     position: absolute;
     width: 14px;
     height: 1px;
@@ -48,23 +48,26 @@ footer .shopy-footer-section .text-head div span {
     right: 0;
     transition: var(--main-transition);
     display: none;
+    pointer-events: none;
 }
 
-footer .shopy-footer-section .text-head div span:last-child {
+footer .shopy-footer-section .text-head .footer-plus-icon span:last-child {
     transform: rotate(90deg);
 }
 
-footer .shopy-footer-section .text-head div span:last-child.opened {
+footer .shopy-footer-section .text-head .footer-plus-icon span:last-child.opened {
     transform: rotate(0deg);
 }
 
-footer .shopy-footer-section .contact-section .contact-content > *:not(:last-child) {
-    margin-bottom: 40px;
+footer .shopy-footer-section .contact-section .contact-content > * {
+    margin-bottom: 30px;
 }
 
 footer .shopy-footer-section .contact-section .contact-content label {
-    position: absolute;
+    position: relative;
+    transition: var(--main-transition);
     left: 10px;
+    top: 20px;
 }
 
 footer .shopy-footer-section .contact-section .contact-content input:not([type='submit']),
@@ -118,20 +121,13 @@ footer .bottom-bar {
     footer .shopy-footer-section .text-head div span {
         display: block !important;
     }
-    footer .shopy-footer-section .about-section .about-content,
-    footer .shopy-footer-section .contact-section .contact-content,
-    footer .shopy-footer-section .location-section .mapouter {
-        height: 0;
+    footer .shopy-footer-section .footer-col {
+        height: auto;
+        max-height: 0;
         overflow: hidden;
         transition: var(--main-transition);
     }
-    footer .shopy-footer-section .about-section .about-content.active {
-        height: 254px;
-    }
-    footer .shopy-footer-section .contact-section .contact-content.active {
-        height: 276px;
-    }
-    footer .shopy-footer-section .location-section .mapouter.active {
-        height: 286px;
+    footer .shopy-footer-section .footer-col.active {
+        max-height: 350px;
     }
 }
