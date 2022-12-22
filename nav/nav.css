@@ -1,3 +1,14 @@
+/* Mobile body overlay */
+body .mb-body-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0 0 0 / 0.7);
+    z-index: 9;
+    visibility: hidden;
+}
+
 /* -------Navbar------- */
 header .topbar {
     background-color: var(--background-color);
@@ -184,13 +195,14 @@ header nav ul li:hover a {
 /* ----------Menu Drawer Mobile style----------- */
 .menu-drawer {
     position: fixed;
-    top: 129px;
+    top: 0;
     background-color: white;
     width: calc(100vw - 100px);
     height: 100vh;
     transition: var(--main-transition);
     left: -767px;
     visibility: hidden;
+    z-index: 99;
 }
 
 .menu-drawer.active {
@@ -309,12 +321,13 @@ header nav ul li:hover a {
 /* ----------Search Drawer Mobile style----------- */
 .search-drawer {
     position: fixed;
-    width: calc(100vw - 100px);
+    width: calc(100vw - 65px);
     height: 100vh;
-    top: 129px;
+    top: 0;
     right: -767px;
     background-color: white;
     visibility: hidden;
+    z-index: 99;
     transition: var(--main-transition);
 }
 
@@ -367,8 +380,7 @@ header nav ul li:hover a {
     transition: var(--main-transition);
 }
 
-.search-drawer .search-result .mb-result-head,
-.search-drawer .search-result .mb-result-view-more {
+.search-drawer .search-result .mb-result-head {
     height: 40px;
     padding: 0 20px;
     display: flex;
@@ -388,19 +400,18 @@ header nav ul li:hover a {
 }
 
 .search-drawer .search-result .mb-result-content {
-    max-height: -moz-calc(100vh - 440px);
-    max-height: -webkit-calc(100vh - 440px);
-    max-height: calc(100vh - 440px);
+    max-height: calc(100vh - 245px);
     overflow-y: auto;
     padding: 20px;
 }
 
+.search-drawer .search-result .mb-result-content .result-not-found {
+    display: none;
+}
+
 .search-drawer .search-result .mb-result-view-more {
-    border: 0;
     font-size: 16px;
     color: #777;
-    box-shadow: 16px 4px 16px rgb(0 0 0 / 20%);
-    height: 50px;
 }
 
 .search-drawer .search-result .mb-result-view-more a {
