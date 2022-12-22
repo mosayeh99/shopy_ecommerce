@@ -1,31 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shopy</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>shopy</title>
     <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="../nav/nav.css">
-    <link rel="stylesheet" href="checkout.css">
-    <link rel="stylesheet" href="../footer/footer.css">
-</head>
-<body>
-    <header></header>
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../global.css">
+        <link rel="stylesheet" href="../nav/nav.css">
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="stylesheet" href="../footer/footer.css">
+    </head>
+    <body>
 
-    <section style="height: 100vh;">
-        <!-- write your code here -->
-    </section>
-    <p>mahmoud saad</p>
+        <!-- Mahmoud Code for cart page-->
+        <div>
+            <!-- save here your item -->
+            <p class="item">1</p>
+            <p class="item">2</p>
+            <p class="item">3</p>
+            <p class="item">4</p>
+            <p class="item">5</p>
+            <button onclick="HideItem()">Hide</button>
+        </div>
 
-    <footer></footer>
-    <script src="../nav/printnav.js"></script>
-    <script src="../nav/nav.js"></script>
-    <script src="checkout.js"></script>
-    <script src="../footer/printfooter.js"></script>
-    <script src="../footer/footer.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script>
+            function HideItem() {
+                var elem = document.querySelectorAll('p[class="item"]')
+                for (var i = 0; i < elem.length; i++) {
+                    elem[i].style.display = "none";
+
+                }
+            }
+        </script>
+
+        <header></header>
+
+        <!-- let's Start -->
+        <!-- the hole div -->
+        <div class="bigDiv">
+
+            <!-- items from cart page will appear here -->
+            <div class="smallDivs">
+
+                <button onclick="showItem()">Appear</button>
+
+            </div>
+
+            <!-- address will come from here -->
+            <div class="smallDivs">
+                <form action="">
+                    <input type="text">
+                    <textarea
+                        id="address"
+                        cols="75%"
+                        rows="7"
+                        placeholder="Please enter your address"
+                        style="border: 1px solid gray;"></textarea>
+
+                    <button id="addressBtn" onclick="cookieAddress()">Save</button>
+                </form>
+            </div>
+
+            <!-- div violet buttons -->
+            <div class="smallDivs">
+                <button>
+                    <a href="/cart/cart.html">
+                        Back to Cart
+                    </a>
+                </button>
+                <button onclick="confirmation()">
+                    Confirm Purchase
+                </button>
+            </div>
+
+        </div>
+
+        <footer></footer>
+        <script src="../nav/printnav.js"></script>
+        <script src="../nav/nav.js"></script>
+        <script src="checkout.js"></script>
+        <script src="../footer/printfooter.js"></script>
+        <script src="../footer/footer.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
