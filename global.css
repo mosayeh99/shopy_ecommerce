@@ -13,8 +13,10 @@
     --background-color: #eee;
     --link-hover-color: #777;
     --text-color-in-dark: #777;
+    --text-color-in-light: #777;
     --caret-color: #777;
     --main-transition: 0.3s linear;
+    --secondary-transition: 0.3s ease-in-out;
     --btn--border-radius: 2px;
 }
 

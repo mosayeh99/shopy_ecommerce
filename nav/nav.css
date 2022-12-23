@@ -12,7 +12,7 @@ body .mb-body-overlay {
 /* -------Navbar------- */
 header .topbar {
     background-color: var(--background-color);
-    padding: 5px 20px;
+    padding: 5px 0;
 }
 
 header .topbar .content {
@@ -281,7 +281,7 @@ header nav ul li:hover a {
     align-items: center;
     min-height: 50px;
     padding: 5px 20px;
-    color: var(--text-color-in-dark);
+    color: var(--text-color-in-light);
     border-bottom: 1px solid #ccc;
     transition: var(--main-transition);
 }
@@ -411,9 +411,8 @@ header nav ul li:hover a {
 
 .search-drawer .search-result .mb-result-view-more {
     font-size: 16px;
-    color: #777;
 }
 
 .search-drawer .search-result .mb-result-view-more a {
-    color: #777;
+    color: var(--text-color-in-light);
 }
