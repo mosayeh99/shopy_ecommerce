@@ -36,6 +36,7 @@
 
 #shopy-section-product-list #product-list #shopy-product {
     border: 2px solid #eee;
+    cursor: pointer;
 }
 
 #shopy-section-product-list #product-list #shopy-product #shopy-product-item a img:last-child {
@@ -70,11 +71,15 @@
 #shopy-section-product-list #product-list #shopy-product #shopy-product-title,
 #shopy-section-product-list #product-list #shopy-product #shopy-product-price {
     background-color: white;
-    color: var(--text-color-in-light);
 }
 
 #shopy-section-product-list #product-list #shopy-product #shopy-product-title a {
     color: var(--secondary-color);
+}
+
+#shopy-section-product-list #product-list #shopy-product #shopy-product-price {
+    color: var(--text-color-in-light);
+    cursor: auto;
 }
 
 @media (max-width: 991px) {
