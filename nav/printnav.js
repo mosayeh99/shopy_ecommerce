@@ -26,7 +26,7 @@ function loadheader() {
                 <span></span>
                 <span></span>
             </div>
-            <a href="index.html"><img src="../assets/images/logo.jpg" alt="Logo" class="logo"></a>
+            <a href="../index.html"><img src="../assets/images/logo.jpg" alt="Logo" class="logo"></a>
             <div class="head-icons">
                 <div class="search">
                     <input type="text" placeholder="search...">
@@ -166,8 +166,8 @@ function loadMobileToolbar() {
     document.querySelector('.toolbar-mobile').innerHTML = shopyMobileToolbar;
 }
 
-loadMobileSearchDrawer();
-function loadMobileSearchDrawer() {
+loadMobileMenuDrawer();
+function loadMobileMenuDrawer() {
     let shopyMobileMenuDrawer = `
     <button class="drawer-close-btn">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
