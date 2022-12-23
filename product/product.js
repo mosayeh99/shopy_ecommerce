@@ -1,14 +1,14 @@
 
 fetch("https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json").then((result) => {
-    console.log(result);
+    // console.log(result);
     let myData = result.json();
-    console.log(myData);
+    // console.log(myData);
     return myData;
 
 })
 .then((myData) => {
     myData.length = 50;
-    console.log(myData);
+    // console.log(myData);
     return myData;
 
 })
@@ -16,36 +16,49 @@ fetch("https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
 return(myData)
 })
 .then((end)=>{
-    
-var i =49;
-let productImg = document.getElementById("productImg");  //Display Images
-productImg.src=`${end.products[i].images[0]}`;        
-let btn =document.getElementsByClassName("btn");
-       btn[0].onclick = function(){
-        productImg.src=`${end.products[i].images[0]}`;
-        for(bt of btn){
-            bt.classList.remove("active");
+    // var i = 19;
+    var i = JSON.parse(localStorage.getItem('IdProductToShow'))
+    i-=1;
+let productImg1 = document.querySelector("#image1");  
+productImg1.src=`${end.products[i].images[0]}`;   
+let productImg2 = document.querySelector("#image2");  
+productImg2.src=`${end.products[i].images[1]}`;   
+let productImg3 = document.querySelector("#image3");  
+productImg3.src=`${end.products[i].images[2]}`;   
+let productImg4 = document.querySelector("#image4");
+if(end.products[i].images[3] == null ){
+    document.querySelector("#image4").style.display = "none";
+}else{
+    productImg4.src=`${end.products[i].images[3]}`;
+}  
+   
+
+let imgHolder =document.getElementsByClassName("img-holder");
+       imgHolder[0].onclick = function(){
+        imgHolder.src=`${end.products[i].images[0]}`;
+        for(image of imgHolder){
+            image.classList.remove("active");
         }
         this.classList.add("active")
        }
-       btn[1].onclick = function(){
-        productImg.src=`${end.products[i].images[1]}`;
-        for(bt of btn){
-            bt.classList.remove("active");
+       imgHolder[1].onclick = function(){
+        imgHolder.src=`${end.products[i].images[1]}`;
+        for(image of imgHolder){
+            image.classList.remove("active");
         }
         this.classList.add("active")
        }
-       btn[2].onclick = function(){
-        productImg.src=`${end.products[i].images[2]}`;
-        for(bt of btn){
-            bt.classList.remove("active");
+       imgHolder[2].onclick = function(){
+        imgHolder.src=`${end.products[i].images[2]}`;
+        for(image of imgHolder){
+            image.classList.remove("active");
         }
         this.classList.add("active")
        }
-       btn[3].onclick = function(){
-        productImg.src=`${end.products[i].images[3]}`;
-        for(bt of btn){
-            bt.classList.remove("active");
+       imgHolder[3].onclick = function(){
+        imgHolder.src=`${end.products[i].images[3]}`;
+        for(image of imgHolder){
+            image.classList.remove("active");
         }
         this.classList.add("active")
        }
@@ -80,7 +93,11 @@ list6.innerHTML = ` ${end.products[i].description[5]}`;
 var size1=document.querySelector(".size1");                    //Display Size
 size1.innerHTML = ` ${end.products[i].sizes[0]}`;
 var size2=document.querySelector(".size2");
-size2.innerHTML = ` ${end.products[i].sizes[1]}`;
+if(end.products[i].sizes[2] == null ){
+    document.querySelector(".size3").style.display = "none";
+}else{
+    size3.innerHTML = ` ${end.products[i].sizes[1]}`;
+}
 var size3=document.querySelector(".size3");
 if(end.products[i].sizes[2] == null ){
     document.querySelector(".size3").style.display = "none";
