@@ -29,7 +29,7 @@ mbToolbarMenuicon.addEventListener('click', (e) => {
 mbMenuDrawerCloseBtn.addEventListener('click', closeMenuDrawer);
 mbMenuDrawer.addEventListener('click', (e) => {e.stopPropagation()});
 document.addEventListener('click', (e) => { // close Menu when click anywhere except menu icons and menu drawer
-    if (e.target != mbHeadbarMenuicon && e.target != mbToolbarMenuicon && e.target != mbMenuDrawer.children) {
+    if (e.target != mbHeadbarMenuicon && e.target != mbToolbarMenuicon && e.target != mbMenuDrawer) {
         closeMenuDrawer();
     }
 });
