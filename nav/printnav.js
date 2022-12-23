@@ -21,7 +21,12 @@ function loadheader() {
             </div>
         </div>
         <div class="head-bar mycontainer">
-            <a href="../index.html"><img src="../assets/images/logo.jpg" alt="Logo" class="logo"></a>
+            <div class="toggle-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="index.html"><img src="../assets/images/logo.jpg" alt="Logo" class="logo"></a>
             <div class="head-icons">
                 <div class="search">
                     <input type="text" placeholder="search...">
@@ -72,11 +77,11 @@ function loadheader() {
         </div>
         <nav>
             <ul>
-                <li>Swaetpant</li>
-                <li>Sweatshirt</li>
-                <li>T-Shirt</li>
-                <li>Pullover</li>
-                <li>Shirt</li>
+                <li><a href="/">Hoodies</a></li>
+                <li><a href="/">T-Shirts</a></li>
+                <li><a href="/">Jackets</a></li>
+                <li><a href="/">Pants</a></li>
+                <li><a href="/">Jeans</a></li>
             </ul>
         </nav>
     `;
