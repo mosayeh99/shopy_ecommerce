@@ -72,4 +72,26 @@ document.addEventListener('click', (e) => {
     if (e.target != mbToolbarSearchIcon && e.target != mbSearchDrawer) {
         closeSearchDrawer();
     }
-})
+});
+
+// ------set count of product in wishlist to wishlist icons------- 
+let countProductInWishlist = document.querySelectorAll('.shopy-wishlist-count');
+let shopyWishlistArray;
+if (localStorage.IdProductsInWishlist != null) {
+    shopyWishlistArray = JSON.parse(localStorage.IdProductsInWishlist);
+    countProductInWishlist.forEach(e => {
+        e.textContent = shopyWishlistArray.length;
+    });
+} else {
+    shopyWishlistArray = [];
+}
+
+// ------set count of product in cart to cart icons-------
+let countProductInCart = document.querySelectorAll('.shopy-cart-count');
+let shopyCartArray;
+if (localStorage.IdProductsInCart != null) {
+    shopyCartArray = JSON.parse(localStorage.IdProductsInCart);
+    countProductInCart.forEach(e => {
+        e.textContent = shopyCartArray.length;
+    });
+}
