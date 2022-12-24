@@ -36,18 +36,69 @@
 
 #shopy-section-product-list #product-list #shopy-product {
     border: 2px solid #eee;
-    cursor: pointer;
 }
 
-#shopy-section-product-list #product-list #shopy-product #shopy-product-item a img:last-child {
+#shopy-product #shopy-product-item a img:last-child {
     transition: var(--secondary-transition);
 }
 
-#shopy-section-product-list #product-list #shopy-product #shopy-product-item:hover a img:last-child {
+#shopy-product #shopy-product-item:hover a img:last-child {
     opacity: 1 !important;
 }
 
-#shopy-section-product-list #product-list #shopy-product #shopy-product-item #shopy-product-sizes {
+#shopy-product #shopy-product-item #shopy-product-add-to-wishlist {
+    top: 15px;
+    right: 17px;
+    color: var(--secondary-color);
+}
+
+#shopy-product #shopy-product-item #shopy-product-add-to-wishlist #wishlist-tooltip {
+    background-color: #777;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    width: max-content;
+    height: fit-content;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: white;
+    transition: var(--secondary-transition);
+    opacity: 0;
+    visibility: hidden;
+}
+
+#shopy-product #shopy-product-item #shopy-product-add-to-wishlist #wishlist-tooltip::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 8px;
+    border: 6px solid;
+    border-color: transparent transparent transparent #777;
+    transition: var(--secondary-transition);
+}
+
+#shopy-product #shopy-product-item #shopy-product-add-to-wishlist span:hover + #wishlist-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+#shopy-product #shopy-product-item #shopy-product-add-to-wishlist span #shopy-product-wishlist-icon.is--added-to-wishlist {
+    fill: var(--secondary-color);
+}
+
+#shopy-product #shopy-product-item #shopy-product-add-to-wishlist span #shopy-product-wishlist-icon:hover {
+    animation: scaleWishlistIcon 0.5s alternate infinite ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes  scaleWishlistIcon{
+    to {
+        transform: scale(1.1);
+    }
+}
+
+#shopy-product #shopy-product-item #shopy-product-sizes {
     position: absolute;
     background-color: white;
     width: 100%;
@@ -55,31 +106,28 @@
     padding: 10px 0;
     transition: var(--secondary-transition);
     box-shadow: 0px 2px 6px rgba(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
-#shopy-section-product-list #product-list #shopy-product #shopy-product-item:hover #shopy-product-sizes {
+#shopy-product #shopy-product-item:hover #shopy-product-sizes {
     bottom: 0;
 }
 
-#shopy-section-product-list #product-list #shopy-product #shopy-product-item #shopy-product-sizes a {
+#shopy-product #shopy-product-item #shopy-product-sizes a {
     display: flex;
     justify-content: center;
     gap: 15px;
     color: var(--text-color-in-light);
 }
 
-#shopy-section-product-list #product-list #shopy-product #shopy-product-title,
-#shopy-section-product-list #product-list #shopy-product #shopy-product-price {
+#shopy-product #shopy-product-title,
+#shopy-product #shopy-product-price {
     background-color: white;
-}
-
-#shopy-section-product-list #product-list #shopy-product #shopy-product-title a {
-    color: var(--secondary-color);
-}
-
-#shopy-section-product-list #product-list #shopy-product #shopy-product-price {
     color: var(--text-color-in-light);
-    cursor: auto;
+}
+
+#shopy-product #shopy-product-title a {
+    color: var(--secondary-color);
 }
 
 @media (max-width: 991px) {

@@ -72,7 +72,7 @@
                             <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572">
                             </path>
                         </svg>
-                        <span>0</span>
+                        <span class="shopy-wishlist-count">0</span>
                     </a>
                 </div>
                 <div class="cart-icon">
@@ -86,7 +86,7 @@
                             <path d="M17 17h-11v-14h-2"></path>
                             <path d="M6 5l14 1l-1 7h-13"></path>
                         </svg>
-                        <span>0</span>
+                        <span class="shopy-cart-count">0</span>
                     </a>
                 </div>
             </div>
@@ -133,14 +133,26 @@
         <div id="shopy-section-product-list">
             <div class="mycontainer">
                 <div id="product-list">
-                    <!-- <div id="shopy-product" data-productid="1">
+                    <!-- <div id="shopy-product">
                         <div id="shopy-product-item" class="position-relative overflow-hidden">
                             <a href="product/product.html">
-                                <img class="w-100" src="https://raw.githubusercontent.com/mosayeh99/products_json_api/main/images/12/1.jpg" alt="">
-                                <img class="w-100 position-absolute start-0 opacity-0" src="https://raw.githubusercontent.com/mosayeh99/products_json_api/main/images/12/3.jpg" alt="">
+                                <img class="has-product-id w-100" src="https://raw.githubusercontent.com/mosayeh99/products_json_api/main/images/12/1.jpg" alt="" data-productid="1">
+                                <img class="has-product-id w-100 position-absolute start-0 opacity-0" src="https://raw.githubusercontent.com/mosayeh99/products_json_api/main/images/12/3.jpg" alt="" data-productid="1">
                             </a>
-                            <div id="shopy-product-sizes" class="d-none d-md-block">
-                                <a href="product/product.html">
+                            <div id="shopy-product-add-to-wishlist" class="position-absolute">
+                                <span>
+                                    <svg id="shopy-product-wishlist-icon" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" data-productid="1"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572">
+                                    </path>
+                                    </svg>
+                                </span>
+                                <span id="wishlist-tooltip" class="d-none d-md-block">Add To Wishlist</span>
+                            </div>
+                            <div id="shopy-product-sizes" class="has-product-id d-none d-md-block" data-productid="1">
+                                <a href="product/product.html" class="pe-none">
                                     <span>M</span>
                                     <span>L</span>
                                     <span>XL</span>
@@ -150,12 +162,12 @@
                         </div>
                         <div id="shopy-product-title" class="ps-3 pt-2 pb-1">
                             <a href="product/product.html">
-                                <span>prof hoody - black</span>
+                                <span class="has-product-id" data-productid="1">prof hoody - black</span>
                             </a>
                         </div>
                         <div id="shopy-product-price" class="ps-3 pb-2">
-                            <span id="shopy-current-price" class="me-2">EGP<span>546</span></span>
-                            <del id="shopy-instead-price">EGP<span>788</span></del>
+                            <span id="shopy-current-price" class="me-2">EGP<span>666</span></span>
+                            <del id="shopy-instead-price">EGP<span>888</span></del>
                         </div>
                     </div> -->
                 </div>
@@ -297,7 +309,7 @@
                         <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572">
                         </path>
                     </svg>
-                    <span class="wishlist-count">0</span>
+                    <span class="shopy-wishlist-count">0</span>
                 </span>
                 <span class="toolbar-label">Wishlist</span>
             </a>
@@ -314,7 +326,7 @@
                         <path d="M17 17h-11v-14h-2"></path>
                         <path d="M6 5l14 1l-1 7h-13"></path>
                     </svg>
-                    <span class="cart-count">0</span>
+                    <span class="shopy-cart-count">0</span>
                 </span>
                 <span class="toolbar-label">Cart</span>
             </a>
