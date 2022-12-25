@@ -1,4 +1,13 @@
+// --------Add&Remove body overlay And Prevent&Allow body scroll--------
 let bodyOverlay = document.querySelector('body .mb-body-overlay');
+function addOverlayAndPreventScroll() {
+    document.body.style.overflow = 'hidden';
+    bodyOverlay.style.visibility = 'visible';
+}
+function removeOverlayAndAllowScroll() {
+    document.body.style.overflow = 'auto';
+    bodyOverlay.style.visibility = 'hidden';
+}
 
 // -----------------Mobile Side Menu-----------------
 let mbHeadbarMenuicon = document.querySelector('header .head-bar .toggle-menu ')
@@ -9,13 +18,11 @@ let mbMenuDrawerHeadBtns = document.querySelectorAll('.menu-drawer .drawer-heade
 let mbMenuDrawerlinks = document.querySelectorAll('.menu-drawer .menu-mb-item');
 function openMenuDrawer() {
     mbMenuDrawer.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    bodyOverlay.style.visibility = 'visible';
+    addOverlayAndPreventScroll();
 }
 function closeMenuDrawer() {
     mbMenuDrawer.classList.remove('active');
-    document.body.style.overflow = 'auto';
-    bodyOverlay.style.visibility = 'hidden';
+    removeOverlayAndAllowScroll();
 }
 mbHeadbarMenuicon.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -53,13 +60,11 @@ let mbSearchDrawerCloseBtn = document.querySelector('.search-drawer .drower-head
 // let mbsearchFiled = document.querySelector('.search-drawer .mb-search input');
 function openSearchDrawer() {
     mbSearchDrawer.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    bodyOverlay.style.visibility = 'visible';
+    addOverlayAndPreventScroll();
 }
 function closeSearchDrawer() {
     mbSearchDrawer.classList.remove('active');
-    document.body.style.overflow = 'auto';
-    bodyOverlay.style.visibility = 'hidden';
+    removeOverlayAndAllowScroll();
 }
 mbToolbarSearchIcon.addEventListener('click', (e) => {
     e.preventDefault();
