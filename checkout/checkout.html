@@ -5,84 +5,279 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>shopy</title>
-    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+        <link
+            rel="shortcut icon"
+            href="../assets/images/favicon.png"
+            type="image/x-icon">
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="../global.css">
         <link rel="stylesheet" href="../nav/nav.css">
         <link rel="stylesheet" href="checkout.css">
         <link rel="stylesheet" href="../footer/footer.css">
+
     </head>
     <body>
 
-        <!-- Mahmoud Code for cart page-->
-        <div>
-            <!-- save here your item -->
-            <p class="item">1</p>
-            <p class="item">2</p>
-            <p class="item">3</p>
-            <p class="item">4</p>
-            <p class="item">5</p>
-            <button onclick="HideItem()">Hide</button>
-        </div>
-
-        <script>
-            function HideItem() {
-                var elem = document.querySelectorAll('p[class="item"]')
-                for (var i = 0; i < elem.length; i++) {
-                    elem[i].style.display = "none";
-
-                }
-            }
-        </script>
-
+        <div class="mb-body-overlay"></div>
         <header></header>
 
         <!-- let's Start -->
-        <!-- the hole div -->
+
         <div class="bigDiv">
 
-            <!-- items from cart page will appear here -->
-            <div class="smallDivs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link active"
+                        id="home-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#home-tab-pane"
+                        type="button"
+                        role="tab"
+                        aria-controls="home-tab-pane"
+                        aria-selected="true">Products</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link"
+                        id="profile-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#profile-tab-pane"
+                        type="button"
+                        role="tab"
+                        aria-controls="profile-tab-pane"
+                        aria-selected="false">Address</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link"
+                        id="contact-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#contact-tab-pane"
+                        type="button"
+                        role="tab"
+                        aria-controls="contact-tab-pane"
+                        aria-selected="false">Payment Method</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent" style="width: 90%; ">
+                <div
+                    class="tab-pane fade show active"
+                    id="home-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                    tabindex="0">
+                    <div class="products" style="display: flex; ">
+                        
+                        <!-- insert your item -->
+                        <div id="Checkout-allItems">
+                            <!-- item 01 -->
+                            <div id="Checkout-holeDiv">
 
-                <button onclick="showItem()">Appear</button>
+                                <div id="Checkout-Right">
+                                    <div id="Checkout-Imgitem">
+                                        <img src="./2.jpg" alt="">
+                                    </div>
+                                    <div id="Chekout-bodyitem">
 
+                                        <div id="Checkout-itemTitle">
+                                            <h5>White-YE2</h5>
+                                        </div>
+                                        <div id="Checkout-details">
+                                            <span>
+                                                size 'XL'
+                                            </span>
+
+                                        </div>
+                                        <div class="Checkout-itemPrice">
+                                            <span>320 L.E</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="checkout-Left">
+                                    <div id="Checkout-DeleteIcon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-trash"
+                                            width="24"
+                                            height="24"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="2"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <line x1="4" y1="7" x2="20" y2="7"></line>
+                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+
+                                    </div>
+                                    <div id="Checkout-counter">
+                                        <span>2</span>
+                                        <!-- <span><b>+</b></span> <span><b>-</b></span> -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- item 02 -->
+                            <div id="Checkout-holeDiv">
+
+                                <div id="Checkout-Right">
+                                    <div id="Checkout-Imgitem">
+                                        <img src="./1.jpg" alt="">
+                                    </div>
+                                    <div id="Chekout-bodyitem">
+
+                                        <div id="Checkout-itemTitle">
+                                            <h5>Black-XA9</h5>
+                                        </div>
+                                        <div id="Checkout-details">
+                                            <span>
+                                                size 'L'
+                                            </span>
+
+                                        </div>
+                                        <div class="Checkout-itemPrice">
+                                            <span>290 L.E</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="checkout-Left">
+                                    <div id="Checkout-DeleteIcon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-trash"
+                                            width="24"
+                                            height="24"
+                                            viewbox="0 0 24 24"
+                                            stroke-width="2"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <line x1="4" y1="7" x2="20" y2="7"></line>
+                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+
+                                    </div>
+                                    <div id="Checkout-counter">
+                                        <span>3</span>
+                                        <!-- <span><b>+</b></span> <span><b>-</b></span> -->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div
+                    class="tab-pane fade"
+                    id="profile-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                    tabindex="0">
+
+                    <label
+                        class="input-group-text"
+                        for="inputGroupSelect01"
+                        style="flex-direction: column; background:white; margin: 20px;">
+                        Choose Your Address
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <input
+                                    class="form-check-input me-1"
+                                    type="radio"
+                                    name="listGroupRadio"
+                                    value=""
+                                    id="firstRadio"
+                                    checked="checked">
+                                <label class="form-check-label" for="firstRadio">miami-6 street</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input
+                                    class="form-check-input me-1"
+                                    type="radio"
+                                    name="listGroupRadio"
+                                    value=""
+                                    id="secondRadio">
+                                <label class="form-check-label" for="secondRadio">smoha-7 street behind hassan market</label>
+                            </li>
+                            <!-- <li class="list-group-item"> <button style="background-color: #ccc;
+                            border-radius: 5px; margin: 10px;" onclick="addAddress()"> <b>+ Add another
+                            address</b> </button> <label class="form-check-label" for="secondRadio">smoha-7
+                            street behind hassan market</label> </li> -->
+
+                            <!-- <select class="form-select" id="inputGroupSelect01"> <option
+                            value="1">miami-6 street</option> <option value="2">smoha-7 street behind hassan
+                            market</option> </select> -->
+                            <button
+                                style="background-color: #ccc; border-radius: 5px; margin: 10px;"
+                                onclick="addAddress()">
+                                <b>+ Add another address</b>
+                            </button>
+                        </label>
+
+                    </div>
+                    <div
+                        class="tab-pane fade"
+                        id="contact-tab-pane"
+                        role="tabpanel"
+                        aria-labelledby="contact-tab"
+                        tabindex="0">
+                        <label
+                            class="input-group-text"
+                            for="inputGroupSelect01"
+                            style="flex-direction: column; background-color: white; margin: 20px">
+                            Choose Your Payment Method
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option value="1">Paypal</option>
+                                <option value="2">cash</option>
+                            </select>
+                            <button
+                                style="background-color: #ccc; border-radius: 5px; margin: 10px;"
+                                onclick="addMethod()">
+                                <b>+ Add another method</b>
+                            </button>
+                        </label>
+                    </div>
+                </div>
+
+                <div style="display: flex;  justify-content: center; margin: 5px;">
+                    <button style="margin: 5px;">
+                        <a href="/cart/cart.html">
+                            Back to Cart
+                        </a>
+                    </button>
+                    <button style="margin: 5px;" onclick="confirmation()">
+                        Confirm Purchase
+                    </button>
+                </div>
             </div>
 
-            <!-- address will come from here -->
-            <div class="smallDivs">
-                <form action="">
-                    <input type="text">
-                    <textarea
-                        id="address"
-                        cols="75%"
-                        rows="7"
-                        placeholder="Please enter your address"
-                        style="border: 1px solid gray;"></textarea>
-
-                    <button id="addressBtn" onclick="cookieAddress()">Save</button>
-                </form>
-            </div>
-
-            <!-- div violet buttons -->
-            <div class="smallDivs">
-                <button>
-                    <a href="/cart/cart.html">
-                        Back to Cart
-                    </a>
-                </button>
-                <button onclick="confirmation()">
-                    Confirm Purchase
-                </button>
-            </div>
-
-        </div>
-
-        <footer></footer>
-        <script src="../nav/printnav.js"></script>
-        <script src="../nav/nav.js"></script>
-        <script src="checkout.js"></script>
-        <script src="../footer/printfooter.js"></script>
-        <script src="../footer/footer.js"></script>
-        <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    </body>
-</html>
+            <div class="menu-drawer"></div>
+            <div class="search-drawer"></div>
+            <div class="toolbar-mobile"></div>
+            <footer></footer>
+            <script src="../nav/printnav.js"></script>
+            <script src="../nav/nav.js"></script>
+            <script src="checkout.js"></script>
+            <script src="../footer/printfooter.js"></script>
+            <script src="../footer/footer.js"></script>
+            <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        </body>
+    </html>

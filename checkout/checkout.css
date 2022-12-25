@@ -1,11 +1,56 @@
+#Checkout-allItems {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#Checkout-Right {
+    display: flex;
+    gap: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#Checkout-holeDiv {
+    display: flex;
+    padding: 15px;
+    gap: 20px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#Checkout-Imgitem img {
+    border-radius: 3px;
+    width: 100px;
+
+}
+
+#checkout-Left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .bigDiv {
     display: flex;
     flex-direction: column;
     margin: 10px;
-
 }
 
 .bigDiv div {
     align-self: center;
-    margin: 10px;
 }
+
+/* .for pop up{
+    position: fixed;
+    width: calc(100vw - 40%);
+    height:150px;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
