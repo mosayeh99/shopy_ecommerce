@@ -28,3 +28,21 @@ function cookieAddress() {
     document.cookie = "addressCookie=" + address + "; expires=" + currentDate;
     */
 }
+
+function addAddress() {
+    var newAddress = prompt("Enter your new address");
+    if (newAddress === null) {
+        alert(" Failed to added, Please try again.")
+    } else {
+        alert(" Successfully added. ")
+    }
+
+}
+function addMethod() {
+    var newMethod = prompt("Enter your new method of payment");
+    if (newMethod === null) {
+        alert(" Failed to added, Please try again.")
+    } else {
+        alert(" Successfully added. ")
+    }
+}
