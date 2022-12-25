@@ -130,6 +130,113 @@
                 </span>
             </div>
         </div>
+        <div id="product-filter-bar" class="mycontainer d-flex justify-content-between align-items-center">
+            <div id="product-filter-btn">
+                <span class="pe-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-filter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5.5 5h13a1 1 0 0 1 .5 1.5l-5 5.5l0 7l-4 -3l0 -4l-5 -5.5a1 1 0 0 1 .5 -1.5"></path>
+                    </svg>
+                </span>
+                <span class="pe-none">Filter</span>
+            </div>
+            <div id="product-filter-drawer">
+                <div id="product-filter-head" class="d-flex justify-content-between align-items-center">
+                    <span>Filter</span>
+                    <button id="drower-close-btn" class="bg-transparent">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div id="product-filter-menu" class="mt-3">
+                    <span>Categories</span>
+                    <div id="filter-menu-item">
+                        <label>
+                            <input id="filter-toggle-checkbox" type="checkbox" data-fitervalue="hoodie">
+                            <div id="filter-toggle-box">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l5 5l10 -10"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            Hoodies
+                        </label>
+                    </div>
+                    <div id="filter-menu-item">
+                        <label>
+                            <input id="filter-toggle-checkbox" type="checkbox" data-fitervalue="t-shirt">
+                            <div id="filter-toggle-box">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l5 5l10 -10"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            T-Shirts
+                        </label>
+                    </div>
+                    <div id="filter-menu-item">
+                        <label>
+                            <input id="filter-toggle-checkbox" type="checkbox" data-fitervalue="jacket">
+                            <div id="filter-toggle-box">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l5 5l10 -10"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            Jackets
+                        </label>
+                    </div>
+                    <div id="filter-menu-item">
+                        <label>
+                            <input id="filter-toggle-checkbox" type="checkbox" data-fitervalue="pant">
+                            <div id="filter-toggle-box">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l5 5l10 -10"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            Pants
+                        </label>
+                    </div>
+                    <div id="filter-menu-item">
+                        <label>
+                            <input id="filter-toggle-checkbox" type="checkbox" data-fitervalue="jeans">
+                            <div id="filter-toggle-box">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="16" height="16" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l5 5l10 -10"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            Jeans
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="filter-result-count">
+                <span>
+                    <span>Showing</span>
+                    <span>1</span>
+                    <span>-</span>
+                    <span>18</span>
+                    <span>of</span>
+                    <span>50</span>
+                    <span>results</span>
+                </span>
+            </div>
+        </div>
         <div id="shopy-section-product-list">
             <div class="mycontainer">
                 <div id="product-list">

@@ -1,3 +1,4 @@
+/* ------------Head banner----------- */
 #banner-head-two-images img {
     height: calc(100vh - 161px);
     object-fit: cover;
@@ -23,8 +24,84 @@
     }
 }
 
+/* --------Filter Section--------- */
+#product-filter-bar {
+    margin-top: 50px;
+}
+
+#product-filter-bar #product-filter-btn {
+    cursor: pointer;
+}
+
+#product-filter-bar #product-filter-drawer {
+    position: fixed;
+    top: 0;
+    left: calc(-100vw - 65px);
+    width: calc(100vw - 65px);
+    height: 100vh;
+    background-color: white;
+    z-index: 99;
+    transition: var(--main-transition);
+    visibility: hidden;
+}
+
+#product-filter-bar #product-filter-drawer.active {
+    left: 0;
+    visibility: visible;
+}
+
+#product-filter-drawer #product-filter-head {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#product-filter-drawer #product-filter-menu span {
+    padding-left: 20px;
+    font-weight: 500;
+}
+
+#product-filter-drawer #product-filter-menu #filter-menu-item {
+    padding: 10px 20px;
+}
+
+#product-filter-drawer #product-filter-menu #filter-menu-item #filter-toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#product-filter-drawer #product-filter-menu #filter-menu-item label {
+    display: flex;
+    align-items: center;
+}
+
+#product-filter-drawer #product-filter-menu #filter-menu-item #filter-toggle-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--secondary-color);
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+#product-filter-drawer #product-filter-menu #filter-menu-item #filter-toggle-box span svg{
+    position: absolute;
+    left: 0;
+    color: white;
+}
+
+#product-filter-drawer #product-filter-menu #filter-menu-item #filter-toggle-checkbox:checked + #filter-toggle-box {
+    background-color: var(--secondary-color);
+}
+
+
+/* --------Product List--------- */
 #shopy-section-product-list {
-    padding: 50px 0;
+    padding: 30px 0 50px;
 }
 
 #shopy-section-product-list #product-list {
@@ -140,5 +217,18 @@
     #banner-head-two-images #banner-text {
         font-size: 34px;
         width: unset;
+    }
+}
+
+@media (min-width: 500px) {
+    #product-filter-bar #product-filter-drawer {
+        width: 340px;
+        left: -340px;
+    }
+}
+@media (min-width: 991px) {
+    #product-filter-bar #product-filter-drawer {
+        width: 420px;
+        left: -420px;
     }
 }
