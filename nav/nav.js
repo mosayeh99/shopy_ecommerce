@@ -53,6 +53,17 @@ function toggleMenuDrawerTabs(e) {
 mbMenuDrawerHeadBtns[0].addEventListener('click', (e) => {toggleMenuDrawerTabs(e);});
 mbMenuDrawerHeadBtns[1].addEventListener('click', (e) => {toggleMenuDrawerTabs(e);});
 
+// -----------------Set search input value of large screen in localStorage-------------------
+let largeSearchInputFiled = document.querySelector('header .head-bar .search input');
+let largeSearchInputIcon = document.querySelector('header .head-bar .search a');
+largeSearchInputIcon.addEventListener('click', (e) => {
+    if (largeSearchInputFiled.value != "") {
+        localStorage.setItem('shopySearchInputValue', JSON.stringify(largeSearchInputFiled.value));
+    }else {
+        e.preventDefault();
+    }
+});
+
 // ----------------------Print Structure of Mobile Search Menu----------------------
 loadMobileSearchDrawer();
 function loadMobileSearchDrawer() {
@@ -232,13 +243,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ----------Set Id Product to localStorage on click--------------
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('has-product-id')) {
-        localStorage.setItem('IdProductToShow', JSON.stringify(e.target.dataset.productid));
-    }
-});
-
 // ------set count of product in wishlist to wishlist icons------- 
 let countProductInWishlist = document.querySelectorAll('.shopy-wishlist-count');
 let shopyWishlistArray;
@@ -258,5 +262,38 @@ if (localStorage.IdProductsInCart != null) {
     shopyCartArray = JSON.parse(localStorage.IdProductsInCart);
     countProductInCart.forEach(e => {
         e.textContent = shopyCartArray.length;
+    });
+}
+
+
+// ----------Set Id Product to localStorage on click--------------
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('has-product-id')) {
+        localStorage.setItem('IdProductToShow', JSON.stringify(e.target.dataset.productid));
+    }
+});
+
+// -----Set Wishlist Product Id to LocalStorage-----
+document.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (e.target.getAttribute('id') == 'shopy-product-wishlist-icon') {
+        e.target.classList.add('is--added-to-wishlist');
+        e.target.parentElement.nextElementSibling.textContent = 'Added To Wishlist';
+        shopyWishlistArray.push(e.target.dataset.productid);
+        countProductInWishlist.forEach(e => {
+            e.textContent = shopyWishlistArray.length;
+        });
+        localStorage.setItem('IdProductsInWishlist', JSON.stringify(shopyWishlistArray));
+    }
+});
+
+// -----Set fill style to product wishlist icons that founded in localStorage------
+function fillStyleToProductWishlist() {
+    let allProductWishListIcons = document.querySelectorAll('#shopy-section-product-list #shopy-product-wishlist-icon');
+    allProductWishListIcons.forEach(e => {
+        if (shopyWishlistArray.indexOf(e.dataset.productid) != -1) { // shopyWishlistArray => declared in nav/nav.js
+            e.classList.add('is--added-to-wishlist');
+            e.parentElement.nextElementSibling.textContent = 'Added To Wishlist';
+        }
     });
 }

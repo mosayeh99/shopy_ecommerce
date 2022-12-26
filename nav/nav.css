@@ -103,14 +103,14 @@ header .head-bar .head-icons .search input {
     transition: var(--main-transition);
 }
 
-header .head-bar .head-icons .search svg {
+header .head-bar .head-icons .search a {
     position: absolute;
     right: 12px;
-    cursor: pointer;
+    top: 4px;
     transition: var(--main-transition);
 }
 
-header .head-bar .head-icons .search svg:hover {
+header .head-bar .head-icons .search a:hover {
     color: var(--link-hover-color);
 }
 
@@ -301,7 +301,7 @@ header nav ul li:hover a {
 .search-drawer {
     position: fixed;
     width: calc(100vw - 65px);
-    height: 100vh;
+    height: calc(100vh - 60px);
     top: 0;
     right: calc(-100vw - 65px);
     background-color: white;

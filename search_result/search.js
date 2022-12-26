@@ -6,42 +6,33 @@
     - Set fill style to product wishlist icons
 */
 
-// ---------Add filter checkbox value to Category Array----------
-let filterCategoriesArray = [];
-document.addEventListener('change', (e) => {
-    if (e.target.getAttribute('id') == 'filter-toggle-checkbox') {
-        if (e.target.checked) {
-            filterCategoriesArray.push(e.target.dataset.fitervalue);
-            showShopyProducts();
-        }else {
-            filterCategoriesArray.splice(filterCategoriesArray.indexOf(e.target.dataset.fitervalue), 1);
-            showShopyProducts();
-        }
-    }
-})
+// ----------------Print Search Result Value in page head---------------------
+printResultForValue();
+function printResultForValue() {
+    document.querySelector('.result-head-banner .result-for-value').textContent = JSON.parse(localStorage.shopySearchInputValue);
+}
 
-// -----------Print Products in home page with filteration conditiones--------------
-showShopyProducts();
-function showShopyProducts() {
-    let shopyProductList = "";
-    let shopyProductListHead = "";
-    let shopyProductInfo = "";
-    fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json')
-    .then(res => res.json())
-    .then((full) => {
+// -----------------Show search result on search drawer----------------
+fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json')
+.then(res => res.json())
+.then((full) => {
+    let shopySearchResults = "";
+    let searchResultCounter = 0;
+    if (localStorage.shopySearchInputValue != null) {
         full.products.forEach(e => {
-            if (filterCategoriesArray.length != 0) {
-                if (filterCategoriesArray.indexOf(e.category) != -1) {
-                    printShopyProducts();
-                }
-            } else {
+            if (e.title.toLowerCase().indexOf(JSON.parse(localStorage.shopySearchInputValue.toLowerCase())) != -1) {
+                searchResultCounter++;
+                document.querySelector('.result-not-found').style.display = 'none';
                 printShopyProducts();
+            }
+            if (searchResultCounter == 0) {
+                document.querySelector('.result-not-found').style.display = 'flex';
             }
             function printShopyProducts() {
                 shopyProductListHead = `
                     <div id="shopy-product">
                     <div id="shopy-product-item" class="position-relative overflow-hidden">
-                        <a href="product/product.html">
+                        <a href="../product/product.html">
                             <img class="has-product-id w-100" src="${e.images[0]}" alt="" data-productid="${e.id}">
                             <img class="has-product-id w-100 position-absolute start-0 opacity-0" src="${e.images[1]}" alt="" data-productid="${e.id}">
                         </a>
@@ -58,7 +49,7 @@ function showShopyProducts() {
                             <span id="wishlist-tooltip" class="d-none d-md-block">Add To Wishlist</span>
                         </div>
                         <div id="shopy-product-sizes" class="has-product-id d-none d-md-block" data-productid="${e.id}">
-                            <a href="product/product.html" class="pe-none">
+                            <a href="../product/product.html" class="pe-none">
                     `
                     let shopyProductSizes = "";
                     e.sizes.forEach(el => {
@@ -71,7 +62,7 @@ function showShopyProducts() {
                             </div>
                         </div>
                         <div id="shopy-product-title" class="ps-3 pt-2 pb-1">
-                            <a href="product/product.html">
+                            <a href="../product/product.html">
                                 <span class="has-product-id" data-productid="${e.id}">${e.title}</span>
                             </a>
                         </div>
@@ -81,38 +72,10 @@ function showShopyProducts() {
                         </div>
                     </div>
                     `
-                shopyProductList += shopyProductListHead + shopyProductSizes + shopyProductInfo;
+                    shopySearchResults += shopyProductListHead + shopyProductSizes + shopyProductInfo;
             }
         });
-        document.querySelector('#shopy-section-product-list #product-list').innerHTML = shopyProductList;
-        fillStyleToProductWishlist(); // Function declared in nav/nav.js
-    });
-}
-
-// ----------------Filter Menu Drawer open & close-------------------
-let shopyFilterBtn = document.querySelector('#product-filter-bar #product-filter-btn');
-let shopyFilterDrawer = document.querySelector('#product-filter-bar #product-filter-drawer');
-let filterDrawerCloseBtn = document.querySelector('#product-filter-drawer #drower-close-btn');
-function openFilterDrawer() {
-    shopyFilterDrawer.classList.add('active');
-    addOverlayAndPreventScroll(); // Function Declared in nav/nav.js
-}
-function closeFilterDrawer() {
-    shopyFilterDrawer.classList.remove('active');
-    removeOverlayAndAllowScroll(); // Function Declared in nav/nav.js
-}
-shopyFilterBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    openFilterDrawer();
-});
-filterDrawerCloseBtn.addEventListener('click', closeFilterDrawer);
-shopyFilterDrawer.addEventListener('click', e => {e.stopPropagation()});
-document.addEventListener('click', (e) => {
-    if (e.target != shopyFilterBtn && e.target != shopyFilterDrawer) {
-        closeFilterDrawer();
     }
-})
-
-window.onload = () => {
-    fillStyleToProductWishlist(); // Function declared in nav/nav.js
-}
+    document.querySelector('#shopy-section-product-list #product-list').innerHTML = shopySearchResults;
+    fillStyleToProductWishlist();
+});
