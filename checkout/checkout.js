@@ -30,13 +30,26 @@ function cookieAddress() {
 }
 
 function addAddress() {
-    var newAddress = prompt("Enter your new address");
-    if (newAddress === null) {
-        alert(" Failed to added, Please try again.")
-    } else {
-        alert(" Successfully added. ")
-    }
+   var newAddress = prompt("Enter your new address");
+if (newAddress === null) {
+    alert(" Failed to added, Please try again.")
+} else {
+    alert(" Successfully added. ")
+}  
 
+}
+// Add Address btn function
+var coll = document.getElementsByClassName("addAddress_btn");
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
 }
 function addMethod() {
     var newMethod = prompt("Enter your new method of payment");

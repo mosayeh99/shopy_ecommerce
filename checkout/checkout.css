@@ -1,3 +1,13 @@
+.bigDiv {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.bigDiv div {
+    align-self: center;
+}
+
 #Checkout-allItems {
     margin-top: 20px;
     display: flex;
@@ -34,15 +44,51 @@
     align-items: center;
     justify-content: space-between;
 }
-
-.bigDiv {
+.checkout-Address {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    justify-content: center;
+    padding: 15px;
+    gap: 20px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+
 }
 
-.bigDiv div {
+.form-control {
+
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    margin-right: 7px;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+.addAddress_btn {
+
+    border-radius: 5px;
+    margin-top: 15px;
     align-self: center;
+    background-color: #eee;
+    /* color: #444; */
+    cursor: pointer;
+    padding: 5px;
+
+}
+
+.content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 /* .for pop up{
