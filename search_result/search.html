@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopy</title>
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../nav/nav.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+</head>
+<body>
+    <div class="mb-body-overlay"></div>
+    <header></header>
+
+    <main>
+        <div class="result-head-banner">
+            <span>result for '<span class="result-for-value"></span>'</span>
+        </div>
+        <div class="result-not-found mycontainer">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-exclamation" width="128" height="128" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="10" cy="10" r="7"></circle>
+                    <path d="M21 21l-6 -6"></path>
+                    <path d="M10 13v.01"></path>
+                    <path d="M10 7v3"></path>
+                </svg>
+            </span>
+            <div class="not-found-text">
+                <span>No results founded for your search</span>
+            </div>
+        </div>
+        <div id="shopy-section-product-list">
+            <div class="mycontainer">
+                <div id="product-list">
+                    <!-- <div id="shopy-product">
+                        <div id="shopy-product-item" class="position-relative overflow-hidden">
+                            <a href="product/product.html">
+                                <img class="has-product-id w-100" src="https://raw.githubusercontent.com/mosayeh99/products_json_api/main/images/12/1.jpg" alt="" data-productid="1">
+                                <img class="has-product-id w-100 position-absolute start-0 opacity-0" src="https://raw.githubusercontent.com/mosayeh99/products_json_api/main/images/12/3.jpg" alt="" data-productid="1">
+                            </a>
+                            <div id="shopy-product-add-to-wishlist" class="position-absolute">
+                                <span>
+                                    <svg id="shopy-product-wishlist-icon" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" data-productid="1"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572">
+                                    </path>
+                                    </svg>
+                                </span>
+                                <span id="wishlist-tooltip" class="d-none d-md-block">Add To Wishlist</span>
+                            </div>
+                            <div id="shopy-product-sizes" class="has-product-id d-none d-md-block" data-productid="1">
+                                <a href="product/product.html" class="pe-none">
+                                    <span>M</span>
+                                    <span>L</span>
+                                    <span>XL</span>
+                                    <span>XXL</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="shopy-product-title" class="ps-3 pt-2 pb-1">
+                            <a href="product/product.html">
+                                <span class="has-product-id" data-productid="1">prof hoody - black</span>
+                            </a>
+                        </div>
+                        <div id="shopy-product-price" class="ps-3 pb-2">
+                            <span id="shopy-current-price" class="me-2">EGP<span>666</span></span>
+                            <del id="shopy-instead-price">EGP<span>888</span></del>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="menu-drawer"></div>
+    <div class="search-drawer"></div>
+    <div class="toolbar-mobile"></div>
+    <footer></footer>
+    <script src="../nav/printnav.js"></script>
+    <script src="../nav/nav.js"></script>
+    <script src="search.js"></script>
+    <script src="../footer/printfooter.js"></script>
+    <script src="../footer/footer.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
