@@ -14,6 +14,10 @@
         <link rel="stylesheet" href="../nav/nav.css">
         <link rel="stylesheet" href="checkout.css">
         <link rel="stylesheet" href="../footer/footer.css">
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous"></script>
 
     </head>
     <body>
@@ -24,7 +28,7 @@
         <!-- let's Start -->
 
         <div class="bigDiv">
-
+            <!-- the 3 pages -->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button
@@ -60,6 +64,7 @@
                         aria-selected="false">Payment Method</button>
                 </li>
             </ul>
+            <!-- content of the 3 pages -->
             <div class="tab-content" id="myTabContent" style="width: 90%; ">
                 <div
                     class="tab-pane fade show active"
@@ -68,7 +73,7 @@
                     aria-labelledby="home-tab"
                     tabindex="0">
                     <div class="products" style="display: flex; ">
-                        
+
                         <!-- insert your item -->
                         <div id="Checkout-allItems">
                             <!-- item 01 -->
@@ -191,13 +196,11 @@
                     aria-labelledby="profile-tab"
                     tabindex="0">
 
-                    <label
-                        class="input-group-text"
-                        for="inputGroupSelect01"
-                        style="flex-direction: column; background:white; margin: 20px;">
-                        Choose Your Address
+                    <label class="checkout-Address">
+                        <h6 style="text-align: center;">
+                            Choose Your Address</h6>
 
-                        <ul class="list-group">
+                        <ul class="list-group" style="display: flex; justify-content: left;">
                             <li class="list-group-item">
                                 <input
                                     class="form-check-input me-1"
@@ -217,20 +220,30 @@
                                     id="secondRadio">
                                 <label class="form-check-label" for="secondRadio">smoha-7 street behind hassan market</label>
                             </li>
-                            <!-- <li class="list-group-item"> <button style="background-color: #ccc;
-                            border-radius: 5px; margin: 10px;" onclick="addAddress()"> <b>+ Add another
-                            address</b> </button> <label class="form-check-label" for="secondRadio">smoha-7
-                            street behind hassan market</label> </li> -->
 
-                            <!-- <select class="form-select" id="inputGroupSelect01"> <option
-                            value="1">miami-6 street</option> <option value="2">smoha-7 street behind hassan
-                            market</option> </select> -->
-                            <button
-                                style="background-color: #ccc; border-radius: 5px; margin: 10px;"
-                                onclick="addAddress()">
-                                <b>+ Add another address</b>
-                            </button>
                         </label>
+
+                        <!-- the add btn -->
+                        <button type="button" class="addAddress_btn">
+                            <h6>
+                                + Add another address</h6>
+                        </button>
+                        <div class="content">
+
+                            <form style="display: flex;margin-top: 10px;">
+
+                                <input type="text" class="form-control">
+                                <button
+                                    onclick="addAddress()"
+                                    style="border-radius: 5px;
+                                background-color: #eee;
+                               height: 200%;
+                               align-self: center;
+                              cursor: pointer;">add</button>
+
+                            </form>
+
+                        </div>
 
                     </div>
                     <div
@@ -239,45 +252,79 @@
                         role="tabpanel"
                         aria-labelledby="contact-tab"
                         tabindex="0">
-                        <label
-                            class="input-group-text"
-                            for="inputGroupSelect01"
-                            style="flex-direction: column; background-color: white; margin: 20px">
-                            Choose Your Payment Method
-                            <select class="form-select" id="inputGroupSelect01">
-                                <option value="1">Paypal</option>
-                                <option value="2">cash</option>
-                            </select>
-                            <button
-                                style="background-color: #ccc; border-radius: 5px; margin: 10px;"
-                                onclick="addMethod()">
-                                <b>+ Add another method</b>
+                        <label class="checkout-Address">
+                            <h6 style="text-align: center;">
+                                Choose Your Payment Method
+                            </h6>
+                            <ul class="list-group" style="display: flex; justify-content: left;">
+                                <li class="list-group-item">
+                                    <input
+                                        class="form-check-input me-1"
+                                        type="radio"
+                                        name="listGroupRadio"
+                                        value=""
+                                        id="firstRadio"
+                                        checked="checked">
+                                    <label class="form-check-label" for="firstRadio">Cash</label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input
+                                        class="form-check-input me-1"
+                                        type="radio"
+                                        name="listGroupRadio"
+                                        value=""
+                                        id="secondRadio">
+                                    <label class="form-check-label" for="secondRadio">PAYPAL</label>
+                                </li>
+
+                            </label>
+
+                            <!-- the add btn -->
+                            <button type="button" class="addAddress_btn">
+                                <h6>
+                                    + Add another Payment Method</h6>
                             </button>
-                        </label>
+                            <div class="content">
+
+                                <form style="display: flex;margin-top: 10px;">
+
+                                    <input type="textarea" class="form-control">
+                                    <button
+                                        onclick="addAddress()"
+                                        style="border-radius: 5px;
+                                     background-color: #eee;
+                                    height: 200%;
+                                    align-self: center;
+                                   cursor: pointer;
+                                   ">add</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- the last btns -->
+                    <div style="display: flex;  justify-content: center; margin: 5px;">
+                        <button style="margin: 5px;">
+                            <a href="/cart/cart.html">
+                                Back to Cart
+                            </a>
+                        </button>
+                        <button style="margin: 5px;" onclick="confirmation()">
+                            Confirm Purchase
+                        </button>
                     </div>
                 </div>
 
-                <div style="display: flex;  justify-content: center; margin: 5px;">
-                    <button style="margin: 5px;">
-                        <a href="/cart/cart.html">
-                            Back to Cart
-                        </a>
-                    </button>
-                    <button style="margin: 5px;" onclick="confirmation()">
-                        Confirm Purchase
-                    </button>
-                </div>
-            </div>
-
-            <div class="menu-drawer"></div>
-            <div class="search-drawer"></div>
-            <div class="toolbar-mobile"></div>
-            <footer></footer>
-            <script src="../nav/printnav.js"></script>
-            <script src="../nav/nav.js"></script>
-            <script src="checkout.js"></script>
-            <script src="../footer/printfooter.js"></script>
-            <script src="../footer/footer.js"></script>
-            <script src="../assets/js/bootstrap.bundle.min.js"></script>
-        </body>
-    </html>
+                <div class="menu-drawer"></div>
+                <div class="search-drawer"></div>
+                <div class="toolbar-mobile"></div>
+                <footer></footer>
+                <script src="../nav/printnav.js"></script>
+                <script src="../nav/nav.js"></script>
+                <script src="checkout.js"></script>
+                <script src="../footer/printfooter.js"></script>
+                <script src="../footer/footer.js"></script>
+                <script src="../assets/js/bootstrap.bundle.min.js"></script>
+            </body>
+        </html>
