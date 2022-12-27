@@ -41,6 +41,11 @@
     width:60% ;
     display: none;
 }
+@media (max-width : 800px) {
+    .login , .signup , .reset {
+        width: 100%;
+    }
+}
 .user , .pass ,.btn ,.newPass , .fname , .lname ,.addr  {
     height : 50px ;
     width: 90%;
