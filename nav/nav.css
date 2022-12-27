@@ -467,7 +467,7 @@ header nav ul li:hover a {
 @media (min-width: 500px) {
     .menu-drawer {
         width: 340px;
-        left: -340px;
+        left: -396px;
     }
     .search-drawer {
         width: 340px;
