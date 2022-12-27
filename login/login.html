@@ -14,14 +14,100 @@
 </head>
 <body>
     <header></header>
+<div class="mycontainer">
+    <h2 class="title">My Account</h2>
+    <div class="path">
+        <a href="index.html">Home /</a><a href="login.html">My Account /</a>
+    </div>
+    
+            <form class="logform col-12" id="logform" action="../userinfo/userinfo.html">
+                <div class="login col-12" id="login">
+                        <p class="note">If you have Account : </p><br>
+                        <label style="font-size:30px ;font-weight:bold ;">Login</label><br>
+                        
+                        <input type="text" placeholder="Your email address *" class="user" id="userLog" autocomplete="off">
+                        
+                    <div>
+                        <input type="password" placeholder="Password *" class="pass" id="passLog" ><span id="showLog"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path d="M12 19c-4 0 -7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7c-.42 .736 -.858 1.414 -1.311 2.033"></path>
+                            <path d="M15 19l2 2l4 -4"></path>
+                        </svg></span>
+                        <div id="error"></div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="logBtn">Login</button>
+                    <a id="forget">Forgot Your Password ?!</a><br><br>
+                    <label class="note">If you Don't have Account :</label>
+                    <a id="RegisterNow">Register Now ..</a>
+                </div> 
 
+            </form>
+
+
+            <form class="regform" id="regform" action="login.html">
+                <div class="signup col-12" id="signup">
+                    <p class="note">If you Don't have Account : </p>
+                        <label style="font-size:30px ;font-weight:bold ;">Register</label><br>
+                        <label>First Name</label>
+                        <input type="text" placeholder="First Name *" class="fname" id="fname" autocomplete="off" required><br>
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Last Name *" class="lname" id="lname" autocomplete="off" required>
+                        <label>Address</label>
+                        <input type="text" placeholder="Your Address *" class="addr" id="addr" autocomplete="off" required>
+                        <label>Valid Email</label>
+                        <input type="text" placeholder="email address *" class="user" id="userReg" autocomplete="off" required>
+                
+                        <label>Password</label>
+                <div>
+                    <input type="password" placeholder="Password *" class="pass" id="passReg" required ><span id="showReg"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <path d="M12 19c-4 0 -7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7c-.42 .736 -.858 1.414 -1.311 2.033"></path>
+                        <path d="M15 19l2 2l4 -4"></path>
+                    </svg></span>
+                    </div>
+                
+                <div id="regError"></div>
+
+                    <button class="btn btn-primary" id="signupBtn" >Register</button>
+                </div> 
+            </form>
+
+
+            <form class="resetForm col-12" id="resetForm" action="../login/login.html">
+                <div class="reset col-12" id="reset">
+                    <label style="font-size:30px ;font-weight:bold ;">Reset Your Password</label><br>  
+                    <div>
+                        <input type="password" placeholder="Your New Password *" class="newPass" id="newPass" ><span id="showReset"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path d="M12 19c-4 0 -7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7c-.42 .736 -.858 1.414 -1.311 2.033"></path>
+                            <path d="M15 19l2 2l4 -4"></path>
+                        </svg></span>
+                        <div id="resetError"></div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="ResetBtn">Reset</button>
+                    <a id="return">Return to Login ..</a><br><br>
+                </div> 
+            </form>
+
+</div>
 
     <footer></footer>
-    <script src="../nav/printnav.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.js"
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous">
+  </script>
     <script src="../nav/nav.js"></script>
     <script src="login.js"></script>
-    <script src="../footer/printfooter.js"></script>
     <script src="../footer/footer.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
