@@ -214,6 +214,9 @@
 }
 
 @media (max-width: 767px) {
+    #banner-head-two-images img {
+        height: calc(100vh - 189px);
+    }
     #banner-head-two-images #banner-text {
         font-size: 34px;
         width: unset;
