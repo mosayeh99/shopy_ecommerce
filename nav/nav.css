@@ -357,11 +357,15 @@ header nav ul li:hover a {
     transition: var(--main-transition);
 }
 
-.search-drawer .mb-search span {
+.search-drawer .mb-search a {
     position: absolute;
     right: 32px;
-    cursor: pointer;
     transition: var(--main-transition);
+    color: var(--main-color);
+}
+
+.search-drawer .mb-search a:hover {
+    color: var(--text-color-in-light);
 }
 
 .search-drawer .search-result .mb-result-head {

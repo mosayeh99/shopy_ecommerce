@@ -79,11 +79,11 @@ function loadheader() {
 </div>
 <nav>
     <ul>
-        <li><a href="/">Hoodies</a></li>
-        <li><a href="/">T-Shirts</a></li>
-        <li><a href="/">Jackets</a></li>
-        <li><a href="/">Pants</a></li>
-        <li><a href="/">Jeans</a></li>
+        <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Hoodie">Hoodies</a></li>
+        <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="T-Shirt">T-Shirts</a></li>
+        <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Jacket">Jackets</a></li>
+        <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Pants">Pants</a></li>
+        <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Jeans">Jeans</a></li>
     </ul>
 </nav>
     `;
@@ -188,11 +188,11 @@ function loadMobileMenuDrawer() {
         </div>
         <div class="menu-mb-cat active menu-mb-item">
             <ul>
-                <li><a href="/">Hoodies</a></li>
-                <li><a href="/">T-Shirts</a></li>
-                <li><a href="/">Jackets</a></li>
-                <li><a href="/">Pants</a></li>
-                <li><a href="/">Jeans</a></li>
+                <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Hoodie">Hoodies</a></li>
+                <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="T-Shirt">T-Shirts</a></li>
+                <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Jacket">Jackets</a></li>
+                <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Pants">Pants</a></li>
+                <li><a href="../search_result/search.html" class="shopy-category-link" data-productscategory="Jeans">Jeans</a></li>
             </ul>
         </div>
         <div class="menu-mb-nav menu-mb-item">

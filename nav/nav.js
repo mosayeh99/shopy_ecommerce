@@ -34,7 +34,11 @@ mbToolbarMenuicon.addEventListener('click', (e) => {
     openMenuDrawer();
 });
 mbMenuDrawerCloseBtn.addEventListener('click', closeMenuDrawer);
-mbMenuDrawer.addEventListener('click', (e) => {e.stopPropagation()});
+mbMenuDrawer.addEventListener('click', (e) => {
+    if (e.target.getAttribute('class') != 'shopy-category-link') {
+        e.stopPropagation();
+    }
+});
 document.addEventListener('click', (e) => { // close Menu when click anywhere except menu icons and menu drawer
     if (e.target != mbHeadbarMenuicon && e.target != mbToolbarMenuicon && e.target != mbMenuDrawer) {
         closeMenuDrawer();
@@ -53,6 +57,13 @@ function toggleMenuDrawerTabs(e) {
 mbMenuDrawerHeadBtns[0].addEventListener('click', (e) => {toggleMenuDrawerTabs(e);});
 mbMenuDrawerHeadBtns[1].addEventListener('click', (e) => {toggleMenuDrawerTabs(e);});
 
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('shopy-category-link')) {
+        localStorage.setItem('shopySearchInputValue', JSON.stringify(e.target.dataset.productscategory));
+        console.log('helllllooo')
+    }
+})
+
 // -----------------Set search input value of large screen in localStorage-------------------
 let largeSearchInputFiled = document.querySelector('header .head-bar .search input');
 let largeSearchInputIcon = document.querySelector('header .head-bar .search a');
@@ -63,6 +74,18 @@ largeSearchInputIcon.addEventListener('click', (e) => {
         e.preventDefault();
     }
 });
+
+// print search page path to search icon & view more btn in search drawer based on current page
+let shopySearchPagePath;
+let currentLocationPath = window.location.pathname.split('/');
+let lastindexInPath = currentLocationPath[currentLocationPath.length - 1];
+if (lastindexInPath.indexOf('search') != -1) {
+    shopySearchPagePath = '';
+}else if (lastindexInPath.indexOf('index') != -1 || lastindexInPath == '') {
+    shopySearchPagePath = 'search_result/search.html';
+}else {
+    shopySearchPagePath = '../search_result/search.html';
+}
 
 // ----------------------Print Structure of Mobile Search Menu----------------------
 loadMobileSearchDrawer();
@@ -80,13 +103,15 @@ function loadMobileSearchDrawer() {
         </div>
         <div class="mb-search">
             <input type="text" placeholder="search...">
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </span>
+            <a href="${shopySearchPagePath}">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+            </a>
         </div>
         <div class="search-result">
             <div class="mb-result-head">
@@ -99,7 +124,7 @@ function loadMobileSearchDrawer() {
 
                     </div>
                     <div class="mb-result-view-more">
-                        <a href="#">
+                        <a href="${shopySearchPagePath}">
                             <span>view All</span>
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -121,20 +146,37 @@ function loadMobileSearchDrawer() {
     document.querySelector('.search-drawer').innerHTML = shopyMobileSearchDrawer;
 }
 
+// -----------------Set search input value of mobile screen in localStorage-------------------
+let mbSearchFiled = document.querySelector('.search-drawer .mb-search input');
+let mbSearchInputIcon = document.querySelector('.search-drawer .mb-search a');
+let mbSearchResultViewMoreBtn = document.querySelector('.search-drawer .mb-result-view-more');
+mbSearchInputIcon.addEventListener('click', (e) => {
+    if (mbSearchFiled.value != "") {
+        localStorage.setItem('shopySearchInputValue', JSON.stringify(mbSearchFiled.value));
+    }else {
+        e.preventDefault();
+    }
+});
+mbSearchResultViewMoreBtn.addEventListener('click', (e) => {
+    if (mbSearchFiled.value != "") {
+        localStorage.setItem('shopySearchInputValue', JSON.stringify(mbSearchFiled.value));
+    }else {
+        e.preventDefault();
+    }
+});
+
 // print product page path to products in search drawer based on current page
 let shopyProductPagePath;
-if (window.location.pathname.indexOf('product') != -1) {
-    shopyProductPagePath = '#';
-}else if (window.location.pathname.indexOf('index') != -1 || window.location.pathname.indexOf('shopy_ecommerce') != -1) {
+if (lastindexInPath.indexOf('product') != -1) { // lastindexInPath => declared in line 70
+    shopyProductPagePath = '';
+}else if (lastindexInPath.indexOf('index') != -1 || lastindexInPath == '') {
     shopyProductPagePath = 'product/product.html';
 }else {
     shopyProductPagePath = '../product/product.html';
 }
 
 // -----------------Show search result on search drawer----------------
-let mbSearchFiled = document.querySelector('.search-drawer .mb-search input');
 let mbSearchResultHeadText = document.querySelectorAll('.search-drawer .mb-result-head .head-text');
-let mbSearchResultViewMoreBtn = document.querySelector('.search-drawer .mb-result-view-more');
 let mbSearchResultNotFoundText = document.querySelector('.search-drawer .result-not-found');
 fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json')
 .then(res => res.json())
