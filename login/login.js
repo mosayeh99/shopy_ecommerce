@@ -2,7 +2,7 @@
 function stopFormsubmit (e){
     e.preventDefault() 
 }
-// localStorage.clear()
+localStorage.clear()
 
 // document.getElementById("regform").addEventListener("click",function(event){
 //       event.preventDefault() 
@@ -50,9 +50,8 @@ var showreg = document.getElementById('showReg') ;
     }) ;
     
     // ------------------------------- Login Form ------------------------------- //
-   
- 
-   
+
+
     document.getElementById("logBtn").addEventListener("click",function(){
 
     
@@ -108,18 +107,21 @@ var showreg = document.getElementById('showReg') ;
         if (isNaN (userReg) && passReg.length >=8){
 
             var obj ={
-                "fname" : fname ,
-                "lname" :lname 
+                "First-Name" : fname ,
+                "Last-Name" :lname ,
+                "RegUser" : userReg ,
+                "RegPassword" : passReg ,
+                "Address" : addr 
             }
 
             arr.push(obj)
             localStorage.setItem("User",JSON.stringify(arr))
 
-            localStorage.setItem("RegUser",userReg);
-            localStorage.setItem("RegPassword",passReg);
-            localStorage.setItem("First-Name",fname);
-            localStorage.setItem("Last-Name",lname);
-            localStorage.setItem("Address",addr);
+            // localStorage.setItem("RegUser",userReg);
+            // localStorage.setItem("RegPassword",passReg);
+            // localStorage.setItem("First-Name",fname);
+            // localStorage.setItem("Last-Name",lname);
+            // localStorage.setItem("Address",addr);
             
             document.getElementById("regError").innerHTML =""
             document.getElementById("regError").style.display = "none"
