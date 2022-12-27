@@ -1,0 +1,88 @@
+
+.title {
+    text-align: center;
+    font-size: 40px ;
+    font-weight: bold;
+    padding: 10px ;
+    margin : 10px ;
+}
+.path {
+    padding : 10px ;
+    margin:10px ;
+}
+
+.note {
+    margin-bottom : 10px ;
+    font-size: 20px;
+    color: rgb(128, 128, 128);
+    
+}
+
+.logform , .regform , .resetForm{
+        display :flex ;
+        justify-content: center;
+    }
+
+.login , .signup ,.reset {
+    padding: 50px ;
+    margin : 10px ;
+    background-color:#eee ;
+    border :3px solid lightgray ;
+}
+.login{
+    width:50% ;
+    display: block;
+}
+.signup {
+    display :none ;
+    width: 70% ;
+}
+.reset{
+    width:60% ;
+    display: none;
+}
+.user , .pass ,.btn ,.newPass , .fname , .lname ,.addr  {
+    height : 50px ;
+    width: 90%;
+    border :2px solid lightgray ;
+    margin :10px ;
+    padding-left: 10px;
+    
+}
+
+.btn{
+width :100px ;
+}
+
+#error , #regError , #resetError{
+    margin :  10px ;
+    padding: 10px;
+    border : 0.5px solid red;
+    background-color: lightgray;
+    width: 90%;
+    height : 70px ;
+    display: block;
+    color: black;
+    display: none ;
+}
+
+#forget, #return {
+    cursor: pointer;
+    color: #1e90ff;
+    font-weight: bold;
+}
+
+#RegisterNow{
+    cursor:pointer ;
+    color :black ;
+    font-weight: bold;
+}
+#signup > label{
+    font-weight: bold;
+    display: block;
+    margin-top: 10px ;
+}
+
+/* #signupBtn{
+    pointer-events: none ;
+} */
