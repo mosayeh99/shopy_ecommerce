@@ -2,7 +2,7 @@
 function stopFormsubmit (e){
     e.preventDefault() 
 }
-localStorage.clear()
+// localStorage.clear()
 
 // document.getElementById("regform").addEventListener("click",function(event){
 //       event.preventDefault() 
@@ -63,7 +63,7 @@ var showreg = document.getElementById('showReg') ;
     console.log(error)
     
     if (userLog === userReg && passLog === passReg){
-        alert("success")
+        document.getElementById("logBtn").style.pointerEvents ="auto"
         document.getElementById("logform").style.display ="none"
     }
     else if (userLog === userReg && passLog !== passReg){
@@ -105,7 +105,7 @@ var showreg = document.getElementById('showReg') ;
             let arr = []
 
         if (isNaN (userReg) && passReg.length >=8){
-
+            document.getElementById("signupBtn").style.pointerEvents ="auto"
             var obj ={
                 "First-Name" : fname ,
                 "Last-Name" :lname ,
