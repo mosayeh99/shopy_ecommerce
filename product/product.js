@@ -117,7 +117,6 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
     let mainProductImg = document.querySelector('.mainsliderimage img');
     let productThumbs = document.querySelectorAll('.slide-thumbs .slide-image');
     document.addEventListener('click', (e) => {
-        // e.stopPropagation();
         if (e.target.classList.contains('slide-image')) {
             productThumbs.forEach(el => {
                 el.classList.remove('active')
@@ -129,7 +128,7 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
     })
     
     
-     increaseQuantity.addEventListener('click',function(){
+    increaseQuantity.addEventListener('click',function(){
         quantity.innerHTML = Number(quantity.innerHTML) +1 ;
     })
     
@@ -149,12 +148,11 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
             }) 
             e.target.classList.add('active')
             sizeValue = e.target.innerHTML;
-            // console.log(sizeValue)
         }
     })
     addToCard.addEventListener('click',function(){
-        if (localStorage.productsInCard != null){
-        productsCartArray = JSON.parse(localStorage.productsInCard)
+        if (localStorage.productsInCart != null){
+        productsCartArray = JSON.parse(localStorage.productsInCart)
         }
         let productInfoObject = { 
             productId : addToCard.dataset.productid ,
@@ -162,8 +160,8 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
             productQty : quantity.textContent
         }
         productsCartArray.push(productInfoObject);
-        localStorage.setItem('productsInCard',JSON.stringify(productsCartArray))
-        document.querySelector(".add-to-card-btn span").style.display = "inline"
+        localStorage.setItem('productsInCart',JSON.stringify(productsCartArray));
+        document.querySelector(".add-to-card-btn span").style.display = "inline";
     })    
 })
 
