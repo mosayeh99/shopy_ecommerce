@@ -4,11 +4,15 @@ function stopFormsubmit (e){
 }
 // localStorage.clear()
 
+
 // document.getElementById("regform").addEventListener("click",function(event){
 //       event.preventDefault() 
 // })
 
-
+console.log (JSON.parse(localStorage.getItem("User"))[0].RegPassword)
+console.log (JSON.parse(localStorage.getItem("User"))[0].RegUser)
+// delete JSON.parse(localStorage.getItem("User"))[0]["RegPassword"]
+// console.log (JSON.parse(localStorage.getItem("User"))[0])
 // ------------------Password Showing ---------------------
 var passlog = document.getElementById('passLog') ;
 var showlog = document.getElementById('showLog') ;
@@ -52,32 +56,31 @@ var showreg = document.getElementById('showReg') ;
     // ------------------------------- Login Form ------------------------------- //
 
 
-    document.getElementById("logBtn").addEventListener("click",function(){
+    document.getElementById("logform").addEventListener('click',function(){
+        
+    
+        var userLog = document.getElementById("userLog").value;
+        var passLog = document.getElementById("passLog").value;
+        var userReg= (JSON.parse(localStorage.getItem("User"))[0].RegUser) ;
+        var passReg= (JSON.parse(localStorage.getItem("User"))[0].RegPassword) ;
+        // var error = document.getElementById("error").innerHTML ;
+    
+        if (userLog === userReg && passLog === passReg){
+            document.getElementById("logBtn").style.pointerEvents ="auto"
+            document.getElementById("logform").style.display ="none"
+        }
+        // document.getElementById("passLog").addEventListener("keydown",function(){
 
-    
-    var userLog = document.getElementById("userLog").value;
-    var passLog = document.getElementById("passLog").value;
-    var userReg= localStorage.getItem('RegUser') ;
-    var passReg= localStorage.getItem('RegPassword') ;
-    var error = document.getElementById("error").innerHTML ;
-    console.log(error)
-    
-    if (userLog === userReg && passLog === passReg){
-        document.getElementById("logBtn").style.pointerEvents ="auto"
-        document.getElementById("logform").style.display ="none"
-    }
-    else if (userLog === userReg && passLog !== passReg){
-        document.getElementById("error").innerHtml ="Uncorrect Password"
-    }
-    else if (userLog !== userReg && passLog === passReg){
-        alert ("Uncorrect User")
-    }
-      
-    else {
-        error = "Retry"
-        console.log(error)
-    }
-})
+             if (userLog === userReg && passLog !== passReg){
+                document.getElementById("error").innerHTML ="Incorrect Password"
+                document.getElementById("error").style.display = "block"
+                document.getElementById("error").style.backgroundColor = "#ffb6c1"
+                document.getElementById("error").style.border = "0.5px solid red"
+            }
+
+        })
+
+
     // ------------------------------- Regestration Form ------------------------------- //
     
     document.getElementById("RegisterNow").addEventListener("click",function(){
@@ -107,11 +110,11 @@ var showreg = document.getElementById('showReg') ;
         if (isNaN (userReg) && passReg.length >=8){
             document.getElementById("signupBtn").style.pointerEvents ="auto"
             var obj ={
-                "First-Name" : fname ,
-                "Last-Name" :lname ,
-                "RegUser" : userReg ,
+                "Address" : addr ,
                 "RegPassword" : passReg ,
-                "Address" : addr 
+                "RegUser" : userReg ,
+                "Last-Name" :lname ,
+                "First-Name" : fname 
             }
 
             arr.push(obj)
@@ -128,8 +131,6 @@ var showreg = document.getElementById('showReg') ;
             
         }
         if(!isNaN (userReg) && passReg.length <8 ) {
-            // regform.removeAttribute(action) ;
-            // console.log(regform)
             document.getElementById("regError").innerHTML ="Email is invalid <br>Password is too short (minimum is 8 characters) "
             document.getElementById("regError").style.display = "block"
 
@@ -156,15 +157,22 @@ var showreg = document.getElementById('showReg') ;
         document.getElementById("login").style.display = "none"
         document.getElementById("signup").style.display = "none"
         document.getElementById("reset").style.display = "block"
+
+        // localStorage.setItem("User",JSON.parse())
+        // localStorage.setItem("User",JSON.stringify(arr))
         
-        localStorage.removeItem('RegPassword')
-        
+       let arr =JSON.parse(localStorage.getItem("User"))
+        let oldPass =arr[0].RegPassword
+        localStorage.removeItem("oldPass")
+        console.log(oldPass)
+        // console.log(JSON.parse(localStorage.getItem("User"))[0].RegPassword)
         document.getElementById("ResetBtn").addEventListener("click", function(){
             newPass = document.getElementById("newPass").value 
+            console.log(newPass)
             
             
             if(newPass.length >=8){
-             localStorage.setItem('RegPassword', newPass ) 
+               console.log(JSON.parse(localStorage.getItem("User")[0]).RegPassword) = newPass
                 
             }
             
@@ -182,3 +190,5 @@ var showreg = document.getElementById('showReg') ;
     // $(document).ready(function(){
     //     alert("jquery loaded")
     //   })
+
+
