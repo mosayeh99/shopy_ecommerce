@@ -1,10 +1,10 @@
-.bigDiv {
+.allPage {
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
 
-.bigDiv div {
+.allPage div {
     align-self: center;
 }
 
@@ -45,9 +45,9 @@
     justify-content: space-between;
 }
 .checkout-Address {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     padding: 15px;
     gap: 20px;
     border: 1px solid #777;
@@ -82,6 +82,16 @@
     border-radius: var(--btn--border-radius);
     align-self: center;
 }
+.next_btn {
+    margin: 5px;
+    background-color: var(--secondary-color);
+    color: white;
+    width: 50%;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: var(--btn--border-radius);
+    align-self: center;
+}
 
 .content {
     padding: 0 18px;
@@ -91,8 +101,7 @@
     transition: max-height 0.2s ease-out;
 }
 
-.last-btn-in-checkout-page{
-    margin-top: 10px;
+.last-btn-in-checkout-page {
     margin: 5px;
     background-color: var(--secondary-color);
     color: white;
@@ -103,13 +112,40 @@
     align-self: center;
 }
 
+.confirm-btn-in-checkout-page {
+    margin-top: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    /* width: 50%; */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: var(--btn--border-radius);
+    align-self: center;
+}
+.small-btns {
+    margin-top: 2px;
+    background-color: var(--main-color);
+    color: white;
+    /* width: 20%; */
+    padding: 5px;
+    cursor: pointer;
+    border-radius: var(--btn--border-radius);
+    height: 100%;
+}
 
-/* .for pop up{
-    position: fixed;
-    width: calc(100vw - 40%);
-    height:150px;
-    background-color: red;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-} */
+/* .for pop up{ position: fixed; width: calc(100vw - 40%); height:150px; background-color: red; top: 50%; left: 50%; transform: translate(-50%,-50%); } */
+
+#address-list > li {
+    position: relative;
+    /* display: block; */
+    /* width: 100%; */
+    padding: 5px;
+    /* list-style: circle */
+    border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+    list-style-type: circle;
+}
+
+#address-list:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
