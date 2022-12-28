@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../nav/nav.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="../footer/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="mb-body-overlay"></div>
@@ -20,18 +21,18 @@
 <div class="mycontainer">
     <h2 class="title">My Account</h2>
     <div class="path">
-        <a href="index.html">Home /</a><a href="login.html">My Account /</a>
+        <a href="index.html">Home /</a><a href="login.html">Login /</a><a>My Account </a>
     </div>
     
-            <form class="logform col-12" id="logform" action="../userinfo/userinfo.html">
+            <form class="logform col-12" id="logform" action="../index.html" method="post">
                 <div class="login col-12" id="login">
                         <p class="note">If you have Account : </p><br>
                         <label style="font-size:30px ;font-weight:bold ;">Login</label><br>
                         
-                        <input type="text" placeholder="Your email address *" class="user" id="userLog" autocomplete="off">
+                        <input type="email" placeholder="Your email address *" class="user" id="userLog" autocomplete="off" required>
                         
                     <div>
-                        <input type="password" placeholder="Password *" class="pass" id="passLog" ><span id="showLog"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <input type="password" required placeholder="Password *" class="pass" id="passLog" ><span id="showLog"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <circle cx="12" cy="12" r="2"></circle>
@@ -39,16 +40,16 @@
                             <path d="M15 19l2 2l4 -4"></path>
                         </svg></span>
                         <div id="error"></div>
+                        <button class="btn btn-primary" id="logBtn">Login</button>
                     </div>
                     
-                    <button class="btn btn-primary" id="logBtn">Login</button>
                     <a id="forget">Forgot Your Password ?!</a><br><br>
                     <label class="note">If you Don't have Account :</label>
-                    <a id="RegisterNow">Register Now ..</a>
+                    <a onmouseover="this.style.color ='#1e90ff' ; this.style.fontSize ='25px'" onmouseleave="this.style.color='black' ; this.style.fontSize ='18px'" id="RegisterNow" class="RegisterNow">Register Now ..</a>
                 </div> 
 
             </form>
-
+            
 
             <form class="regform" id="regform" action="login.html">
                 <div class="signup col-12" id="signup">
@@ -61,7 +62,7 @@
                         <label>Address</label>
                         <input type="text" placeholder="Your Address *" class="addr" id="addr" autocomplete="off" required>
                         <label>Valid Email</label>
-                        <input type="text" placeholder="email address *" class="user" id="userReg" autocomplete="off" required>
+                        <input type="email" placeholder="email address *" class="user" id="userReg" autocomplete="off" required>
                 
                         <label>Password</label>
                 <div>
@@ -115,6 +116,7 @@
 <script src="../footer/printfooter.js"></script>
 <script src="../footer/footer.js"></script>
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
 
 
 </body>

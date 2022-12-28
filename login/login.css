@@ -50,7 +50,7 @@
     
 }
 
-.btn{
+.btn {
 width :100px ;
 }
 
@@ -58,12 +58,13 @@ width :100px ;
     margin :  10px ;
     padding: 10px;
     border : 0.5px solid red;
-    background-color: lightgray;
+    background-color: lightpink;
     width: 90%;
     height : 70px ;
     display: block;
     color: black;
     display: none ;
+    border-radius: 10px ;
 }
 
 #forget, #return {
@@ -76,16 +77,24 @@ width :100px ;
     cursor:pointer ;
     color :black ;
     font-weight: bold;
+    font-size: 18px ;
 }
+
 #signup > label{
     font-weight: bold;
     display: block;
     margin-top: 10px ;
 }
 
- #logBtn , #ResetBtn{
+ #logBtn , #resetBtn , #regBtn{
     pointer-events: none ;
 }
+
+#showReg , #showLog , #showReset {
+    cursor: pointer ;
+}
+
+
 
     @media (max-width : 800px) {
         .login , .signup , .reset {
@@ -98,11 +107,30 @@ width :100px ;
             height : 40px ;
             width: 80%;
             border :2px solid lightgray ;
-            margin :10px ;
-            padding-left: 5px;
+            margin :15px ;
+            padding-left: 20px;
             
         }
+
+        .login , .signup ,.reset {
+            padding: 30px ;
+            margin : 10px ;
+        }
+         
         .note{
             font-size: 18px;
+        }
+
+        #error , #regError , #resetError{
+            margin :  10px ;
+            padding: 10px;
+            border : 0.5px solid red;
+            background-color: lightpink;
+            width: 90%;
+            height : auto ;
+            display: block;
+            color: black;
+            display: none ;
+            border-radius: 10px;
         }
     }
