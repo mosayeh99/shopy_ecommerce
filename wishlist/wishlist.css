@@ -1,0 +1,101 @@
+/* 
+    ----------------NOTE------------------
+    product list style come from style.css
+*/
+
+.result-head-banner {
+    background-image: url(../assets/images/result-page-head-bg.webp);
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.result-head-banner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 0.6);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#shopy-product-del-from-wishlist {
+    top: 15px;
+    right: 17px;
+    color: #ccc;
+}
+
+#shopy-product-del-from-wishlist #del-product-wishlist-icon {
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+#shopy-product-del-from-wishlist #del-product-wishlist-icon > * {
+    pointer-events: none;
+}
+
+#shopy-product-del-from-wishlist #del-product-wishlist-icon:hover {
+    color: var(--text-color-in-light);
+}
+
+#shopy-product-del-from-wishlist #wishlist-tooltip {
+    background-color: #777;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    width: max-content;
+    height: fit-content;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: white;
+    transition: var(--secondary-transition);
+    opacity: 0;
+    visibility: hidden;
+}
+
+#shopy-product-del-from-wishlist #wishlist-tooltip::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 8px;
+    border: 6px solid;
+    border-color: transparent transparent transparent #777;
+    transition: var(--secondary-transition);
+}
+
+#shopy-product-del-from-wishlist span:hover + #wishlist-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wishlist-empty {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 80px;
+    display: none;
+}
+
+.wishlist-empty .not-found-text {
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+@media (max-width: 767px) {
+    .result-head-banner {
+        font-size: 25px;
+    }
+}

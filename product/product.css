@@ -119,6 +119,25 @@
     display:none;
     margin-left: 10px;
 }
+.go-to-cart-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 0;
+    overflow: hidden;
+    transition: var(--main-transition);
+}
+.go-to-cart-btn a {
+    width: 100%;
+}
+.go-to-cart-btn a button {
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+    border-radius: var(--btn--border-radius);
+    margin-bottom: 30px;
+}
 .product-features {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));

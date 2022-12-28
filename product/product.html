@@ -16,7 +16,6 @@
     <div class="mb-body-overlay"></div>
     <header></header>
 
-   
     <div class="mycontainer ">
         <div class="product-container">
         <!-- <div class="product">
@@ -25,7 +24,9 @@
                     <img src="" alt="">
                 </div>
                 <div class="smallbuttonimages">
-                    <img src="" class="slide-image active">
+                    <div class="slide-thumbs">
+                        <img src="" class="slide-image active">
+                    </div>
                 </div>
             </div>
             <div class="details ">
@@ -35,7 +36,7 @@
                     <del>EGP<span class="priceBefore">5448</span></del>
                 </div>
                 <div class="display-size">
-                    <button>M</button>
+                    <button class="size active">M</button>
                 </div>
                 <div class="quantity-select ">
                     <span class="decrease-quantity">-</span>
@@ -47,7 +48,13 @@
                         <li>sayeh1</li>
                     </ul>
                 </div>
-                <button class="add-to-card-btn">Add to cart</button>
+                <button class="add-to-card-btn" data-productid="${e.id}" >Add to cart<span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                    </span>
+                </button>
                 <div class="product-features">
                     <div class="feature">
                         <div class="feature-img">
@@ -70,7 +77,7 @@
                 </div>
             </div>
         </div> -->
-    </div>
+        </div>
     </div>
     
     <div class="menu-drawer"></div>

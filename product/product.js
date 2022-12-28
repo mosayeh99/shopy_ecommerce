@@ -72,12 +72,17 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
                 </ul>
             </div>
             <button class="add-to-card-btn" data-productid="${e.id}" >Add to cart<span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-            </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 12l5 5l10 -10"></path>
+                    </svg>
+                </span>
             </button>
+            <div class="go-to-cart-btn">
+                <a href="../cart/cart.html">
+                    <button>Check The Cart</button>
+                </a>
+            </div>
             <div class="product-features">
                 <div class="feature">
                     <div class="feature-img">
@@ -100,9 +105,8 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
             </div>
             </div>
         </div>
-            `
-            product =  productHead + imageSlider + productContent + productSize + productQuantity + productDescription + productFoot;
-
+        `
+        product =  productHead + imageSlider + productContent + productSize + productQuantity + productDescription + productFoot;
         }
     })
 
@@ -112,7 +116,6 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
     let quantity = document.querySelector(".quantity")
     let addToCard = document.querySelector(".add-to-card-btn")
     let productSizes =document.querySelectorAll(".size")
-    
     
     let mainProductImg = document.querySelector('.mainsliderimage img');
     let productThumbs = document.querySelectorAll('.slide-thumbs .slide-image');
@@ -124,9 +127,7 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
             e.target.classList.add('active');
             mainProductImg.src = e.target.src;
         }
-        
     })
-    
     
     increaseQuantity.addEventListener('click',function(){
         quantity.innerHTML = Number(quantity.innerHTML) +1 ;
@@ -134,13 +135,12 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
     
     decreaseQuantity.addEventListener('click',function(){
         if (quantity.innerHTML !== "1"){
-        quantity.innerHTML = Number(quantity.innerHTML) -1 ;
+            quantity.innerHTML = Number(quantity.innerHTML) -1 ;
         }
-        
     })
+
     let sizeValue = document.querySelector(".display-size .size").dataset.productfirstsize;
     let productsCartArray =[];
-
     document.addEventListener('click',(e) =>{
         if(e.target.classList.contains("size")){
             productSizes.forEach(el =>{
@@ -162,7 +162,11 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
         productsCartArray.push(productInfoObject);
         localStorage.setItem('productsInCart',JSON.stringify(productsCartArray));
         document.querySelector(".add-to-card-btn span").style.display = "inline";
-    })    
+        document.querySelector(".go-to-cart-btn").style.height = '76px';
+        countProductInCart.forEach(e => { // countProductInCart => declared in nav/nav.js
+            e.textContent = productsCartArray.length;
+        });
+    })
 })
 
 
