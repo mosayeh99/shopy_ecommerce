@@ -30,26 +30,36 @@ function cookieAddress() {
 }
 
 function addAddress() {
-   var newAddress = prompt("Enter your new address");
-if (newAddress === null) {
-    alert(" Failed to added, Please try again.")
-} else {
-    alert(" Successfully added. ")
-}  
+    var newli = document.createElement('li');
+    var newlabel = document.createElement("label");
+    // var newli = document.createElement("li");
+    var y = document.createTextNode(document.getElementById("newAddress").value);
+    newlabel.appendChild(y);
+    newli.appendChild(newlabel)
+    // newli.appendChild(newli)
+    document
+        .getElementById("address-list")
+        .appendChild(newli);
+
+    // var y = document.createTextNode(document.getElementById("newAddress").value);
+    // var newlabel = document.createElement("label"); newlabel.appendChild(y)
+    // document.getElementById("firstRadio").appendChild(newlabel); var newAddress =
+    // prompt("Enter your new address"); if (newAddress === null) { alert(" Failed
+    // to added, Please try again.") } else {     alert(" Successfully added. ") }
 
 }
 // Add Address btn function
 var coll = document.getElementsByClassName("addAddress_btn");
 for (var i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
 }
 function addMethod() {
     var newMethod = prompt("Enter your new method of payment");

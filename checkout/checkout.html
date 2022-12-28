@@ -27,8 +27,8 @@
 
         <!-- let's Start -->
 
-        <div class="bigDiv">
-            <!-- the 3 pages -->
+        <div class="allPage">
+
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button
@@ -50,20 +50,13 @@
                         type="button"
                         role="tab"
                         aria-controls="profile-tab-pane"
-                        aria-selected="false">Address</button>
+                        aria-selected="false">CHECKOUT</button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button
-                        class="nav-link"
-                        id="contact-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#contact-tab-pane"
-                        type="button"
-                        role="tab"
-                        aria-controls="contact-tab-pane"
-                        aria-selected="false">Payment Method</button>
-                </li>
-                
+                <!-- <li class="nav-item" role="presentation"> <button class="nav-link"
+                id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                type="button" role="tab" aria-controls="contact-tab-pane"
+                aria-selected="false">Payment Method</button> </li> -->
+
             </ul>
             <!-- content of the 3 pages -->
             <div class="tab-content" id="myTabContent" style="width: 90%; ">
@@ -190,175 +183,171 @@
 
                     </div>
 
-
-
-
-
-
-                    
-
-
-
-
-
-
-
                 </div>
-                
+
                 <div
                     class="tab-pane fade"
                     id="profile-tab-pane"
                     role="tabpanel"
                     aria-labelledby="profile-tab"
                     tabindex="0">
-
-                    <label class="checkout-Address">
-                        <h6 style="text-align: center;">
-                            Choose Your Address</h6>
-
-                        <ul class="list-group" style="display: flex; justify-content: left;">
-                            <li class="list-group-item">
-                                <input
-                                    class="form-check-input me-1"
-                                    type="radio"
-                                    name="listGroupRadio"
-                                    value=""
-                                    id="firstRadio"
-                                    checked="checked">
-                                <label class="form-check-label" for="firstRadio">miami-6 street</label>
-                            </li>
-                            <li class="list-group-item">
-                                <input
-                                    class="form-check-input me-1"
-                                    type="radio"
-                                    name="listGroupRadio"
-                                    value=""
-                                    id="secondRadio">
-                                <label class="form-check-label" for="secondRadio">smoha-7 street behind hassan market</label>
-                            </li>
-
-                        </label>
-
-                        <!-- the add btn -->
-                        <button type="button" class="addAddress_btn">
-                            <h6>
-                                + Add another address</h6>
-                        </button>
-                        <div class="content">
-
-                            <div style="display: flex;margin-top: 10px;">
-
-                                <input type="text" class="form-control">
-                                <button
-                                    onclick="addAddress()"
-                                    style="border-radius: 5px;
-                                background-color: #eee;
-                               height: 200%;
-                               align-self: center;
-                              cursor: pointer;">add</button>
-
-                            </div>
-
-                        </div>
-
-
-                        
-
-                        <!-- <button class="addAddress_btn" id="contact-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#contact-tab-pane"
-                        type="button"
-                        role="tab"
-                        aria-controls="contact-tab-pane"
-                        aria-selected="false">Next</button> -->
-                            
-
-                    </div>
-                    <div
-                        class="tab-pane fade"
-                        id="contact-tab-pane"
-                        role="tabpanel"
-                        aria-labelledby="contact-tab"
-                        tabindex="0">
+                    
+                    <div>
                         <label class="checkout-Address">
                             <h6 style="text-align: center;">
-                                Choose Your Payment Method
-                            </h6>
+                                Choose Your Address</h6>
+
                             <ul class="list-group" style="display: flex; justify-content: left;">
-                                <div class="form-check">
+                                <div id="address-list"></div>
+                                <li class="list-group-item">
                                     <input
-                                        class="form-check-input"
+                                        class="form-check-input me-1"
                                         type="radio"
-                                        name="flexRadioDefault"
-                                        id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Cash
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="flexRadioDefault"
-                                        id="flexRadioDefault2"
-                                        checked="checked">
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        PAYPAL
-                                    </label>
-                                </div>
+                                        name="listGroupRadio"
+                                        value=""
+                                        id="secondRadio">
+                                        <label class="form-check-label" for="secondRadio">smoha-7 street behind hassan market</label>
+                                    </input>
+                                </li>
+
+                                <!-- <li class="list-group-item"> <input class="form-check-input me-1"
+                                type="radio" name="listGroupRadio" value="" id="firstRadio" checked="checked">
+                                </li> <li class="list-group-item"> <input class="form-check-input me-1"
+                                type="radio" name="listGroupRadio" value="" id="secondRadio"> <label
+                                class="form-check-label" for="secondRadio">smoha-7 street behind hassan
+                                market</label> </input> </li> -->
 
                             </label>
 
                             <!-- the add btn -->
                             <button type="button" class="addAddress_btn">
                                 <h6>
-                                    + Add another Payment Method</h6>
+                                    + Add another address</h6>
                             </button>
                             <div class="content">
-
                                 <div style="display: flex;margin-top: 10px;">
-
-                                    <input type="textarea" class="form-control">
-                                    <button
-                                        onclick="addAddress()"
-                                        style="border-radius: 5px;
-                                     background-color: #eee;
-                                    height: 200%;
-                                    align-self: center;
-                                   cursor: pointer;
-                                   ">add</button>
+                                    <input type="text" class="form-control" id="newAddress">
+                                    <button onclick="addAddress()" class="small-btns">add</button>
 
                                 </div>
 
                             </div>
+
+                            <!-- to do next button -->
+                            <button
+                                class="next_btn"
+                                id="contact-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#contact-tab-pane"
+                                type="button"
+                                role="tab"
+                                aria-controls="contact-tab-pane"
+                                aria-selected="false">Next</button>
+
                         </div>
+                        <div>
+                            <div
+                                class="tab-pane fade"
+                                id="contact-tab-pane"
+                                role="tabpanel"
+                                aria-labelledby="contact-tab"
+                                tabindex="0">
+                                <label class="checkout-Address">
+                                    <h6 style="text-align: center;">
+                                        Choose Your Payment Method
+                                    </h6>
+
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="flexRadioDefault"
+                                            id="flexRadioDefault2"
+                                            checked="checked">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Cash
+                                        </label>
+
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="flexRadioDefault"
+                                            id="flexRadioDefault2">
+                                        <div class="form-check-label" for="flexRadioDefault2">
+                                            Credit / Debit Card
+                                            <div>
+                                                <label for="">Card Number *
+                                                </label>
+                                                <div style="display: flex;">
+                                                    <input type="textarea" class="form-control">
+                                                    <button class="small-btns">save</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseExample"
+                                            aria-controls="collapseExample"
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="flexRadioDefault"
+                                            id="flexRadioDefault2">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            PAYPAL
+                                        </label>
+                                        <div class="collapse" id="collapseExample">
+
+                                            Pay securely with PayPal – you can pay with your credit or debit card if you
+                                            don’t have a PayPal account. Once payment is complete, you will automatically be
+                                            redirected back to Supereight.net
+
+                                        </div>
+                                    </div>
+
+                                </label>
+                                <button class="confirm-btn-in-checkout-page" onclick="confirmation()" ">
+                                    Confirm Purchase
+                                </button>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-
-
-                </div>                    
-                    <!-- the last btns -->
-                    <div style="display: flex;  justify-content: center; margin: 5px;">
-                        <button class="last-btn-in-checkout-page">
-                            <a href="/cart/cart.html" style="color: white;">
-                                Back to Cart
-                            </a>
-                        </button>
-                        <button class="last-btn-in-checkout-page" onclick="confirmation()">
-                            Confirm Purchase
-                        </button>
-                    </div>
                 </div>
 
-                <div class="menu-drawer"></div>
-                <div class="search-drawer"></div>
-                <div class="toolbar-mobile"></div>
-                <footer></footer>
-                <script src="../nav/printnav.js"></script>
-                <script src="../nav/nav.js"></script>
-                <script src="checkout.js"></script>
-                <script src="../footer/printfooter.js"></script>
-                <script src="../footer/footer.js"></script>
-                <script src="../assets/js/bootstrap.bundle.min.js"></script>
-            </body>
-        </html>
+            </div>
+
+            <!-- the last btns -->
+            <div style="display: flex;  justify-content: center; margin: 5px;">
+                <button class="last-btn-in-checkout-page">
+                    <a href="/cart/cart.html" style="color: white;">
+                        Back to Cart
+                    </a>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="menu-drawer"></div>
+        <div class="search-drawer"></div>
+        <div class="toolbar-mobile"></div>
+        <footer></footer>
+        <script src="../nav/printnav.js"></script>
+        <script src="../nav/nav.js"></script>
+        <script src="checkout.js"></script>
+        <script src="../footer/printfooter.js"></script>
+        <script src="../footer/footer.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
