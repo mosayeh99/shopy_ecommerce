@@ -66,6 +66,14 @@ var showreg = document.getElementById('showReg') ;
         // var error = document.getElementById("error").innerHTML ;
     
         if (userLog === userReg && passLog === passReg){
+            Swal.fire({
+                icon: 'success',
+                title: 'Successfully Login',
+                text: 'Wish you a good Shopping ',
+                footer: `<a href="../index.html">  Home Page  /</a>
+                         <a href="../checkout/checkout.html"> Checkout  /</a>
+                         <a href="./login.html">  LogOut  </a>`
+              })
             document.getElementById("logBtn").style.pointerEvents ="auto"
             document.getElementById("logform").style.display ="none"
         }
@@ -74,10 +82,16 @@ var showreg = document.getElementById('showReg') ;
              if (userLog === userReg && passLog !== passReg){
                 document.getElementById("error").innerHTML ="Incorrect Password"
                 document.getElementById("error").style.display = "block"
-                document.getElementById("error").style.backgroundColor = "#ffb6c1"
-                document.getElementById("error").style.border = "0.5px solid red"
+                // document.getElementById("error").style.backgroundColor = "#ffb6c1"
+                // document.getElementById("error").style.border = "0.5px solid red"
             }
-
+        else if (!(userLog !== userReg) || !(passLog !== passReg)){
+            
+            document.getElementById("error").innerHTML ="Retry Or Register Now"
+            if (userLog !== userReg && passLog ==! passReg ){
+                document.getElementById("error").innerHTML ="If you don't have Account , please Register ."}
+            document.getElementById("error").style.display = "block"
+        }
         })
 
 
@@ -131,6 +145,8 @@ var showreg = document.getElementById('showReg') ;
             
         }
         if(!isNaN (userReg) && passReg.length <8 ) {
+            // regform.removeAttribute(action) ;
+            // console.log(regform)
             document.getElementById("regError").innerHTML ="Email is invalid <br>Password is too short (minimum is 8 characters) "
             document.getElementById("regError").style.display = "block"
 
@@ -186,9 +202,4 @@ var showreg = document.getElementById('showReg') ;
         
     })
     
-    
-    // $(document).ready(function(){
-    //     alert("jquery loaded")
-    //   })
-
 

@@ -64,6 +64,7 @@ width :100px ;
     display: block;
     color: black;
     display: none ;
+    border-radius: 10px ;
 }
 
 #forget, #return {
@@ -93,6 +94,8 @@ width :100px ;
     cursor: pointer ;
 }
 
+
+
     @media (max-width : 800px) {
         .login , .signup , .reset {
             width: 100%;
@@ -121,8 +124,8 @@ width :100px ;
         #error , #regError , #resetError{
             margin :  10px ;
             padding: 10px;
-            border : 0.5px solid blue;
-            background-color: lightcyan;
+            border : 0.5px solid red;
+            background-color: lightpink;
             width: 90%;
             height : auto ;
             display: block;
