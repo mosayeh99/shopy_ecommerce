@@ -1,7 +1,7 @@
 
-function stopFormsubmit (e){
-    e.preventDefault() 
-}
+// function stopFormsubmit (e){
+//     e.preventDefault() 
+// }
 // localStorage.clear()
 
 
@@ -9,8 +9,8 @@ function stopFormsubmit (e){
 //       event.preventDefault() 
 // })
 
-console.log (JSON.parse(localStorage.getItem("User"))[0].RegPassword)
-console.log (JSON.parse(localStorage.getItem("User"))[0].RegUser)
+// console.log (JSON.parse(localStorage.getItem("User"))[0].RegPassword)
+// console.log (JSON.parse(localStorage.getItem("User"))[0].RegUser)
 // delete JSON.parse(localStorage.getItem("User"))[0]["RegPassword"]
 // console.log (JSON.parse(localStorage.getItem("User"))[0])
 // ------------------Password Showing ---------------------
@@ -74,6 +74,7 @@ var showreg = document.getElementById('showReg') ;
                          <a href="../checkout/checkout.html"> Checkout  /</a>
                          <a href="./login.html">  LogOut  </a>`
               })
+              
             document.getElementById("logBtn").style.pointerEvents ="auto"
             document.getElementById("logform").style.display ="none"
         }
