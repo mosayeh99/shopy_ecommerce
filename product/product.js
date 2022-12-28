@@ -1,3 +1,4 @@
+// Looping in API and display all data of the selected product 
 fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json')
 .then(res => res.json())
 .then((full) =>{
@@ -71,7 +72,7 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
         productFoot=`
                 </ul>
             </div>
-            <button class="add-to-card-btn" data-productid="${e.id}" >Add to cart<span>
+            <button class="add-to-cart-btn" data-productid="${e.id}" >Add to cart<span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M5 12l5 5l10 -10"></path>
@@ -110,13 +111,19 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
         }
     })
 
+    // Select HTML Container to Display the product 
     document.querySelector(".product-container").innerHTML = product;
+
+   // Select HTML elements of Quantity  
     let decreaseQuantity = document.querySelector(".decrease-quantity")
     let increaseQuantity = document.querySelector(".increase-quantity")
     let quantity = document.querySelector(".quantity")
-    let addToCard = document.querySelector(".add-to-card-btn")
+    // Select add to card button
+    let addToCard = document.querySelector(".add-to-cart-btn")
+    // Select sizes
     let productSizes =document.querySelectorAll(".size")
-    
+
+    // Image slider 
     let mainProductImg = document.querySelector('.mainsliderimage img');
     let productThumbs = document.querySelectorAll('.slide-thumbs .slide-image');
     document.addEventListener('click', (e) => {
@@ -129,6 +136,7 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
         }
     })
     
+    // Quantity
     increaseQuantity.addEventListener('click',function(){
         quantity.innerHTML = Number(quantity.innerHTML) +1 ;
     })
@@ -138,9 +146,8 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
             quantity.innerHTML = Number(quantity.innerHTML) -1 ;
         }
     })
-
+    // Sizes
     let sizeValue = document.querySelector(".display-size .size").dataset.productfirstsize;
-    let productsCartArray =[];
     document.addEventListener('click',(e) =>{
         if(e.target.classList.contains("size")){
             productSizes.forEach(el =>{
@@ -150,6 +157,8 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
             sizeValue = e.target.innerHTML;
         }
     })
+    // add productInfo to local storage
+    let productsCartArray =[];
     addToCard.addEventListener('click',function(){
         if (localStorage.productsInCart != null){
         productsCartArray = JSON.parse(localStorage.productsInCart)
@@ -161,7 +170,7 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
         }
         productsCartArray.push(productInfoObject);
         localStorage.setItem('productsInCart',JSON.stringify(productsCartArray));
-        document.querySelector(".add-to-card-btn span").style.display = "inline";
+        document.querySelector(".add-to-cart-btn span").style.display = "inline";
         document.querySelector(".go-to-cart-btn").style.height = '76px';
         countProductInCart.forEach(e => { // countProductInCart => declared in nav/nav.js
             e.textContent = productsCartArray.length;
