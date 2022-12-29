@@ -3,7 +3,7 @@
 //     e.preventDefault() 
 // }
 // localStorage.clear()
-
+// console.log(JSON.parse(localStorage.getItem("User")[0]).RegPassword)
 
 // document.getElementById("regform").addEventListener("click",function(event){
 //       event.preventDefault() 
@@ -125,7 +125,7 @@ var showreg = document.getElementById('showReg') ;
         if (isNaN (userReg) && passReg.length >=8){
             document.getElementById("signupBtn").style.pointerEvents ="auto"
             var obj ={
-                "Address" : addr ,
+                "Address" :  [addr] ,
                 "RegPassword" : passReg ,
                 "RegUser" : userReg ,
                 "Last-Name" :lname ,
@@ -183,6 +183,14 @@ var showreg = document.getElementById('showReg') ;
         localStorage.removeItem("oldPass")
         console.log(oldPass)
         // console.log(JSON.parse(localStorage.getItem("User"))[0].RegPassword)
+
+
+            newPass = arr[0].RegUser
+
+            console.log(newPass)
+        
+        
+
         document.getElementById("ResetBtn").addEventListener("click", function(){
             newPass = document.getElementById("newPass").value 
             console.log(newPass)
@@ -202,5 +210,5 @@ var showreg = document.getElementById('showReg') ;
 
         
     })
-    
+   
 
