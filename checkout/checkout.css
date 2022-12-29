@@ -168,12 +168,25 @@
 }
 
 .productshead {
-    background-color: var(--secondary-color);
-    color: white;
+    font-weight: 600;
+
+    background-color: #ccc;
+    color: black;
+    /* background-color: var(--secondary-color);
+    color: white; */
 }
 .productsbody {
     padding-left: 15px;
 }
 .subTotal {
+    /* color: ; */
     text-align: center;
+}
+.productsTable td {
+    padding: 10px; padding-left: 30px;
+}
+
+.totalPriceList{
+    font-weight: 600;
+    border-top: 1px solid ;
 }
