@@ -4,8 +4,8 @@ function loadheader() {
     <div class="topbar">
     <div class="content mycontainer">
         <div class="links">
-            <a href="">About Us</a>
-            <a href="">Contact</a>
+            <a href="/" class="topbar-link">About Us</a>
+            <a href="/" class="topbar-link">Contact</a>
         </div>
         <div class="offfer">
             <p>GET 10% OFF ON YOUR FIRST ORDER!</p>
@@ -16,7 +16,7 @@ function loadheader() {
                 <circle cx="12" cy="10" r="3" />
                 <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
             </svg>
-            <a href="">Location</a>
+            <a href="/" class="topbar-link">Location</a>
         </div>
     </div>
 </div>
@@ -197,9 +197,10 @@ function loadMobileMenuDrawer() {
         </div>
         <div class="menu-mb-nav menu-mb-item">
             <ul>
-                <li><a href="/">About us</a></li>
-                <li><a href="/">Contact us</a></li>
-                <li><a href="/">Location</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/" class="mb-menu-tap-link">About us</a></li>
+                <li><a href="/" class="mb-menu-tap-link">Contact us</a></li>
+                <li><a href="/" class="mb-menu-tap-link">Location</a></li>
             </ul>
         </div>
     `
