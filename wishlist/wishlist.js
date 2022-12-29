@@ -14,16 +14,15 @@ function showShopyProducts() {
     .then(res => res.json())
     .then((full) => {
         let wishlistCounter = 0;
-        full.products.forEach(e => {
-            if (localStorage.IdProductsInWishlist != null) {
-                if (JSON.parse(localStorage.IdProductsInWishlist).indexOf((e.id).toString()) != -1) {
-                    printShopyProducts();
-                    document.querySelector('.wishlist-empty').style.display = 'none';
-                    wishlistCounter++;
-                }
-                if (wishlistCounter == 0) {
-                    document.querySelector('.wishlist-empty').style.display = 'flex';
-                }
+        if (localStorage.IdProductsInWishlist != null) {
+            full.products.forEach(e => {
+            if (JSON.parse(localStorage.IdProductsInWishlist).indexOf((e.id).toString()) != -1) {
+                printShopyProducts();
+                document.querySelector('.wishlist-empty').style.display = 'none';
+                wishlistCounter++;
+            }
+            if (wishlistCounter == 0) {
+                document.querySelector('.wishlist-empty').style.display = 'flex';
             }
             function printShopyProducts() {
                 shopyProductListHead = `
@@ -73,8 +72,11 @@ function showShopyProducts() {
                     `
                 shopyProductList += shopyProductListHead + shopyProductSizes + shopyProductInfo;
             }
-        });
-        document.querySelector('#shopy-section-product-list #product-list').innerHTML = shopyProductList;
+            });
+            document.querySelector('#shopy-section-product-list #product-list').innerHTML = shopyProductList;
+        }else {
+            document.querySelector('.wishlist-empty').style.display = 'flex';
+        }
     });
 }
 
