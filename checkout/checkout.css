@@ -5,6 +5,7 @@
 }
 
 .allPage div {
+    width: 90%;
     align-self: center;
 }
 
@@ -135,14 +136,44 @@
 
 /* .for pop up{ position: fixed; width: calc(100vw - 40%); height:150px; background-color: red; top: 50%; left: 50%; transform: translate(-50%,-50%); } */
 
- #address-list  {
-    position: relative; 
+#address-list  {
+    position: relative;
     display: block;
     width: 100%;
     padding: 5px;
-} 
+}
 
 #address-list:checked {
     background-color: #0d6efd;
     border-color: #0d6efd;
+}
+
+.checkout-Products {
+    border: 1px solid #777;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.checkout-Products > table {
+    padding: 20px;
+}
+
+.productsTable {
+    width: 100%;
+}
+
+.productshead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.productsbody {
+    padding-left: 15px;
+}
+.subTotal {
+    text-align: center;
 }
