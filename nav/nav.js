@@ -1,3 +1,12 @@
+// -----------------Scroll to footer when click on topbar links-----------------
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('topbar-link')) {
+        e.preventDefault();
+        document.querySelector('footer').scrollIntoView({
+            behavior: 'smooth'
+        })
+    }
+})
 // --------Add&Remove body overlay And Prevent&Allow body scroll--------
 let bodyOverlay = document.querySelector('body .mb-body-overlay');
 function addOverlayAndPreventScroll() {
@@ -35,7 +44,7 @@ mbToolbarMenuicon.addEventListener('click', (e) => {
 });
 mbMenuDrawerCloseBtn.addEventListener('click', closeMenuDrawer);
 mbMenuDrawer.addEventListener('click', (e) => {
-    if (e.target.getAttribute('class') != 'shopy-category-link') {
+    if (e.target.getAttribute('class') != 'shopy-category-link' && e.target.getAttribute('class') != 'mb-menu-tap-link') {
         e.stopPropagation();
     }
 });
@@ -59,35 +68,40 @@ mbMenuDrawerHeadBtns[1].addEventListener('click', (e) => {toggleMenuDrawerTabs(e
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('shopy-category-link')) {
         localStorage.setItem('shopySearchInputValue', JSON.stringify(e.target.dataset.productscategory));
-        console.log('helllllooo')
+    }
+    if (e.target.classList.contains('mb-menu-tap-link')) {
+        e.preventDefault();
+        document.querySelector('footer').scrollIntoView({
+            behavior: 'smooth'
+        })
     }
 })
 
 // -----------------Set search input value of large screen in localStorage-------------------
-let largeSearchInputFiled = document.querySelector('header .head-bar .search input');
+let largeSearchInputField = document.querySelector('header .head-bar .search input');
 let largeSearchInputIcon = document.querySelector('header .head-bar .search a');
 largeSearchInputIcon.addEventListener('click', (e) => {
-    if (largeSearchInputFiled.value != "") {
-        localStorage.setItem('shopySearchInputValue', JSON.stringify(largeSearchInputFiled.value));
+    if (largeSearchInputField.value != "") {
+        localStorage.setItem('shopySearchInputValue', JSON.stringify(largeSearchInputField.value));
     }else {
         e.preventDefault();
     }
 });
 
 // -----------------Set search input value of mobile screen in localStorage-------------------
-let mbSearchFiled = document.querySelector('.search-drawer .mb-search input');
+let mbSearchField = document.querySelector('.search-drawer .mb-search input');
 let mbSearchInputIcon = document.querySelector('.search-drawer .mb-search a');
 let mbSearchResultViewMoreBtn = document.querySelector('.search-drawer .mb-result-view-more');
 mbSearchInputIcon.addEventListener('click', (e) => {
-    if (mbSearchFiled.value != "") {
-        localStorage.setItem('shopySearchInputValue', JSON.stringify(mbSearchFiled.value));
+    if (mbSearchField.value != "") {
+        localStorage.setItem('shopySearchInputValue', JSON.stringify(mbSearchField.value));
     }else {
         e.preventDefault();
     }
 });
 mbSearchResultViewMoreBtn.addEventListener('click', (e) => {
-    if (mbSearchFiled.value != "") {
-        localStorage.setItem('shopySearchInputValue', JSON.stringify(mbSearchFiled.value));
+    if (mbSearchField.value != "") {
+        localStorage.setItem('shopySearchInputValue', JSON.stringify(mbSearchField.value));
     }else {
         e.preventDefault();
     }
@@ -133,12 +147,12 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
         }
         document.querySelector('.shopy-search-result-items').innerHTML = shopySearchDrawerResults;
     })
-    mbSearchFiled.addEventListener('keyup', () => { // show search result when start write on search input
+    mbSearchField.addEventListener('keyup', () => { // show search result when start write on search input
         shopySearchDrawerResults = "";
         let searchResultCounter = 0;
         full.products.forEach(e => {
-            if (mbSearchFiled.value != "") {
-                if (e.title.toLowerCase().indexOf(mbSearchFiled.value.toLowerCase()) != -1) {
+            if (mbSearchField.value != "") {
+                if (e.title.toLowerCase().indexOf(mbSearchField.value.toLowerCase()) != -1) {
                     searchResultCounter++;
                     if (searchResultCounter <= 8) {
                         mbSearchResultHeadText[0].classList.remove('active');
@@ -238,10 +252,12 @@ if (localStorage.productsInCart != null) {
 }
 
 // ----------Set Id Product to localStorage on click--------------
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('has-product-id')) {
-        localStorage.setItem('IdProductToShow', JSON.stringify(e.target.dataset.productid));
-    }
+['click', 'contextmenu'].forEach(evt => {
+    document.addEventListener(evt, (e) => {
+        if (e.target.classList.contains('has-product-id')) {
+            localStorage.setItem('IdProductToShow', JSON.stringify(e.target.dataset.productid));
+        }
+    })
 });
 
 // -----Set Wishlist Product Id to LocalStorage-----
@@ -262,9 +278,18 @@ document.addEventListener('click', (e) => {
 function fillStyleToProductWishlist() {
     let allProductWishListIcons = document.querySelectorAll('#shopy-section-product-list #shopy-product-wishlist-icon');
     allProductWishListIcons.forEach(e => {
-        if (shopyWishlistArray.indexOf(e.dataset.productid) != -1) { // shopyWishlistArray => declared in nav/nav.js
+        e.addEventListener('click', () => {
+            if (e.classList.contains('is--added-to-wishlist')) {
+                if (shopyLastindexInPath.indexOf('search') != -1) {
+                    location.href = '../wishlist/wishlist.html';
+                }else {
+                    location.href = 'wishlist/wishlist.html';
+                }
+            }
+        })
+        if (shopyWishlistArray.indexOf(e.dataset.productid) != -1) {
             e.classList.add('is--added-to-wishlist');
-            e.parentElement.nextElementSibling.textContent = 'Added To Wishlist';
+            e.parentElement.nextElementSibling.textContent = 'Browse Wishlist';
         }
     });
 }
