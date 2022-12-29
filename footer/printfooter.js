@@ -57,15 +57,15 @@ window.addEventListener('load', () => {
                         <div class="contact-content footer-col">
                             <div class="name-row">
                                 <label>Name</label>
-                                <input class="contact-filed" type="text" name="userName">
+                                <input class="contact-field" type="text" name="userName">
                             </div>
                             <div class="email-row">
                                 <label>Email</label>
-                                <input class="contact-filed" type="email" name="email">
+                                <input class="contact-field" type="email" name="email">
                             </div>
                             <div class="msg-row">
                                 <label>Message</label>
-                                <textarea class="contact-filed" name="message" rows="1"></textarea>
+                                <textarea class="contact-field" name="message" rows="1"></textarea>
                             </div>
                             <input type="submit" value="Send">
                         </div>
@@ -79,7 +79,7 @@ window.addEventListener('load', () => {
                             <span></span>
                         </div>
                     </div>
-                    <div class="mapouter footer-col">
+                    <div class="mapouter location-content footer-col">
                         <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
                                 marginheight="0" marginwidth="0"
                                 src="https://maps.google.com/maps?width=600&amp;height=256&amp;hl=en&amp;q=5th settlement new cairo egypt&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
