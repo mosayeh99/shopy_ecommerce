@@ -1,54 +1,21 @@
-.allPage {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+@media(max-width:699.999999999px) {
+    .CheckoutBig-div {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
-.allPage div {
-    width: 90%;
-    align-self: center;
+@media(min-width:700px) {
+    .CheckoutBig-div {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
-#Checkout-allItems {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-
-#Checkout-Right {
-    display: flex;
-    gap: 20px;
-    border-radius: 5px;
-    width: 100%;
-}
-
-#Checkout-holeDiv {
-    display: flex;
-    padding: 15px;
-    gap: 20px;
-    border: 1px solid #777;
-    border-radius: 5px;
-    width: 100%;
-}
-
-#Checkout-Imgitem img {
-    border-radius: 3px;
-    width: 100px;
-
-}
-
-#checkout-Left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
 .checkout-Address {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
     padding: 15px;
     gap: 20px;
     border: 1px solid #777;
@@ -64,7 +31,6 @@
 }
 
 .form-control {
-
     border: 1px solid #ccc;
     margin-bottom: 10px;
     margin-right: 7px;
@@ -73,7 +39,6 @@
 }
 
 .addAddress_btn {
-
     margin-top: 10px;
     background-color: var(--main-color);
     color: white;
@@ -83,6 +48,7 @@
     border-radius: var(--btn--border-radius);
     align-self: center;
 }
+
 .next_btn {
     margin: 5px;
     background-color: var(--secondary-color);
@@ -106,7 +72,6 @@
     margin: 5px;
     background-color: var(--secondary-color);
     color: white;
-    /* width: 100%; */
     padding: 10px;
     cursor: pointer;
     border-radius: var(--btn--border-radius);
@@ -117,12 +82,12 @@
     margin-top: 10px;
     background-color: var(--secondary-color);
     color: white;
-    /* width: 50%; */
+    width: 100%;
     padding: 10px;
     cursor: pointer;
     border-radius: var(--btn--border-radius);
-    align-self: center;
 }
+
 .small-btns {
     margin-top: 2px;
     background-color: var(--main-color);
@@ -134,9 +99,7 @@
     height: 100%;
 }
 
-/* .for pop up{ position: fixed; width: calc(100vw - 40%); height:150px; background-color: red; top: 50%; left: 50%; transform: translate(-50%,-50%); } */
-
-#address-list  {
+#address-list {
     position: relative;
     display: block;
     width: 100%;
@@ -169,24 +132,20 @@
 
 .productshead {
     font-weight: 600;
-
     background-color: #ccc;
     color: black;
-    /* background-color: var(--secondary-color);
-    color: white; */
 }
 .productsbody {
     padding-left: 15px;
 }
 .subTotal {
-    /* color: ; */
     text-align: center;
 }
 .productsTable td {
-    padding: 10px; padding-left: 30px;
+    padding: 10px 10px 10px 30px;
 }
 
-.totalPriceList{
+.totalPriceList {
     font-weight: 600;
-    border-top: 1px solid ;
+    border-top: 1px solid;
 }
