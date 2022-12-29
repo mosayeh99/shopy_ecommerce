@@ -57,15 +57,15 @@ window.addEventListener('load', () => {
                         <div class="contact-content footer-col">
                             <div class="name-row">
                                 <label>Name</label>
-                                <input class="contact-field" type="text" name="userName">
+                                <input class="contact-name-field contact-field" type="text" name="userName">
                             </div>
                             <div class="email-row">
                                 <label>Email</label>
-                                <input class="contact-field" type="email" name="email">
+                                <input class="contact-email-field contact-field" type="email" name="email">
                             </div>
                             <div class="msg-row">
                                 <label>Message</label>
-                                <textarea class="contact-field" name="message" rows="1"></textarea>
+                                <textarea class="contact-msg-field contact-field" name="message" rows="1"></textarea>
                             </div>
                             <input type="submit" value="Send">
                         </div>
