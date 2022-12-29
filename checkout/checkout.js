@@ -44,7 +44,28 @@ function addAddress() {
     if (newAddress === null) { alert(" Failedto added, Please try again.") }
      else { alert(" Successfully added. ") }*/
 
+//----------------- Address local Storage ------------------------------
+ var newAddress = document.getElementById("newAddress")
+    var key = newAddress.value;
+    if (key) {
+        localStorage.setItem("extraAddress",key);
+    }   
 }
+//----------------- Card Number local Storage ------------------------------
+savePaymentBtn.onclick = function (){
+    var CardNO = document.getElementById("CardNumber").value
+    console.log(CardNO);
+    if (CardNO) {
+        localStorage.setItem("Card Number",CardNO);
+    }
+}
+//////////////////////////////////////////////////////////////
+//console.log(localStorage.User);
+//var user1 = localStorage.User
+// console.log(user1.[0].Address);
+
+
+
 //----------------- Add Address btn function------------------------------
 var coll = document.getElementsByClassName("addAddress_btn");
 for (var i = 0; i < coll.length; i++) {
@@ -59,3 +80,6 @@ for (var i = 0; i < coll.length; i++) {
     });
 }
 
+
+// geting localStorage
+let prodectsCartArr = JSON.parse(localStorage.productsInCart)
