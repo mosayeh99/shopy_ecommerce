@@ -6,6 +6,62 @@
     - Set fill style to product wishlist icons
 */
 
+let fiterSection = document.querySelector('#product-filter-bar');
+let bannerArrow = document.querySelector('#banner-head-two-images #banner-arrow');
+bannerArrow.addEventListener('click', () => {
+    fiterSection.scrollIntoView({
+        behavior: 'smooth'
+    })
+})
+// ---------------change product grid layout-----------------------
+let shopyProductList = document.querySelector('#shopy-section-product-list #product-list');
+let largGridLayoutBtns = document.querySelectorAll('#display-products-shape .larg-grid-layout-icon');
+let mbGridLayoutBtns = document.querySelectorAll('#display-products-shape .mb-grid-layout-icon');
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('larg-grid-layout-icon')) {
+        largGridLayoutBtns.forEach(el => {
+            el.classList.remove('active')
+        })
+        e.target.classList.add('active');
+        shopyProductList.removeAttribute('class');
+        localStorage.setItem('grid_layout_large_screen', e.target.dataset.gridlayout);
+        shopyProductList.classList.add(e.target.dataset.gridlayout);
+    }else if (e.target.classList.contains('mb-grid-layout-icon')) {
+        mbGridLayoutBtns.forEach(el => {
+            el.classList.remove('active')
+        })
+        e.target.classList.add('active');
+        shopyProductList.removeAttribute('class');
+        localStorage.setItem('grid_layout_mobile_screen', e.target.dataset.gridlayout);
+        shopyProductList.classList.add(e.target.dataset.gridlayout);
+    }
+})
+window.addEventListener('resize', loadGridLayout);
+loadGridLayout();
+function loadGridLayout() {
+    if (window.innerWidth > 767) {
+        if (localStorage.grid_layout_large_screen != null) {
+            shopyProductList.classList.add(localStorage.grid_layout_large_screen);
+            largGridLayoutBtns.forEach(el => {
+                el.classList.remove('active');
+                if (el.dataset.gridlayout == localStorage.grid_layout_large_screen) {
+                    el.classList.add('active');
+                }
+            })
+        }
+    }else {
+        if (localStorage.grid_layout_mobile_screen != null) {
+            shopyProductList.classList.add(localStorage.grid_layout_mobile_screen);
+            mbGridLayoutBtns.forEach(el => {
+                el.classList.remove('active');
+                if (el.dataset.gridlayout == localStorage.grid_layout_mobile_screen) {
+                    el.classList.add('active');
+                }
+            })
+        }
+    }
+}
+
 // ---------Add filter checkbox value to Category Array----------
 let filterCategoriesArray = [];
 document.addEventListener('change', (e) => {
@@ -23,8 +79,8 @@ document.addEventListener('change', (e) => {
 // -----------Print Products in home page with filteration conditiones--------------
 showShopyProducts();
 function showShopyProducts() {
-    let shopyProductList = "";
-    let shopyProductListHead = "";
+    let shopyProducts = "";
+    let shopyProductsHead = "";
     let shopyProductInfo = "";
     fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json')
     .then(res => res.json())
@@ -38,7 +94,7 @@ function showShopyProducts() {
                 printShopyProducts();
             }
             function printShopyProducts() {
-                shopyProductListHead = `
+                shopyProductsHead = `
                     <div id="shopy-product">
                     <div id="shopy-product-item" class="position-relative overflow-hidden">
                         <a href="product/product.html">
@@ -81,10 +137,10 @@ function showShopyProducts() {
                         </div>
                     </div>
                     `
-                shopyProductList += shopyProductListHead + shopyProductSizes + shopyProductInfo;
+                shopyProducts += shopyProductsHead + shopyProductSizes + shopyProductInfo;
             }
         });
-        document.querySelector('#shopy-section-product-list #product-list').innerHTML = shopyProductList;
+        shopyProductList.innerHTML = shopyProducts;
         fillStyleToProductWishlist(); // Function declared in nav/nav.js
     });
 }

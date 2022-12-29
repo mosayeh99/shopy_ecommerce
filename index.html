@@ -20,8 +20,8 @@
         <div class="topbar">
             <div class="content mycontainer">
                 <div class="links">
-                    <a href="">About Us</a>
-                    <a href="">Contact</a>
+                    <a href="/" class="topbar-link">About Us</a>
+                    <a href="/" class="topbar-link">Contact</a>
                 </div>
                 <div class="offfer">
                     <p>GET 10% OFF ON YOUR FIRST ORDER!</p>
@@ -32,7 +32,7 @@
                         <circle cx="12" cy="10" r="3" />
                         <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
                     </svg>
-                    <a href="">Location</a>
+                    <a href="/" class="topbar-link">Location</a>
                 </div>
             </div>
         </div>
@@ -227,16 +227,23 @@
                     </div>
                 </div>
             </div>
-            <div id="filter-result-count">
-                <span>
-                    <span>Showing</span>
-                    <span>1</span>
-                    <span>-</span>
-                    <span>18</span>
-                    <span>of</span>
-                    <span>50</span>
-                    <span>results</span>
-                </span>
+            <div id="display-products-shape">
+                <div id="large-screen-display" class="d-none d-md-flex gap-3">
+                    <span id="display-shape-2" class="larg-grid-layout-icon" data-gridlayout="grid-2-applaied">
+                        <?xml version="1.0" ?><svg fill="curentColor" height="18" viewBox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M1 1H7V7H1V1Z"/><path d="M9 1H15V7H9V1Z"/><path d="M1 9H7V15H1V9Z"/><path d="M9 9H15V15H9V9Z"/></svg>
+                    </span>
+                    <span id="display-shape-4" class="larg-grid-layout-icon active" data-gridlayout="grid-4-applaied">
+                        <?xml version="1.0" ?><svg height="16px" version="1.1" viewBox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g fill="curentColor" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g fill="curentColor" id="Core" transform="translate(-340.000000, -4.000000)"><g id="apps" transform="translate(340.000000, 4.000000)"><path d="M0,4 L4,4 L4,0 L0,0 L0,4 L0,4 Z M6,16 L10,16 L10,12 L6,12 L6,16 L6,16 Z M0,16 L4,16 L4,12 L0,12 L0,16 L0,16 Z M0,10 L4,10 L4,6 L0,6 L0,10 L0,10 Z M6,10 L10,10 L10,6 L6,6 L6,10 L6,10 Z M12,0 L12,4 L16,4 L16,0 L12,0 L12,0 Z M6,4 L10,4 L10,0 L6,0 L6,4 L6,4 Z M12,10 L16,10 L16,6 L12,6 L12,10 L12,10 Z M12,16 L16,16 L16,12 L12,12 L12,16 L12,16 Z" id="Shape"/></g></g></g></svg>
+                    </span>
+                </div>
+                <div id="mobile-display" class="d-flex d-md-none gap-3">
+                    <span id="dispaly-shape-1" class="mb-grid-layout-icon" data-gridlayout="grid-1-applaied">
+                        <svg height="16" viewBox="0 0 512 512" width="16" xmlns="http://www.w3.org/2000/svg"><title></title><rect height="100%" width="100%" x="0" y="0"></rect></svg>
+                    </span>
+                    <span id="display-shape-2" class="mb-grid-layout-icon active" data-gridlayout="grid-2-applaied">
+                        <?xml version="1.0" ?><svg fill="curentColor" height="18" viewBox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M1 1H7V7H1V1Z"/><path d="M9 1H15V7H9V1Z"/><path d="M1 9H7V15H1V9Z"/><path d="M9 9H15V15H9V9Z"/></svg>
+                    </span>
+                </div>
             </div>
         </div>
         <div id="shopy-section-product-list">
@@ -311,9 +318,10 @@
         </div>
         <div class="menu-mb-nav menu-mb-item">
             <ul>
-                <li><a href="/">About us</a></li>
-                <li><a href="/">Contact us</a></li>
-                <li><a href="/">Location</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/" class="mb-menu-tap-link">About us</a></li>
+                <li><a href="/" class="mb-menu-tap-link">Contact us</a></li>
+                <li><a href="/" class="mb-menu-tap-link">Location</a></li>
             </ul>
         </div>
     </div>
@@ -513,15 +521,20 @@
                         <div class="contact-content footer-col">
                             <div class="name-row">
                                 <label>Name</label>
-                                <input class="contact-filed" type="text" name="userName">
+                                <input class="contact-name-field contact-field" type="text" name="userName">
+                                <p class="required-error">Name field is required</p>
+                                <p class="not-valid-error">Please enter valid name</p>
                             </div>
                             <div class="email-row">
                                 <label>Email</label>
-                                <input class="contact-filed" type="email" name="email">
+                                <input class="contact-email-field contact-field" type="email" name="email">
+                                <p class="required-error">Email field is required</p>
+                                <p class="not-valid-error">Please enter valid email address</p>
                             </div>
                             <div class="msg-row">
                                 <label>Message</label>
-                                <textarea class="contact-filed" name="message" rows="1"></textarea>
+                                <textarea class="contact-msg-field contact-field" name="message" rows="1"></textarea>
+                                <p class="required-error">Message field is required</p>
                             </div>
                             <input type="submit" value="Send">
                         </div>
@@ -535,7 +548,7 @@
                             <span></span>
                         </div>
                     </div>
-                    <div class="mapouter footer-col">
+                    <div class="mapouter location-content footer-col">
                         <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
                                 marginheight="0" marginwidth="0"
                                 src="https://maps.google.com/maps?width=600&amp;height=256&amp;hl=en&amp;q=5th settlement new cairo egypt&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
