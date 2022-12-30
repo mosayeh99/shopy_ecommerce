@@ -95,10 +95,12 @@ h1,h2,h3,h4,h5,h6,p,ul {
     z-index: 9999;
     transition: var(--secondary-transition);
     opacity: 0;
+    visibility: hidden;
 }
 
 #shopy-alert-success.active {
     opacity: 1;
+    visibility: visible;
 }
 
 #shopy-alert-success span:first-child {
