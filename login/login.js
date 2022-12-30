@@ -69,11 +69,9 @@ var showreg = document.getElementById('showReg') ;
             document.getElementById("logform").style.display ="none"
         }
 
-             if (userLog === userReg && passLog !== passReg){
+        if (userLog === userReg && passLog !== passReg){
                 document.getElementById("error").innerHTML ="Incorrect Password"
                 document.getElementById("error").style.display = "block"
-                // document.getElementById("error").style.backgroundColor = "#ffb6c1"
-                // document.getElementById("error").style.border = "0.5px solid red"
             }
         else if (!(userLog !== userReg) || !(passLog !== passReg)){
             
@@ -185,6 +183,5 @@ var showreg = document.getElementById('showReg') ;
             
         })
 
-        
     })
 
