@@ -300,5 +300,5 @@ function shopyAlertSuccess() {
     document.querySelector('#shopy-alert-success').classList.add('active');
     setTimeout(() => {
         location.href = '../index.html';
-    }, 5000);
+    }, 3000);
 }
