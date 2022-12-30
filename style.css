@@ -220,6 +220,28 @@
     color: var(--secondary-color);
 }
 
+/* #shopy-category-slider {
+    background-color: #f9f9f9;
+}
+
+#shopy-category-slider #category-slider-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+}
+
+#shopy-category-slider #category-slider-items #category-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#shopy-category-slider #category-slider-items #category-slide img {
+    width: 150px;
+} */
+
 @media (max-width: 991px) {
     #display-products-shape #display-shape-2 {
         fill: var(--main-color);
