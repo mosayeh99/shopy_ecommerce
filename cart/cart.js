@@ -1,104 +1,82 @@
-let carts = document.querySelectorAll('.add-cart');
-let products = []
+// //decleration
+// const productContainer = document.querySelector(".products")
+// //function
+const api = "https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json"
+//  function displayCart() {
+//   let cartItems = localStorage.getItem("productsInCart")
+//   cartItems = JSON.parse(cartItems)
+//   // console.log(cartItems)
 
-for (let i=0; i < carts.length; i++){
-  carts[i].addEventListener('click', ()=> {
-    cartNumbers(products[i]);
-    totalCost(products[i]);
-  })
-}
+  const response = await fetch(api);
+  const data = await response.json();
+console.log(data.products[0].images[0])
 
-  function onLoadCartNumbers() {
-    let productNumbers = localStorage.getItem('cartNumbers');
+//   let itemType = localStorage.getItem("shopySearchInputValue")
+//   itemType = JSON.parse(itemType)
 
-    if ( productNumbers) {
-      document.querySelector('.cart span').textContent = productNumbers;
-  }
-}
-  // function cartNumbers(product) {
-  //   let productNumbers = localStorage.getItem('cartNumbers');
+//   Object.values(cartItems).map(item => {
+//     console.log(item);
 
-  //   productNumbers = parseInt(productNumbers);
-
-  //   if ( productNumbers) {
-  //     localStorage.setItem('cartNumbers', productNumbers + 1);
-  //     document.querySelector('.cart span').textContent = productNumbers + 1;
-  //   } else{
-  //     localStorage.setItem('cartNumbers', 1);
-  //     document.querySelector('.cart span').textContent = 1;
-  //   }
-  //   setItems(product);
-  // }
-
-  function setItems(product) {
-    let cartItems = localStorage.getItem('IdProductToShow');
-    cartItems = JSON.parse(cartItems);
-    if (cartItems != null) {
-      if (cartItems[product.tag] == undefined) {
-        cartItems = {
-          ...cartItems,
-          [product.tag]: product
-        }
-      }
-      cartItems[product.tag].inCart += 1;
-    }else{
-    product.inCart = 1;
-    cartItems = {
-      [product.tag]: product
-     }
-  }
-    
-    localStorage.setItem("IdProductToShow", JSON.stringify(cartItems));
-  }
-
-//   function totalCost(product) {
-//     let cartCost = localStorage.getItem('totalCost');
-
-//     if (cartCost != null) {
-//       cartCost = parseInt(cartCost);
-//       localStorage.setItem("totalCost", cartCost + product.price);
-//     }else{
-//     localStorage.setItem("totalCost", product.price);
-//   }
+//     productContainer.innerHTML += `
+//       <p>${item.productId}</p>
+//       <p>${item.productSize}</p>
+//       <p>${item.productQty}</p>
+//       <p>${itemType}</p>
+      
+      
+//     ` 
+//   })
 // }
+// displayCart();
 
-function displayCart() {
-  let cartItems = localStorage.getItem("IdProductToShow");
-  cartItems = JSON.parse(cartItems);
 
-  let productContainer = document.querySelector(".products");
-  let cartCost = localStorage.getItem('totalCost');
 
-  if (cartItems && productContainer ) {
-    productContainer.innerHTML = '';
-    Object.values(cartItems).map(item => {
-      productContainer.innerHTML += `
-      <div class="product">
-      <ion-icon name="close-circle-outline"></ion-icon>
-        <img src="./assets/images/${item.tag}.jpg">
-        <span> ${item.name} </span>
-      </div>
-      <div class="price"> $${item.price},00 </div>
-      <div class="quantity">
-      <ion-icon name="caret-back-circle-outline"></ion-icon>
-      <span> ${item.inCart} </span>
-      <ion-icon name="caret-forward-circle-outline"></ion-icon>
-      </div>
-      <div class="total"> $${item.inCart * item.price},00 </div>
-      `;
-    });
-      productContainer.innerHTML += `
-      <div class="basketTotalContainer">
-        <h4 class="basketTotalTitle">
-              Basket Total
-        </h4>
-        <h4 class="basketTotal">
-          $ ${cartCost},00
-        </h4>
-      </div>
-    `;
+// // async function getData() {
+// //   const response = await fetch(api);
+// //   const data = await response.json();
+// // console.log(data.products[0].images[0])
+// {/* <p>${data.products[0].images[0]}</p> */}
+
+// // }
+// // getData();
+
+
+// $('.visibility-cart').on('click',function(){
+       
+//   var $btn =  $(this);
+//   var $cart = $('.cart');
+//   console.log($btn);
+  
+//   if ($btn.hasClass('is-open')) {
+//      $btn.removeClass('is-open');
+//      $btn.text('O')
+//      $cart.removeClass('is-open');     
+//      $cart.addClass('is-closed');
+//      $btn.addClass('is-closed');
+//   } else {
+//      $btn.addClass('is-open');
+//      $btn.text('X')
+//      $cart.addClass('is-open');     
+//      $cart.removeClass('is-closed');
+//      $btn.removeClass('is-closed');
+//   }
+
+                  
+// });
+
+
+let decreaseQuantity = document.querySelector(".decrease-quantity")
+let increaseQuantity = document.querySelector(".increase-quantity")
+let quantity = document.querySelector(".quantity")
+
+increaseQuantity.addEventListener('click',function(){
+  quantity.innerHTML = Number(quantity.innerHTML) +1 ;
+});
+
+decreaseQuantity.addEventListener('click',function(){
+  if (quantity.innerHTML !== "1"){
+      quantity.innerHTML = Number(quantity.innerHTML) -1 ;
   }
-}
-onLoadCartNumbers();
-displayCart();
- 
+});
+
+

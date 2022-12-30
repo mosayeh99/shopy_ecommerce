@@ -1,60 +1,122 @@
-.products-container{
-	justify-content: space-around;
-	max-width: 650px;
-	margin: 0 auto;
-	margin-top: 50px;
+
+.table {
+  background: #ffffff;
+  border-radius: 0.6em;
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 1.8em;
+	
 }
-.products-container ion-icon{
-	font-size: 30px;
-	color: blue;
-	margin-left: 10px;
-	margin-right: 10px;
-	cursor: pointer;
+.layout-inline > * {
+  display: inline-block;
 }
 
-.product-header{
-	width: 100%;
-	max-width: 650px;
-	display: flex;
-	justify-content: flex-start;
-	border-bottom: 4px solid lightgrey;
-	margin: 0 auto;
+.align-center {
+  text-align: center;
 }
-.product-title{
-	width:32%;
+
+.th {
+  background: rgb(31, 134, 202);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
 }
-.price{
-	width: 25%;
+
+.quantity-select {
+	width: 150px;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
+	margin: 30px 0;
 }
-.quantity{
-	width: 30%;
-	display: flex;
-	align-items: center;
+
+.quantity-select .decrease-quantity {
+	cursor: pointer;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
 }
-.total{
-	width: 20%;
-	display: flex;
-	align-items: center;
+.quantity-select .increase-quantity:hover, .decrease-quantity:hover {
+	background-color: #eee;
 }
-.products{
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
+.quantity-select .increase-quantity {
+	cursor: pointer;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
-.products img {
-	width: 80px;
+.quantity-select span {
+	width: calc(100% / 3);
+	text-align: center;
+	padding: 12px 10px;
+	border: 2px solid #eee;
 }
-.basketTotalContainer{
-	display: flex;
-	justify-content: flex-end;
-	width: 100%;
-	padding: 10px 0;
+
+.Total {
+	float: right;
+	
 }
-.basketTitle {
-	width: 30%;
+
+
+.col {
+  padding: 1em;
+  width: 12%;
 }
-.basketTotal {
-	width: 10%;
+
+.col-pro {
+  width: 44%;
 }
+
+.col-pro > * {
+  vertical-align: middle;
+}
+
+.col-qty {
+  text-align: center;
+  width: 17%;
+}
+
+.col-numeric p {
+  font: bold 1.8em helvetica;
+}
+
+.col-total p {
+  color: #000;
+}
+
+
+.col-qty > * {
+  vertical-align: middle; 
+}
+
+.col-qty > input {
+  max-width: 2.6em;
+}
+
+
+a.qty:hover {
+  background: #3b9ac6;
+}
+
+@media screen and ( max-width: 755px) {
+  .container {
+    width: 98%;
+  }
+  
+  .col-pro {
+    width: 35%;
+  }
+  
+  .col-qty {
+    width: 22%;
+  }
+  
+  img {
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and ( max-width: 591px) {
+  
+}
+
