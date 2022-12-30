@@ -1,3 +1,8 @@
+let confirmPurchaseBtn = document.querySelector('.confirm-btn-in-checkout-page');
+confirmPurchaseBtn.addEventListener('click', () => {
+    shopyAlertSuccess();
+    localStorage.removeItem('productsInCart');
+})
 //-------------- To get selected item from cart page -----------------------
 let prodectsCartArr;
 if (localStorage.productsInCart != null) {
