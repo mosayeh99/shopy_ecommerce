@@ -73,6 +73,9 @@ width :100px ;
     border-radius: 10px ;
 }
 
+/* #logform{
+    display: none;
+} */
 #forget, #return {
     cursor: pointer;
     color: #1e90ff;

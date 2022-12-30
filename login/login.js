@@ -55,6 +55,8 @@ var showreg = document.getElementById('showReg') ;
         var userReg= (JSON.parse(localStorage.getItem("User"))[0].RegUser) ;
         var passReg= (JSON.parse(localStorage.getItem("User"))[0].RegPassword) ;
     
+
+
         if (userLog === userReg && passLog === passReg){
             Swal.fire({
                 icon: 'success',
@@ -63,24 +65,33 @@ var showreg = document.getElementById('showReg') ;
                 footer: `<a href="../index.html">  Home Page  /</a>
                          <a href="../checkout/checkout.html"> Checkout  /</a>
                          <a href="./login.html">  LogOut  </a>`
-            })
-
-            document.getElementById("logBtn").style.pointerEvents ="auto"
-            document.getElementById("logform").style.display ="none"
+                        })
+                        document.getElementById("error").style.display = "none"
+                    document.getElementById("logform").style.display ="none"
+        }
+   
+        document.getElementById("passLog").addEventListener('blur', function(){
+         if ((userLog !== userReg && passLog !== passReg)){
+            
+            document.getElementById("error").innerHTML ="Wrong e-mail <br> Retry Or Register Now"
+            
+            document.getElementById("error").style.display = "block"
         }
 
-        if (userLog === userReg && passLog !== passReg){
-                document.getElementById("error").innerHTML ="Incorrect Password"
-                document.getElementById("error").style.display = "block"
-            }
-        else if (!(userLog !== userReg) || !(passLog !== passReg)){
-            
-            document.getElementById("error").innerHTML ="Retry Or Register Now"
-            if (userLog !== userReg && passLog ==! passReg ){
-                document.getElementById("error").innerHTML ="If you don't have Account , please Register ."}
+        else if ((userLog === userReg && passLog !== passReg )){
+            document.getElementById("error").innerHTML ="Incorrect Password"
             document.getElementById("error").style.display = "block"
         }
         })
+
+        // document.getElementById("passLog").addEventListener('blur', function(){
+        //     if (userLog === userReg && passLog !== passReg){
+                
+        //         document.getElementById("error").innerHTML ="Incorrect Password"
+        //         document.getElementById("error").style.display = "block"
+        //     }})
+    })
+        
 
 
 
@@ -114,7 +125,8 @@ var showreg = document.getElementById('showReg') ;
                 "RegPassword" : passReg ,
                 "RegUser" : userReg ,
                 "LastName" :lname ,
-                "FirstName" : fname 
+                "FirstName" : fname ,
+                "login" : true 
             }
             arr.push(obj)
 
@@ -171,7 +183,8 @@ var showreg = document.getElementById('showReg') ;
                 "RegPassword" : newPass ,
                 "RegUser" : userReg ,
                 "LastName" :lname ,
-                "FirstName" : fname 
+                "FirstName" : fname ,
+                "login" : true 
             }
             arr.push(obj)   
             }
@@ -185,3 +198,14 @@ var showreg = document.getElementById('showReg') ;
 
     })
 
+    let arr =JSON.parse(localStorage.getItem("User"))
+
+    while (arr.login === true)
+    {
+
+    document.getElementById("logform").style.display = "none";
+
+    }
+
+
+   console.log(arr[0].login)
