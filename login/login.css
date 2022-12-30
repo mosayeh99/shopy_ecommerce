@@ -54,6 +54,12 @@
 width :100px ;
 }
 
+#logBtn , #resetBtn , #regBtn{
+   pointer-events: none ;
+}
+
+
+/* Style Of Error Box  */
 #error , #regError , #resetError{
     margin :  10px ;
     padding: 10px;
@@ -86,9 +92,6 @@ width :100px ;
     margin-top: 10px ;
 }
 
- #logBtn , #resetBtn , #regBtn{
-    pointer-events: none ;
-}
 
 #showReg , #showLog , #showReset {
     cursor: pointer ;
@@ -96,7 +99,9 @@ width :100px ;
 
 
 
-    @media (max-width : 800px) {
+ /* media querry for mobile screen  */
+
+@media (max-width : 800px) {
         .login , .signup , .reset {
             width: 100%;
             padding : 20px ;

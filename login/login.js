@@ -1,18 +1,7 @@
 
-// function stopFormsubmit (e){
-//     e.preventDefault() 
-// }
+
 // localStorage.clear()
-// console.log(JSON.parse(localStorage.getItem("User")[0]).RegPassword)
 
-// document.getElementById("regform").addEventListener("click",function(event){
-//       event.preventDefault() 
-// })
-
-// console.log (JSON.parse(localStorage.getItem("User"))[0].RegPassword)
-// console.log (JSON.parse(localStorage.getItem("User"))[0].RegUser)
-// delete JSON.parse(localStorage.getItem("User"))[0]["RegPassword"]
-// console.log (JSON.parse(localStorage.getItem("User"))[0])
 // ------------------Password Showing ---------------------
 var passlog = document.getElementById('passLog') ;
 var showlog = document.getElementById('showLog') ;
@@ -52,6 +41,8 @@ var showreg = document.getElementById('showReg') ;
             newPass.type = "password" ;
         }
     }) ;
+
+
     
     // ------------------------------- Login Form ------------------------------- //
 
@@ -63,7 +54,6 @@ var showreg = document.getElementById('showReg') ;
         var passLog = document.getElementById("passLog").value;
         var userReg= (JSON.parse(localStorage.getItem("User"))[0].RegUser) ;
         var passReg= (JSON.parse(localStorage.getItem("User"))[0].RegPassword) ;
-        // var error = document.getElementById("error").innerHTML ;
     
         if (userLog === userReg && passLog === passReg){
             Swal.fire({
@@ -73,12 +63,11 @@ var showreg = document.getElementById('showReg') ;
                 footer: `<a href="../index.html">  Home Page  /</a>
                          <a href="../checkout/checkout.html"> Checkout  /</a>
                          <a href="./login.html">  LogOut  </a>`
-              })
-              
+            })
+
             document.getElementById("logBtn").style.pointerEvents ="auto"
             document.getElementById("logform").style.display ="none"
         }
-        // document.getElementById("passLog").addEventListener("keydown",function(){
 
              if (userLog === userReg && passLog !== passReg){
                 document.getElementById("error").innerHTML ="Incorrect Password"
@@ -94,6 +83,7 @@ var showreg = document.getElementById('showReg') ;
             document.getElementById("error").style.display = "block"
         }
         })
+
 
 
     // ------------------------------- Regestration Form ------------------------------- //
@@ -116,9 +106,6 @@ var showreg = document.getElementById('showReg') ;
             var addr   = document.getElementById("addr").value ;
             var userReg = document.getElementById("userReg").value;
             var passReg = document.getElementById("passReg").value;
-
-            var regform = document.getElementById("regform")
-            console.log(regform)
             
             let arr = []
 
@@ -128,40 +115,34 @@ var showreg = document.getElementById('showReg') ;
                 "Address" :  [addr] ,
                 "RegPassword" : passReg ,
                 "RegUser" : userReg ,
-                "Last-Name" :lname ,
-                "First-Name" : fname 
+                "LastName" :lname ,
+                "FirstName" : fname 
             }
-
             arr.push(obj)
-            localStorage.setItem("User",JSON.stringify(arr))
 
-            // localStorage.setItem("RegUser",userReg);
-            // localStorage.setItem("RegPassword",passReg);
-            // localStorage.setItem("First-Name",fname);
-            // localStorage.setItem("Last-Name",lname);
-            // localStorage.setItem("Address",addr);
-            
+            localStorage.setItem("User",JSON.stringify(arr)) 
+
             document.getElementById("regError").innerHTML =""
             document.getElementById("regError").style.display = "none"
             
         }
-        if(!isNaN (userReg) && passReg.length <8 ) {
-            // regform.removeAttribute(action) ;
-            // console.log(regform)
+        else if(!isNaN (userReg) && passReg.length <8 ) {
+
             document.getElementById("regError").innerHTML ="Email is invalid <br>Password is too short (minimum is 8 characters) "
             document.getElementById("regError").style.display = "block"
 
             }
-            else if(!isNaN (userReg)) {
+        else if(!isNaN (userReg)) {
                 document.getElementById("regError").innerHTML ="Email is invalid"
             }
-            else if(passReg.length <8 ) {
+        else if(passReg.length <8 ) {
                 document.getElementById("regError").innerHTML ="Password is too short (minimum is 8 characters)"
             }
         })
     
     
-    // ------------------------------- Reset Pass Form ------------------------------- //
+
+    // ------------------------------- Reset Password Form ------------------------------- //
         document.getElementById("return").addEventListener("click",function() {
 
             document.getElementById("login").style.display = "block"
@@ -175,30 +156,26 @@ var showreg = document.getElementById('showReg') ;
         document.getElementById("signup").style.display = "none"
         document.getElementById("reset").style.display = "block"
 
-        // localStorage.setItem("User",JSON.parse())
-        // localStorage.setItem("User",JSON.stringify(arr))
-        
-       let arr =JSON.parse(localStorage.getItem("User"))
-        let oldPass =arr[0].RegPassword
-        localStorage.removeItem("oldPass")
-        console.log(oldPass)
-        // console.log(JSON.parse(localStorage.getItem("User"))[0].RegPassword)
-
-
-            newPass = arr[0].RegUser
-
-            console.log(newPass)
-        
-        
-
         document.getElementById("ResetBtn").addEventListener("click", function(){
             newPass = document.getElementById("newPass").value 
-            console.log(newPass)
+            let arr =JSON.parse(localStorage.getItem("User"))
+            var fname = arr[0].FirstName ;
+            var lname = arr[0].LastName ;
+            var addr   = arr[0].Address  ;
+            var userReg = arr[0].RegUser ;
             
-            
-            if(newPass.length >=8){
-               console.log(JSON.parse(localStorage.getItem("User")[0]).RegPassword) = newPass
-                
+            if(newPass.length >=8){        
+            arr[0].RegPassword = newPass ;
+
+            localStorage.setItem('User',JSON.stringify(arr)) ;
+            var obj ={
+                "Address" :  [addr] ,
+                "RegPassword" : newPass ,
+                "RegUser" : userReg ,
+                "LastName" :lname ,
+                "FirstName" : fname 
+            }
+            arr.push(obj)   
             }
             
             else if (newPass.length <8){
@@ -210,5 +187,4 @@ var showreg = document.getElementById('showReg') ;
 
         
     })
-   
 
