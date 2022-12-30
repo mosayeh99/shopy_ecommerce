@@ -49,7 +49,7 @@ for (var i = 0; i < coll.length; i++) {
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
         } else {
-            content.style.maxHeight = "38px";
+            content.style.maxHeight = "100px";
         }
     });
 }
