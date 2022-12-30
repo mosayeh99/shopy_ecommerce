@@ -23,9 +23,9 @@
     <div class="path">
         <a href="../index.html">Home /</a><a href="login.html">Login /</a><a>My Account </a>
     </div>
-    
-            <form class="logform col-12" id="logform" action="../index.html" method="post">
-                <div class="login col-12" id="login">
+    <!-- ============================================= Login Form ============================================= -->
+    <form class="logform col-12" id="logform" action="../index.html" method="post">
+        <div class="login col-12" id="login">
                         <p class="note">If you have Account : </p><br>
                         <label style="font-size:30px ;font-weight:bold ;">Login</label><br>
                         
@@ -39,6 +39,8 @@
                             <path d="M12 19c-4 0 -7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7c-.42 .736 -.858 1.414 -1.311 2.033"></path>
                             <path d="M15 19l2 2l4 -4"></path>
                         </svg></span>
+
+                        <!-- Error Password or Don,t have Account -->
                         <div id="error"></div>
                         <button class="btn btn-primary" id="logBtn">Login</button>
                     </div>
@@ -50,7 +52,8 @@
 
             </form>
             
-
+            
+            <!-- ============================================= SignUp Form ============================================= -->
             <form class="regform" id="regform" action="login.html">
                 <div class="signup col-12" id="signup">
                     <p class="note">If you Don't have Account : </p>
@@ -74,13 +77,15 @@
                     </svg></span>
                     </div>
                 
-                <div id="regError"></div>
-
-                    <button class="btn btn-primary" id="signupBtn" >Register</button>
-                </div> 
+                    <!-- Not Valid Registeration -->
+                    <div id="regError"></div>
+                    
+                <button class="btn btn-primary" id="signupBtn" >Register</button>
+            </div> 
             </form>
+            
 
-
+            <!-- ============================================= Reset Password Form ============================================= -->
             <form class="resetForm col-12" id="resetForm" action="../login/login.html">
                 <div class="reset col-12" id="reset">
                     <label style="font-size:30px ;font-weight:bold ;">Reset Your Password</label><br>  
@@ -92,6 +97,8 @@
                             <path d="M12 19c-4 0 -7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7c-.42 .736 -.858 1.414 -1.311 2.033"></path>
                             <path d="M15 19l2 2l4 -4"></path>
                         </svg></span>
+
+                        <!-- Not Valid Password To Reset -->
                         <div id="resetError"></div>
                     </div>
                     
