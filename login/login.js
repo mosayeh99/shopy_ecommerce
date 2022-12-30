@@ -198,14 +198,14 @@ var showreg = document.getElementById('showReg') ;
 
     })
 
-    let arr =JSON.parse(localStorage.getItem("User"))
+//     let arr =JSON.parse(localStorage.getItem("User"))
 
-    while (arr.login === true)
-    {
+//     while (arr.login === true)
+//     {
 
-    document.getElementById("logform").style.display = "none";
+//     document.getElementById("logform").style.display = "none";
 
-    }
+//     }
 
 
-   console.log(arr[0].login)
+//    console.log(arr[0].login)
