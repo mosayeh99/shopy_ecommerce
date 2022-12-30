@@ -293,3 +293,12 @@ function fillStyleToProductWishlist() {
         }
     });
 }
+
+//-----------------Shopy Alert Success-----------------
+function shopyAlertSuccess() {
+    document.querySelector('#shopy-alert-overlay').classList.add('active');
+    document.querySelector('#shopy-alert-success').classList.add('active');
+    setTimeout(() => {
+        location.href = '../index.html';
+    }, 5000);
+}

@@ -63,3 +63,49 @@ h1,h2,h3,h4,h5,h6,p,ul {
         width: 1380px;
     }
 }
+
+/* ---shopy alert success--- */
+#shopy-alert-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 0 0 / 0.6);
+    top: 0;
+    z-index: 9999;
+    display: none;
+}
+
+#shopy-alert-overlay.active {
+    display: block;
+}
+
+#shopy-alert-success {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 35px;
+    border-radius: 10px;
+    font-size: 20px;
+    z-index: 9999;
+    transition: var(--secondary-transition);
+    opacity: 0;
+}
+
+#shopy-alert-success.active {
+    opacity: 1;
+}
+
+#shopy-alert-success span:first-child {
+    color: var(--secondary-color);
+}
+
+#shopy-alert-success span:last-child {
+    width: 250px;
+    text-align: center;
+}

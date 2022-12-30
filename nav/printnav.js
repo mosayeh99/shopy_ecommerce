@@ -2,7 +2,7 @@ loadheader();
 function loadheader() {
     let shopyHeader = `
     <div class="topbar">
-    <div class="content mycontainer">
+    <div class="shopy-topbar-content mycontainer">
         <div class="links">
             <a href="/" class="topbar-link">About Us</a>
             <a href="/" class="topbar-link">Contact</a>
