@@ -220,27 +220,64 @@
     color: var(--secondary-color);
 }
 
-/* #shopy-category-slider {
+/* ---------our mession section---------- */
+#shopy-mession-section {
+    background-color: #ebebeb;
+    padding: 50px 0;
+}
+
+#shopy-mession-section #mession-sec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#shopy-mession-section #mession-sec-text {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#shopy-mession-section #mession-sec-text p:first-child {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+#shopy-mession-section #mession-sec-text p:nth-child(2) {
+    margin: 50px 0 30px;
+    font-size: 50px;
+}
+
+#shopy-mession-section #mession-sec-text p:last-child {
+    font-size: 14px;
+}
+
+#shopy-mession-section #mession-sec-img {
+    max-width: 500px;
+    display: flex;
+    margin: auto;
+}
+
+#shopy-mession-section #mession-sec-img img {
+    width: 100%;
+}
+
+/* -----success parteners Brands----- */
+#shopy-brands-section {
     background-color: #f9f9f9;
 }
 
-#shopy-category-slider #category-slider-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 200px;
+#shopy-brands-section #brands-section-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-#shopy-category-slider #category-slider-items #category-slide{
+#shopy-brands-section #brands-section-items #brands-item {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-#shopy-category-slider #category-slider-items #category-slide img {
-    width: 150px;
-} */
 
 @media (max-width: 991px) {
     #display-products-shape #display-shape-2 {
@@ -248,6 +285,13 @@
     }
     #shopy-section-product-list #product-list {
         grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
+    }
+    #shopy-mession-section #mession-sec-text p:first-child {
+        font-size: 20px;
+    }
+    #shopy-mession-section #mession-sec-text p:nth-child(2) {
+        margin: 50px 0 30px;
+        font-size: 30px;
     }
 }
 
@@ -264,6 +308,21 @@
     }
     #shopy-section-product-list #product-list.grid-1-applaied {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #shopy-mession-section #mession-sec-img {
+        justify-content: center;
+    }
+    #shopy-mession-section #mession-sec-img img {
+        width: 80%;
+    }
+    #shopy-mession-section #mession-sec-row {
+        flex-direction: column-reverse;
+    }
+    #shopy-mession-section #mession-sec-text p:nth-child(2) {
+        margin: 20px 0;
     }
 }
 
