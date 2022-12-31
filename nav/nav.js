@@ -302,3 +302,19 @@ function shopyAlertSuccess() {
         location.href = '../index.html';
     }, 3000);
 }
+
+let shopyUsersArray = [];
+if (localStorage.User != null) {
+    shopyUsersArray = JSON.parse(localStorage.getItem("User"));
+}
+document.addEventListener('click', (e) => {
+    if (e.target.getAttribute('id') == 'shopy-user-icon') {
+        shopyUsersArray.forEach((el) => {
+            if (shopyUsersArray.length == 0 || el.loginStatus == true) {
+                location.href = '../login/login.html';
+            }else {
+                location.href = '../useraccount/useraccount.html';
+            }
+        })
+    }
+})

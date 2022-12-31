@@ -39,7 +39,7 @@ function loadheader() {
             </a>
         </div>
         <div class="user-icon">
-            <a href="../login/login.html">
+            <a id="shopy-user-icon" href="../login/login.html">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -119,7 +119,7 @@ function loadMobileToolbar() {
     </a>
 </div>
 <div class="toolbar-accout toolbar-item">
-    <a href="../login/login.html">
+    <a id="shopy-user-icon" href="../login/login.html">
         <span class="toolbar-icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24"
             height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
