@@ -308,9 +308,10 @@ if (localStorage.User != null) {
     shopyUsersArray = JSON.parse(localStorage.getItem("User"));
 }
 document.addEventListener('click', (e) => {
+    console.log(e.target.getAttribute('id'));
     if (e.target.getAttribute('id') == 'shopy-user-icon') {
         shopyUsersArray.forEach((el) => {
-            if (shopyUsersArray.length == 0 || el.loginStatus == true) {
+            if (shopyUsersArray.length == 0 || el.loginStatus == false) {
                 location.href = '../login/login.html';
             }else {
                 location.href = '../useraccount/useraccount.html';
