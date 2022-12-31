@@ -40,6 +40,18 @@ At the end of the project we managed to achieve a great success with a well-made
 <br>
 <br>
 
+<b>Home Features</b>
+
+| Feature  |  Coded?       | Description  |
+|----------|:-------------:|:-------------|
+| Add to wishlist | &#10004; | Ability to add products to wishlist |
+| search | &#10004; | Ability to search about any product in site |
+| Filter | &#10004; | Ability to filter products based on category |
+| view all products | &#10004; | View all products in site and display any one by click on it |
+
+<br>
+<br>
+
 <b>Products Features</b>
 
 | Feature  |  Coded?       | Description  |

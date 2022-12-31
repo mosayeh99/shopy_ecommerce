@@ -307,15 +307,38 @@ let shopyUsersArray = [];
 if (localStorage.User != null) {
     shopyUsersArray = JSON.parse(localStorage.getItem("User"));
 }
+
+let shopyuserPagePath;
+let shopyLoginPagePath;
+let shopycurrentLocationPath = window.location.pathname.split('/');
+let userLastindexInPath = shopycurrentLocationPath[shopycurrentLocationPath.length - 1];
+if (userLastindexInPath.indexOf('useraccount') != -1) {
+    shopyuserPagePath = '';
+}else if (userLastindexInPath.indexOf('index') != -1 || userLastindexInPath == '') {
+    shopyuserPagePath = 'useraccount/useraccount.html';
+}else {
+    shopyuserPagePath = '../useraccount/useraccount.html';
+}
+if (userLastindexInPath.indexOf('login') != -1) {
+    shopyLoginPagePath = '';
+}else if (userLastindexInPath.indexOf('index') != -1 || userLastindexInPath == '') {
+    shopyLoginPagePath = 'login/login.html';
+}else {
+    shopyLoginPagePath = '../login/login.html';
+}
+
 document.addEventListener('click', (e) => {
-    console.log(e.target.getAttribute('id'));
     if (e.target.getAttribute('id') == 'shopy-user-icon') {
-        shopyUsersArray.forEach((el) => {
-            if (shopyUsersArray.length == 0 || el.loginStatus == false) {
-                location.href = '../login/login.html';
-            }else {
-                location.href = '../useraccount/useraccount.html';
-            }
-        })
+        if (shopyUsersArray.length == 0) {
+            shopyUsersArray.forEach((el) => {
+                if (el.loginStatus == false) {
+                    location.href = login/login.html;
+                }else {
+                    location.href = shopyuserPagePath;
+                }
+            })
+        }else {
+            location.href = shopyLoginPagePath;
+        }
     }
 })

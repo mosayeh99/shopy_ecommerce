@@ -47,6 +47,8 @@ document.getElementById("loginNow").addEventListener("click",function(){
 })
 
 document.getElementById("logBtn").addEventListener('click',function(e){
+    e.preventDefault();
+    console.log(document.getElementById("passLog").value);
     if (arr.length != 0) {
         var userLog = document.getElementById("userLog").value;
         var passLog = document.getElementById("passLog").value;

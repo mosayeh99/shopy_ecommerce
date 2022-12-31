@@ -86,6 +86,10 @@ header .head-bar .head-icons {
     color: var(--main-color);
 }
 
+header .head-bar .head-icons .user-icon {
+    cursor: pointer;
+}
+
 header .head-bar .head-icons .search {
     position: relative;
     display: flex;
