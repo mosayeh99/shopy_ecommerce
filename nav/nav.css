@@ -288,13 +288,15 @@ header nav ul li:hover a {
     position: relative;
 }
 
-.toolbar-mobile .toolbar-item a {
+.toolbar-mobile .toolbar-item a,
+.toolbar-mobile .toolbar-item > span {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--main-color);
     font-size: 12px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 /* ----------Search Drawer Mobile style----------- */
