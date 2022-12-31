@@ -71,6 +71,7 @@
 
 #table-foot-btns {
   margin: 30px 10px 0;
+  display: block;
 }
 
 #table-foot-btns #cart-foot-checkout-btn a,
@@ -82,6 +83,17 @@
   padding: 10px 30px;
   display: inline-block;
   width: 100%;
+}
+
+#table-foot-btns #cart-foot-shopping-btn a {
+  background-color: white;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+}
+
+#table-foot-btns #cart-foot-shopping-btn a:hover {
+  background-color: var(--main-color);
+  color: white;
 }
 
 .cart-empty {
@@ -116,9 +128,8 @@
   #cart-product {
     border-bottom: 1px solid #dee2e6;
   }
-  #go-to-checkout {
-    margin: 30px 0 0;
-    max-width: 300px;
-    
+  #table-foot-btns {
+    display: flex;
+    justify-content: space-between;
   }
 }

@@ -1,4 +1,6 @@
 let productsInCartArray = [];
+let productsSubtotalPrice;
+let productsPrice;
 // --------------------------Print Products In Cart------------------------
 showProductsIncart();
 function showProductsIncart() {
@@ -12,6 +14,7 @@ function showProductsIncart() {
                 productsInCartArray = JSON.parse(localStorage.productsInCart);
                 if (productsInCartArray.length == 0) {
                     document.querySelector('.cart-empty').style.display = 'flex';
+                    document.querySelector('#table-foot-btns').style.display = 'none';
                 }
                 full.products.forEach(e => {
                     productsInCartArray.forEach(el => {
@@ -64,14 +67,16 @@ function showProductsIncart() {
                 })
             }else {
                 document.querySelector('.cart-empty').style.display = 'flex';
+                document.querySelector('#table-foot-btns').style.display = 'none';
             }
         document.querySelector("#cart-table-body").innerHTML = prodAddedCart;
+
+        productsSubtotalPrice = document.querySelectorAll('#cart-product-subtotal-price');
+        productsPrice = document.querySelectorAll('#product-price');
     });
 }
 
 // ------------------------increase & decrease quantity-------------------
-let productsSubtotalPrice = document.querySelectorAll('#cart-product-subtotal-price');
-let productsPrice = document.querySelectorAll('#product-price');
 document.addEventListener('click', (e) => {
     if (e.target.getAttribute('id') == 'increase-quantity') {
         let quantityFieldValue = e.target.previousElementSibling;
@@ -89,18 +94,20 @@ document.addEventListener('click', (e) => {
         })
     }else if (e.target.getAttribute('id') == 'decrease-quantity') {
         let quantityFieldValue = e.target.nextElementSibling;
-        quantityFieldValue.textContent = +quantityFieldValue.textContent -1 ;
-        productsInCartArray[e.target.dataset.productindex].productQty = quantityFieldValue.textContent;
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCartArray));
-        productsPrice.forEach(el => {
-            if (el.dataset.productindex == e.target.dataset.productindex ) {
-                productsSubtotalPrice.forEach(elm => {
-                    if (e.target.dataset.productindex == elm.dataset.productindex) {
-                        elm.textContent = +quantityFieldValue.textContent * +el.textContent;
-                    }
-                })
-            }
-        })
+        if (quantityFieldValue.textContent != "1"){
+            quantityFieldValue.textContent = +quantityFieldValue.textContent -1 ;
+            productsInCartArray[e.target.dataset.productindex].productQty = quantityFieldValue.textContent;
+            localStorage.setItem('productsInCart', JSON.stringify(productsInCartArray));
+            productsPrice.forEach(el => {
+                if (el.dataset.productindex == e.target.dataset.productindex ) {
+                    productsSubtotalPrice.forEach(elm => {
+                        if (e.target.dataset.productindex == elm.dataset.productindex) {
+                            elm.textContent = +quantityFieldValue.textContent * +el.textContent;
+                        }
+                    })
+                }
+            })
+        }
     }
 })
 
