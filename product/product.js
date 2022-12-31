@@ -81,7 +81,7 @@ fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/p
             </button>
             <div class="go-to-cart-btn">
                 <a href="../cart/cart.html">
-                    <button>Check The Cart</button>
+                    <button>View Cart</button>
                 </a>
             </div>
             <div class="product-features">
