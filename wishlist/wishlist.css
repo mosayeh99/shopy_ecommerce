@@ -3,7 +3,7 @@
     product list style come from style.css
 */
 
-.result-head-banner {
+.wishlist-head-banner {
     background-image: url(../assets/images/result-page-head-bg.webp);
     background-size: cover;
     height: 200px;
@@ -18,7 +18,7 @@
     z-index: 1;
 }
 
-.result-head-banner::before {
+.wishlist-head-banner::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -92,10 +92,4 @@
     text-transform: capitalize;
     font-size: 30px;
     font-weight: 300;
-}
-
-@media (max-width: 767px) {
-    .result-head-banner {
-        font-size: 25px;
-    }
 }
