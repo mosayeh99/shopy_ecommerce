@@ -15,100 +15,82 @@
 <body>
     <div class="mb-body-overlay"></div>
     <header></header>
-
-    <section style="height: 100vh;">
-<!-- start of shop-main body -->
-
-
-<div class="table">
-      
-  <div class="layout-inline row th">
-    <div class="col col-pro">Product</div>
-    <div class="col col-price align-center "> 
-      Price
-    </div>
-    <div class="col col-qty align-center">QTY</div>
-    <div class="col">Total</div>
-  </div>
-  
-  <div class="layout-inline row">
     
-    <div class="col col-pro layout-inline">
-      <img src="/cart/1.jpg" width="75px">
-      <p>Happy Little Critter</p>
-    </div>
-    
-    <div class="col col-price col-numeric align-center ">
-      <p>£59.99</p>
-    </div>
-
-    <div class="col col-qty quantity-select">
-      <span class="decrease-quantity">-</span>
-      <span class="quantity">1</span> </span>
-      <span class="increase-quantity">+</span>
-    </div>
-    
-  
-    <div class="col col-total col-numeric">               <p> £182.95</p>
-    </div>
-  </div>
-  
-  <div class="layout-inline row row-bg2">
-
-    <div class="col col-pro layout-inline">
-      <img src="/cart/2.jpg" width="75px">
-      <p>Scared Little Kittie</p>
-    </div>
-    
-    <div class="col col-price col-numeric align-center ">
-      <p>£23.99</p>
-    </div>
-
-    <div class="col col-qty quantity-select">
-      <span class="decrease-quantity">-</span>
-      <span class="quantity">1</span> </span>
-      <span class="increase-quantity">+</span>
-    </div>
-    
-   
-    <div class="col col-total col-numeric">
-      <p>£25.94</p>
-    </div>      
-  
-  </div>
-  
-
-  
-    <hr>
-  <div class="Total col-6 col-sm-6 col-lg-3">
-    <label class=" fs-4 fw-bold">Total price</label>
-    <div class="text-large fs-5"><strong>$1164.65</strong></div>
-  </div>
-
-    <div class="btn col-6 col-sm-6 col-lg-4">
-    <button type="button" class="btn btn-default">
-      <a href="/index.html">Continue Shopping</a> 
-  </button>
-  <button type="button" class="btn btn-success "> <a href="/checkout/checkout.html">Checkout </a>
-     
-  </button>
-    </div>
-    
-
-
-
-
-    </section>
-
-
+    <main>
+        <div class="cart-head-banner">
+            <span>Cart</span>
+        </div>
+        <div class="mycontainer">
+            <div id="cart-table" class="d-grid">
+                <div id="cart-table-head" class="d-none d-md-flex row text-center py-3">
+                    <span class="col-6 fw-semibold">Product</span>
+                    <span class="col-2 fw-semibold">Price</span>
+                    <span class="col-2 fw-semibold">Quantity</span>
+                    <span class="col-2 fw-semibold">Subtotal</span>
+                </div>
+                <div id="cart-table-body" class="d-flex d-md-block flex-column gap-4">
+                    <!-- <div id="cart-product" class="row align-items-center py-md-3 text-md-center">
+                        <div id="cart-product-item" class="col-12 col-md-6 py-3">
+                            <div class="row align-items-center">
+                                <span class="col-1" id="cart-product-del-btn">×</span>
+                                <div class="col-3 col-lg-2 d-flex align-items-center justify-content-center">
+                                    <a href="../product/product.html">
+                                        <img class="has-product-id w-75" src="https://raw.githubusercontent.com/mosayeh99/products_json_api/main/images/2/1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <a href="../product/product.html">
+                                    <span class="has-product-id col text-center text-md-start">Welcome Hierophant T-Shirt – White - XXL</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="cart-product-price" class="col-12 col-md py-3">
+                            <div class="row justify-content-between">
+                                <span class="col d-md-none fw-semibold">Price</span>
+                                <span class="col text-end text-md-center">EGP555</span>
+                            </div>
+                        </div>
+                        <div id="cart-product-quantity" class="col-12 col-md-2 py-3">
+                            <div class=" row align-items-center">
+                                <span class="col d-md-none fw-semibold">Quantity</span>
+                                <div id="product-quantity" class="col">
+                                    <span id="decrease-quantity">-</span>
+                                    <span id="quantity">1</span>
+                                    <span id="increase-quantity">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cart-product-subtotal" class="col-12 col-md-2 py-3">
+                            <div class="row">
+                                <span class="col d-md-none fw-semibold">Subtotal</span>
+                                <span class="col text-end text-md-center">EGP555</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="cart-empty mycontainer">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-x" width="128" height="128" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="6" cy="19" r="2"></circle>
+                    <circle cx="17" cy="19" r="2"></circle>
+                    <path d="M17 17h-11v-14h-2"></path>
+                    <path d="M6 5l7.999 .571m5.43 4.43l-.429 2.999h-13"></path>
+                    <path d="M17 3l4 4"></path>
+                    <path d="M21 3l-4 4"></path>
+                </svg>
+            </span>
+            <div class="not-found-text">
+                <span>cart is empty</span>
+            </div>
+        </div>
+    </main>
     
     <div class="menu-drawer"></div>
     <div class="search-drawer"></div>
     <div class="toolbar-mobile"></div>
     <footer></footer>
-    <script 
-type="module"src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="../nav/printnav.js"></script>
     <script src="../nav/nav.js"></script>
     <script src="cart.js"></script>
