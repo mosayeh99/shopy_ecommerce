@@ -4,12 +4,11 @@ confirmPurchaseBtn.addEventListener('click', () => {
     localStorage.removeItem('productsInCart');
 })
 //-------------- To get selected item from cart page -----------------------
-let prodectsCartArr;
+let productsCartArr = [];
 if (localStorage.productsInCart != null) {
-    prodectsCartArr = JSON.parse(localStorage.productsInCart);
+    productsCartArr = JSON.parse(localStorage.productsInCart);
 }
-fetch(
-    'https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/produc' + 'ts.json')
+fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/produc' + 'ts.json')
     .then(res => res.json())
     .then((full) => {
         let productsTable = "";
@@ -17,14 +16,14 @@ fetch(
         let totalPrice = "";
         let subTotalPrice = 0;
         full.products.forEach(e => {
-                prodectsCartArr.forEach(el => {
+                productsCartArr.forEach(el => {
                     if (el.productId == e.id) {
                         prodInCart += `
                         <tr class="product-row">
                             <td>
                                 <span>${e.title}</span>
-                                <span>[${el.productSize}]</span>
-                                <span>× ${el.productQty}</span>
+                                <span>- ${el.productSize}</span>
+                                <span> × ${el.productQty}</span>
                             </td>
                             <td class="subTotal">EGP ${el.productQty * e.price}</td>
                         </tr>`
