@@ -28,18 +28,6 @@ At the end of the project we managed to achieve a great success with a well-made
 
 ## Features
 
-<b>Registration Features</b>
-
-| Feature  |  Coded?       | Description  |
-|----------|:-------------:|:-------------|
-| Register | &#10004; | Ability of signup & make a new account |
-| Login | &#10004; | Ability of login with valid e-mail & right password |
-| Reset Password | &#10004; | Ability of reset your password if you forgot it |
-| Logout  | &#10004; | Ability of logout from you account |
-
-<br>
-<br>
-
 <b>Home Features</b>
 
 | Feature  |  Coded?       | Description  |
@@ -48,6 +36,18 @@ At the end of the project we managed to achieve a great success with a well-made
 | search | &#10004; | Ability to search about any product in site |
 | Filter | &#10004; | Ability to filter products based on category |
 | view all products | &#10004; | View all products in site and display any one by click on it |
+
+<br>
+<br>
+
+<b>Registration Features</b>
+
+| Feature  |  Coded?       | Description  |
+|----------|:-------------:|:-------------|
+| Register | &#10004; | Ability of signup & make a new account |
+| Login | &#10004; | Ability of login with valid e-mail & right password |
+| Reset Password | &#10004; | Ability of reset your password if you forgot it |
+| Logout  | &#10004; | Ability of logout from you account |
 
 <br>
 <br>
@@ -75,6 +75,28 @@ At the end of the project we managed to achieve a great success with a well-made
 | Remove a Item | &#10004; | Ability of Remove a Item from the Cart |
 | Address | &#10004; | Ability of add new address to deliver order |
 | Checkout | &#10004; | Ability to Checkout |
+
+<br>
+<br>
+
+
+<b>WishList Features</b>
+
+| Feature  |  Coded?       | Description  |
+|----------|:-------------:|:-------------|
+| Disply Products In wishlist | &#10004; | View all products in wishlist and display any one by click on it |
+| Remove From Wishlist | &#10004; | Ability to remove any product from wishlist |
+
+<br>
+<br>
+
+
+<b>User Account Features</b>
+
+| Feature  |  Coded?       | Description  |
+|----------|:-------------:|:-------------|
+| Disply All User Info | &#10004; | View Data about user Full Name, Email, Address |
+| Logout | &#10004; | User can logout from account page |
 
 <br>
 <br>
@@ -144,52 +166,44 @@ forget link in Login Form .
 
 ### The main page of ecommerce website
 
-![homepage](https://user-images.githubusercontent.com/118169083/210150874-69a23ef3-1e34-4d55-9d49-cc2aadf85529.png)
+![screencapture-127-0-0-1-5500-index-html-2023-01-01-00_43_08](https://user-images.githubusercontent.com/113994083/210156913-cc6256a0-947c-4fad-8d35-1345bd1cfd03.png)
 
 <br><br>
 
 ### The authentification page of ecommerce website
 
-![authentificationpage ](https://user-images.githubusercontent.com/118169083/210150848-62c9669c-bd86-4157-839f-c1260c28ef5f.png)
+![screencapture-127-0-0-1-5500-login-login-html-2023-01-01-00_40_57](https://user-images.githubusercontent.com/113994083/210156878-3233e0e5-87fd-48bc-b3f9-a2ffa161a16e.png)
 
 <br><br>
 
 ### The registration page of ecommerce website
 
-![registrationpage](https://user-images.githubusercontent.com/118169083/210150913-650b9be6-1b00-4a72-b8c1-55a63729af34.png)
-
-<br><br>
-
-### The Products Page where you can choose a specific product to buy
-
-![bodyhome](https://user-images.githubusercontent.com/118169083/210150860-d196fa08-6b7e-466e-97b2-4b5bb6d3ed2a.png)
+![screencapture-127-0-0-1-5500-login-login-html-2023-01-01-00_41_55](https://user-images.githubusercontent.com/113994083/210156888-40923cf9-f0fe-4093-abeb-12c031391b78.png)
 
 <br><br>
 
 ### The Product details Page
 
-![product](https://user-images.githubusercontent.com/118169083/210150908-270eba06-70d8-465d-b39b-21194def269d.png)
-<br><br>
+![screencapture-127-0-0-1-5500-product-product-html-2023-01-01-00_45_48](https://user-images.githubusercontent.com/113994083/210156939-5ef71cc9-4b9d-4605-baf0-18fae3d5bcb5.png)
 
 ### The Shopping Cart Page
 
-![cartpage](https://user-images.githubusercontent.com/118169083/210150839-ae1ac665-53d1-46bb-a1b3-6e89fc646eeb.png)
+![screencapture-127-0-0-1-5500-cart-cart-html-2023-01-01-00_47_24](https://user-images.githubusercontent.com/113994083/210156956-74fb6b34-33d4-4540-a975-b09a8c9a4848.png)
 
 <br><br>
 
 ### The Payment Page
 
-![checkout](https://user-images.githubusercontent.com/118169083/210150865-b7b15ab4-f515-4de7-b528-a35fb4a27c26.png)
+![screencapture-127-0-0-1-5500-checkout-checkout-html-2023-01-01-00_48_15](https://user-images.githubusercontent.com/113994083/210156963-a016e5ee-771c-49bf-b715-4e309d67ce86.png)
 
 <br><br>
 
-
 ### The Wishlist page
+![screencapture-127-0-0-1-5500-wishlist-wishlist-html-2023-01-01-00_49_01](https://user-images.githubusercontent.com/113994083/210156969-4a8ae57e-2c9a-4709-b46e-1295145867ae.png)
 
-![wishlist](https://user-images.githubusercontent.com/118169083/210150914-33781562-ece1-4f61-9508-98945ddb70fa.png)
+<br><br>
 
+### User Account Page
 
-### Responsive Footer
-
-![footer](https://user-images.githubusercontent.com/118169083/210150871-2daf9a86-c7d6-4d18-8121-0261619f43c9.jpg)
+![screencapture-127-0-0-1-5500-useraccount-useraccount-html-2023-01-01-00_51_13](https://user-images.githubusercontent.com/113994083/210156995-041320ae-21cb-42d5-a475-a65a5b50c1f0.png)
 
