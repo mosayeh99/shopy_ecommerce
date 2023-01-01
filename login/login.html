@@ -19,7 +19,7 @@
 
 <div class="mycontainer">
     <!-- ============================================= Login Form ============================================= -->
-    <form class="logform col-12" id="logform" action="../index.html" method="post">
+    <form class="logform col-12" id="logform" method="post">
         <div class="login col-12" id="login">
                     <label id="form-tag-head">Login</label>
                     <input type="email" placeholder="Your email address *" class="user" id="userLog" autocomplete="off">
@@ -43,7 +43,7 @@
             
             
             <!-- ============================================= SignUp Form ============================================= -->
-            <form class="regform" id="regform" action="login.html">
+            <form class="regform" id="regform">
                 <div class="signup col-12" id="signup">
                     <label id="form-tag-head">SignUp</label>
                     <label>First Name</label>
@@ -78,7 +78,7 @@
             
 
             <!-- ============================================= Reset Password Form ============================================= -->
-            <form class="resetForm col-12" id="resetForm" action="../login/login.html">
+            <form class="resetForm col-12" id="resetForm">
                 <div class="reset col-12" id="reset">
                     <label id="form-tag-head">Reset Your Password</label>
                     <input id="reset-pass-email-field" type="email" placeholder="Your email address *" class="user" autocomplete="off">
@@ -103,7 +103,7 @@
 <div id="shopy-alert-overlay"></div>
 <div id="shopy-alert-success">
     <span><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
-    <span>Successfully Login!</span>
+    <span id="shopy-alert-msg">Successfully Login!</span>
 </div>
 
 <div class="menu-drawer"></div>
