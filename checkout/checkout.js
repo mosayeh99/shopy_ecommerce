@@ -58,11 +58,12 @@ let loginUserArr;
 if (localStorage.User != null) {
     loginUserArr = JSON.parse(localStorage.User);
 }
+let userIndex = loginUserArr.findIndex(ele => ele.loginStatus == true);
 printAddress();
 function printAddress() {
     let addressOfUSer = "";
     let addessCounter = 0;
-    loginUserArr[0].Address.forEach(e => {
+    loginUserArr[userIndex].Address.forEach(e => {
         if (addessCounter == 0) {
             addressOfUSer += `
             <label id="checkout-radio-input" class="form-check-label">
@@ -84,10 +85,9 @@ let addAddressBtn = document.getElementById("addAddressBtn");
 let newAddressInput = document.getElementById("newAddress");
 addAddressBtn.addEventListener('click', () => {
     if (newAddressInput.value != "") {
-        loginUserArr[0]
-            .Address
-            .push(newAddressInput.value);
+        loginUserArr[userIndex].Address.push(newAddressInput.value);
         localStorage.setItem("User", JSON.stringify(loginUserArr));
         printAddress();
+        newAddressInput.value = "";
     }
 })

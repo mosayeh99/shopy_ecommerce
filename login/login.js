@@ -74,7 +74,7 @@ document.getElementById("logBtn").addEventListener('click',function(e){
                 localStorage.setItem('IdProductsInWishlist', JSON.stringify(arr[userIndex].wishlist))
                 localStorage.setItem('productsInCart', JSON.stringify(arr[userIndex].cart))
                 setTimeout(() => {
-                    location.href = '../index.html';
+                    location.href = '../useraccount/useraccount.html';
                 }, 3000);
             }
     }else {
@@ -152,7 +152,7 @@ signupBtn.addEventListener("click",function(e){
             }
         }
         localStorage.setItem("User",JSON.stringify(arr));
-        history.back();
+        location.href = '../useraccount/useraccount.html';
     }
 })
 
