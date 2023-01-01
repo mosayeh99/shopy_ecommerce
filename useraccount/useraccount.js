@@ -31,6 +31,15 @@ if (userInfoArray.length != 0) {
 }
 
 logoutBtn.addEventListener('click', () => {
+    let userIndex = userInfoArray.findIndex(ele => ele.loginStatus == true);
+    if (userIndex != -1) {
+        if (localStorage.IdProductsInWishlist != null) {
+            userInfoArray[userIndex].wishlist = JSON.parse(localStorage.IdProductsInWishlist);
+        }
+        if (localStorage.productsInCart != null) {
+            userInfoArray[userIndex].cart = JSON.parse(localStorage.productsInCart);
+        }
+    }
     userInfoArray.forEach((el) => {
         if (el.loginStatus == true) {
             el.loginStatus = false;
