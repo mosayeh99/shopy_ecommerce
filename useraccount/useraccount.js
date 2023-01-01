@@ -25,7 +25,7 @@ logoutBtn.addEventListener('click', () => {
         if (el.loginStatus == true) {
             el.loginStatus = false;
             localStorage.setItem('User', JSON.stringify(userInfoArray));
-            location.href = '../index.html';
+            location.href = '../login/login.html';
         }
     })
 })

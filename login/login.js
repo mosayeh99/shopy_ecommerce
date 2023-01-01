@@ -71,6 +71,8 @@ document.getElementById("logBtn").addEventListener('click',function(e){
             // -------------Shopy Alert success---------------
             document.querySelector('#shopy-alert-overlay').classList.add('active');
             document.querySelector('#shopy-alert-success').classList.add('active');
+            arr[0].loginStatus = true;
+            localStorage.setItem('User', JSON.stringify(arr));
             setTimeout(() => {
                 history.back();
             }, 3000);

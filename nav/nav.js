@@ -329,10 +329,10 @@ if (userLastindexInPath.indexOf('login') != -1) {
 
 document.addEventListener('click', (e) => {
     if (e.target.getAttribute('id') == 'shopy-user-icon') {
-        if (shopyUsersArray.length == 0) {
+        if (shopyUsersArray.length != 0) {
             shopyUsersArray.forEach((el) => {
                 if (el.loginStatus == false) {
-                    location.href = login/login.html;
+                    location.href = shopyLoginPagePath;
                 }else {
                     location.href = shopyuserPagePath;
                 }
