@@ -190,7 +190,7 @@ document.getElementById("ResetBtn").addEventListener("click", function(e){
         document.getElementById("resetError").style.display = "block"
     }else if (userIndex == -1){
         e.preventDefault();
-        document.getElementById("resetError").innerHTML ="Your email or old password is incorect";
+        document.getElementById("resetError").innerHTML ="Your email is not registered";
         document.getElementById("resetError").style.display = "block"
     }else {
         e.preventDefault();
