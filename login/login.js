@@ -198,10 +198,13 @@ document.getElementById("ResetBtn").addEventListener("click", function(e){
         document.getElementById("resetError").innerHTML ="Your email or old password is incorect";
         document.getElementById("resetError").style.display = "block"
     }else {
+        e.preventDefault();
         arr[userIndex].RegPassword = newPass;
         arr[userIndex].loginStatus = true;
         localStorage.setItem('User',JSON.stringify(arr));
-        document.querySelector('#shopy-alert-success::last-child').textContent = 'Password Reseted'
+        localStorage.setItem('IdProductsInWishlist', JSON.stringify(arr[userIndex].wishlist))
+        localStorage.setItem('productsInCart', JSON.stringify(arr[userIndex].cart))
+        document.querySelector('#shopy-alert-success #shopy-alert-msg').textContent = 'Password Reseted';
         document.querySelector('#shopy-alert-overlay').classList.add('active');
         document.querySelector('#shopy-alert-success').classList.add('active');
         setTimeout(() => {
