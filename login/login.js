@@ -48,35 +48,35 @@ document.getElementById("loginNow").addEventListener("click",function(){
 
 document.getElementById("logBtn").addEventListener('click',function(e){
     e.preventDefault();
-    console.log(document.getElementById("passLog").value);
     if (arr.length != 0) {
         var userLog = document.getElementById("userLog").value;
         var passLog = document.getElementById("passLog").value;
-        var userReg= arr[0].RegUser;
-        var passReg= arr[0].RegPassword;
-        if (userLog == "") {
-            e.preventDefault();
-            document.getElementById("error").innerHTML ="Please enter your Email.";
-            document.getElementById("error").style.display = "block"
-        }else if (passLog == "") {
-            e.preventDefault();
-            document.getElementById("error").innerHTML ="Please enter your password.";
-            document.getElementById("error").style.display = "block"
-        }else if (userLog != userReg && passLog != passReg){
-            e.preventDefault();
-            document.getElementById("error").innerHTML ="Your email or password is incorect."
-            document.getElementById("error").style.display = "block"
-        }else {
-            document.getElementById("error").style.display = "none"
-            // -------------Shopy Alert success---------------
-            document.querySelector('#shopy-alert-overlay').classList.add('active');
-            document.querySelector('#shopy-alert-success').classList.add('active');
-            arr[0].loginStatus = true;
-            localStorage.setItem('User', JSON.stringify(arr));
-            setTimeout(() => {
-                history.back();
-            }, 3000);
-        }
+        let userIndex = arr.findIndex(el => el.RegUser == userLog && el.RegPassword == passLog);
+            if (userLog == "") {
+                e.preventDefault();
+                document.getElementById("error").innerHTML ="Please enter your Email.";
+                document.getElementById("error").style.display = "block"
+            }else if (passLog == "") {
+                e.preventDefault();
+                document.getElementById("error").innerHTML ="Please enter your password.";
+                document.getElementById("error").style.display = "block"
+            }else if (userIndex == -1) {
+                e.preventDefault();
+                document.getElementById("error").innerHTML ="Your email or password is incorect.";
+                document.getElementById("error").style.display = "block";
+            }else {
+                document.getElementById("error").style.display = "none"
+                // -------------Shopy Alert success---------------
+                document.querySelector('#shopy-alert-overlay').classList.add('active');
+                document.querySelector('#shopy-alert-success').classList.add('active');
+                arr[userIndex].loginStatus = true;
+                localStorage.setItem('User', JSON.stringify(arr));
+                localStorage.setItem('IdProductsInWishlist', JSON.stringify(arr[userIndex].wishlist))
+                localStorage.setItem('productsInCart', JSON.stringify(arr[userIndex].cart))
+                setTimeout(() => {
+                    history.back();
+                }, 3000);
+            }
     }else {
         e.preventDefault();
         document.getElementById("error").innerHTML ="Your email or password is incorect."
@@ -131,16 +131,26 @@ signupBtn.addEventListener("click",function(e){
         document.getElementById("regError").innerHTML ="Password is too short (minimum is 8 characters)"
         document.getElementById("regError").style.display = "block"
     }else {
-        console.log('iam in')
         var obj ={
-            "Address" :  [addr.value] ,
-            "RegPassword" : passReg.value ,
-            "RegUser" : userReg.value ,
-            "FirstName" : fname.value ,
-            "LastName" :lname.value ,
+            "FirstName" : fname.value,
+            "LastName" :lname.value,
+            "RegUser" : userReg.value,
+            "Address" :  [addr.value],
+            "RegPassword" : passReg.value,
+            "wishlist" : [],
+            "cart" : [],
             "loginStatus" : true
         }
         arr.push(obj);
+        let userIndex = arr.findIndex(el => el.loginStatus == true);
+        if (userIndex != -1) {
+            if (localStorage.IdProductsInWishlist != null) {
+                arr[userIndex].wishlist = JSON.parse(localStorage.IdProductsInWishlist);
+            }
+            if (localStorage.productsInCart != null) {
+                arr[userIndex].cart = JSON.parse(localStorage.productsInCart);
+            }
+        }
         localStorage.setItem("User",JSON.stringify(arr));
         history.back();
     }
@@ -164,15 +174,38 @@ document.getElementById("forget").addEventListener("click",function(){
     document.getElementById("login").style.display = "none"
     document.getElementById("signup").style.display = "none"
     document.getElementById("reset").style.display = "block"
-    document.getElementById("ResetBtn").addEventListener("click", function(e){
-        newPass = document.getElementById("newPass").value;
-        if (newPass.length <8){
-            e.preventDefault();
-            document.getElementById("resetError").innerHTML ="Password is too short (minimum is 8 characters)";
-            document.getElementById("resetError").style.display = "block"
-        }else if (newPass.length >=8){
-            arr[0].RegPassword = newPass ;
-            localStorage.setItem('User',JSON.stringify(arr));
-        }
-    })
+})
+
+document.getElementById("ResetBtn").addEventListener("click", function(e){
+    let userEmail = document.querySelector('#reset-pass-email-field');
+    let userOldPass = document.querySelector('#reset-pass-oldpass-field');
+    let userIndex = arr.findIndex(el => el.RegUser == userEmail.value && el.RegPassword == userOldPass.value);
+    newPass = document.getElementById("newPass").value;
+    if (userEmail.value == "" ) {
+        e.preventDefault();
+        document.getElementById("resetError").innerHTML ="Please enter your email.";
+        document.getElementById("resetError").style.display = "block"
+    }else if (userOldPass.value == "") {
+        e.preventDefault();
+        document.getElementById("resetError").innerHTML ="Please enter your current password.";
+        document.getElementById("resetError").style.display = "block"
+    }else if (newPass.length <8){
+        e.preventDefault();
+        document.getElementById("resetError").innerHTML ="Password is too short (minimum is 8 characters)";
+        document.getElementById("resetError").style.display = "block"
+    }else if (userIndex == -1){
+        e.preventDefault();
+        document.getElementById("resetError").innerHTML ="Your email or old password is incorect";
+        document.getElementById("resetError").style.display = "block"
+    }else {
+        arr[userIndex].RegPassword = newPass;
+        arr[userIndex].loginStatus = true;
+        localStorage.setItem('User',JSON.stringify(arr));
+        document.querySelector('#shopy-alert-success::last-child').textContent = 'Password Reseted'
+        document.querySelector('#shopy-alert-overlay').classList.add('active');
+        document.querySelector('#shopy-alert-success').classList.add('active');
+        setTimeout(() => {
+            location.href = '../useraccount/useraccount.html';
+        }, 3000);
+    }
 })

@@ -303,6 +303,7 @@ function shopyAlertSuccess() {
     }, 3000);
 }
 
+// -----------------------User icon path--------------------------------
 let shopyUsersArray = [];
 if (localStorage.User != null) {
     shopyUsersArray = JSON.parse(localStorage.getItem("User"));
@@ -330,13 +331,12 @@ if (userLastindexInPath.indexOf('login') != -1) {
 document.addEventListener('click', (e) => {
     if (e.target.getAttribute('id') == 'shopy-user-icon') {
         if (shopyUsersArray.length != 0) {
-            shopyUsersArray.forEach((el) => {
-                if (el.loginStatus == false) {
-                    location.href = shopyLoginPagePath;
-                }else {
-                    location.href = shopyuserPagePath;
-                }
-            })
+            let userIndex = shopyUsersArray.findIndex(el => el.loginStatus == true);
+            if (userIndex == -1) {
+                location.href = shopyLoginPagePath;
+            }else {
+                location.href = shopyuserPagePath;
+            }
         }else {
             location.href = shopyLoginPagePath;
         }
