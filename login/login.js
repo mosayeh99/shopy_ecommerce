@@ -74,7 +74,7 @@ document.getElementById("logBtn").addEventListener('click',function(e){
                 localStorage.setItem('IdProductsInWishlist', JSON.stringify(arr[userIndex].wishlist))
                 localStorage.setItem('productsInCart', JSON.stringify(arr[userIndex].cart))
                 setTimeout(() => {
-                    history.back();
+                    location.href = '../index.html';
                 }, 3000);
             }
     }else {
