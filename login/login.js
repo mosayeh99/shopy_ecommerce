@@ -178,16 +178,11 @@ document.getElementById("forget").addEventListener("click",function(){
 
 document.getElementById("ResetBtn").addEventListener("click", function(e){
     let userEmail = document.querySelector('#reset-pass-email-field');
-    let userOldPass = document.querySelector('#reset-pass-oldpass-field');
-    let userIndex = arr.findIndex(el => el.RegUser == userEmail.value && el.RegPassword == userOldPass.value);
+    let userIndex = arr.findIndex(el => el.RegUser == userEmail.value);
     newPass = document.getElementById("newPass").value;
     if (userEmail.value == "" ) {
         e.preventDefault();
         document.getElementById("resetError").innerHTML ="Please enter your email.";
-        document.getElementById("resetError").style.display = "block"
-    }else if (userOldPass.value == "") {
-        e.preventDefault();
-        document.getElementById("resetError").innerHTML ="Please enter your current password.";
         document.getElementById("resetError").style.display = "block"
     }else if (newPass.length <8){
         e.preventDefault();
