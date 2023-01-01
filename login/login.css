@@ -1,16 +1,3 @@
-
-.title {
-    text-align: center;
-    font-size: 40px ;
-    font-weight: bold;
-    padding: 10px ;
-    margin : 10px ;
-}
-.path {
-    padding : 10px ;
-    margin:10px ;
-}
-
 input {
     outline: 0;
     caret-color: var(--caret-color);
@@ -40,7 +27,7 @@ input {
 .reset {
     display :none ;
 }
-.user , .pass ,.newPass , .fname , .lname ,.addr, .pass  {
+.user , .pass ,.newPass , .fname , .lname ,.addr {
     height : 50px ;
     width: 100%;
     border: 1px solid var(--main-color);
