@@ -128,17 +128,11 @@ if (localStorage.User != null) {
     allUsersArray = JSON.parse(localStorage.User);
 }
 let ProceedToCheckoutBtn = document.querySelector('#cart-foot-checkout-btn');
+let userIndex = allUsersArray.findIndex(ele => ele.loginStatus == true);
 ProceedToCheckoutBtn.addEventListener('click', () => {
-    let userLoginCounter;
-    allUsersArray.forEach((el) => {
-        console.log(el.loginStatus);
-        userLoginCounter = 0;
-        if (el.loginStatus == true) {
-            location.href = '../checkout/checkout.html';
-            userLoginCounter++;
-        }
-    })
-    if (userLoginCounter == 0) {
+    if (userIndex != -1) {
+        location.href = '../checkout/checkout.html';
+    }else {
         location.href = '../login/login.html';
     }
 })
