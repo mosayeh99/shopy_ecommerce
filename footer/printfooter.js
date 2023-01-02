@@ -58,14 +58,19 @@ window.addEventListener('load', () => {
                             <div class="name-row">
                                 <label>Name</label>
                                 <input class="contact-name-field contact-field" type="text" name="userName">
+                                <p class="required-error">Name field is required</p>
+                                <p class="not-valid-error">Please enter valid name</p>
                             </div>
                             <div class="email-row">
                                 <label>Email</label>
                                 <input class="contact-email-field contact-field" type="email" name="email">
+                                <p class="required-error">Email field is required</p>
+                                <p class="not-valid-error">Please enter valid email address</p>
                             </div>
                             <div class="msg-row">
                                 <label>Message</label>
                                 <textarea class="contact-msg-field contact-field" name="message" rows="1"></textarea>
+                                <p class="required-error">Message field is required</p>
                             </div>
                             <input type="submit" value="Send">
                         </div>
