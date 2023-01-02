@@ -14,8 +14,7 @@
 ### Front-End Development Skills
 - Git 
 - Bootstrap 
-- Swal
-- fetch API 
+- Dummy JSON Data, Created by us, you can check by click [here](https://github.com/mosayeh99/products_json_api)
 <br><br>
 
 ### N.B: The work is done with the following technologies
@@ -113,9 +112,8 @@ At the end of the project we managed to achieve a great success with a well-made
 - There is error box will appear .
 ###	Reset Form :
 - If you forget your password , you can change it by using 
-forget link in Login Form .
-###	Media Query :
-- To to make data shown suitable for all screen sizes. <br><br>
+forget link in Login Form .<br><br>
+
 
 ### Wishlist :
 -	Wishlists page contain products that chosen by user from home page.
@@ -125,17 +123,11 @@ forget link in Login Form .
 
 ### Buying Scenario:
 -   When User click on the product selected in Home page Will be taken to the product page to see  more detailed information about the product .
-
 -  In product page he can see more images about the product he selected which are displayed using image slider .
-
 -  The user can choose his size by click on the suitable size displayed to him and the quantity he want by determining the quantity using (+) and (-) .
-
 -  After user reading the price and all descriptions sorted to him then select the size and quantity ,he can press on "Add To Cart" Button.
- 
 -  Since he pressed on "Add To Cart" Button , A check icon will appear to make the user comfortable that his requires have been recorded .
-
 -  It's not the only thing appear when client click on "Add To Cart" Button ,Another button called " Get The Cart " Will also appear .
-
 -  When user click on " Get The Cart " button ,he will go to Cart page to continue his purchasing process . <br><br>
 
 
