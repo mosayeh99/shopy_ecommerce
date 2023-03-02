@@ -15,7 +15,7 @@ header .topbar {
     padding: 5px 0;
 }
 
-header .topbar .content {
+header .topbar .shopy-topbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,31 +23,31 @@ header .topbar .content {
     font-size: 14px;
 }
 
-header .topbar .content .links {
+header .topbar .shopy-topbar-content .links {
     display: flex;
     gap: 30px;
 }
 
-header .topbar .content .links a {
+header .topbar .shopy-topbar-content .links a {
     text-decoration: none;
     color: var(--main-color);
     transition: var(--main-transition);
 }
 
-header .topbar .content .links a:hover {
+header .topbar .shopy-topbar-content .links a:hover {
     color: var(--link-hover-color);
 }
 
-header .topbar .content .offfer p {
+header .topbar .shopy-topbar-content .offfer p {
     font-size: 16px;
 }
 
-header .topbar .content .location a {
+header .topbar .shopy-topbar-content .location a {
     color: var(--main-color);
     transition: var(--main-transition);
 }
 
-header .topbar .content .location a:hover {
+header .topbar .shopy-topbar-content .location a:hover {
     color: var(--link-hover-color);
 }
 
@@ -84,6 +84,10 @@ header .head-bar .head-icons {
     align-items: center;
     gap: 30px;
     color: var(--main-color);
+}
+
+header .head-bar .head-icons .user-icon {
+    cursor: pointer;
 }
 
 header .head-bar .head-icons .search {
@@ -288,13 +292,15 @@ header nav ul li:hover a {
     position: relative;
 }
 
-.toolbar-mobile .toolbar-item a {
+.toolbar-mobile .toolbar-item a,
+.toolbar-mobile .toolbar-item > span {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--main-color);
     font-size: 12px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 /* ----------Search Drawer Mobile style----------- */
@@ -444,11 +450,11 @@ header nav ul li:hover a {
 }
 
 @media (max-width: 767px) {
-    header .topbar .content {
+    header .topbar .shopy-topbar-content {
         justify-content: center;
     }
-    header .topbar .content .links,
-    header .topbar .content .location,
+    header .topbar .shopy-topbar-content .links,
+    header .topbar .shopy-topbar-content .location,
     header .head-bar .head-icons .search,
     header .head-bar .head-icons .heart-icon,
     header .head-bar .head-icons .user-icon,

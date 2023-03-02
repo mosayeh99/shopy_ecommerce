@@ -293,3 +293,52 @@ function fillStyleToProductWishlist() {
         }
     });
 }
+
+//-----------------Shopy Alert Success-----------------
+function shopyAlertSuccess() {
+    document.querySelector('#shopy-alert-overlay').classList.add('active');
+    document.querySelector('#shopy-alert-success').classList.add('active');
+    setTimeout(() => {
+        location.href = '../index.html';
+    }, 3000);
+}
+
+// -----------------------User icon path--------------------------------
+let shopyUsersArray = [];
+if (localStorage.User != null) {
+    shopyUsersArray = JSON.parse(localStorage.getItem("User"));
+}
+
+let shopyuserPagePath;
+let shopyLoginPagePath;
+let shopycurrentLocationPath = window.location.pathname.split('/');
+let userLastindexInPath = shopycurrentLocationPath[shopycurrentLocationPath.length - 1];
+if (userLastindexInPath.indexOf('useraccount') != -1) {
+    shopyuserPagePath = '';
+}else if (userLastindexInPath.indexOf('index') != -1 || userLastindexInPath == '') {
+    shopyuserPagePath = 'useraccount/useraccount.html';
+}else {
+    shopyuserPagePath = '../useraccount/useraccount.html';
+}
+if (userLastindexInPath.indexOf('login') != -1) {
+    shopyLoginPagePath = '';
+}else if (userLastindexInPath.indexOf('index') != -1 || userLastindexInPath == '') {
+    shopyLoginPagePath = 'login/login.html';
+}else {
+    shopyLoginPagePath = '../login/login.html';
+}
+
+document.addEventListener('click', (e) => {
+    if (e.target.getAttribute('id') == 'shopy-user-icon') {
+        if (shopyUsersArray.length != 0) {
+            let userIndex = shopyUsersArray.findIndex(el => el.loginStatus == true);
+            if (userIndex == -1) {
+                location.href = shopyLoginPagePath;
+            }else {
+                location.href = shopyuserPagePath;
+            }
+        }else {
+            location.href = shopyLoginPagePath;
+        }
+    }
+})

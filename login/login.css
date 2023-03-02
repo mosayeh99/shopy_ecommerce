@@ -1,136 +1,107 @@
-
-.title {
-    text-align: center;
-    font-size: 40px ;
-    font-weight: bold;
-    padding: 10px ;
-    margin : 10px ;
-}
-.path {
-    padding : 10px ;
-    margin:10px ;
+input {
+    outline: 0;
+    caret-color: var(--caret-color);
 }
 
 .note {
-    margin-bottom : 10px ;
-    font-size: 20px;
-    color: rgb(128, 128, 128);
-    
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .logform , .regform , .resetForm{
-        display :flex ;
-        justify-content: center;
-    }
+    display :flex ;
+    justify-content: center;
+}
 
 .login , .signup ,.reset {
-    padding: 50px ;
-    margin : 10px ;
-    background-color:#eee ;
-    border :3px solid lightgray ;
+    margin: 50px 0;
+    max-width: 400px;
+    width: 100%;
 }
 .login{
-    width:50% ;
     display: block;
 }
-.signup {
+.signup,
+.reset {
     display :none ;
-    width: 70% ;
 }
-.reset{
-    width:60% ;
-    display: none;
-}
-.user , .pass ,.btn ,.newPass , .fname , .lname ,.addr  {
+.user , .pass ,.newPass , .fname , .lname ,.addr {
     height : 50px ;
-    width: 90%;
-    border :2px solid lightgray ;
-    margin :10px ;
+    width: 100%;
+    border: 1px solid var(--main-color);
+    margin :10px 0;
     padding-left: 10px;
-    
+}
+#form-tag-head {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
-.btn {
-width :100px ;
+.form-pass-field {
+    position: relative;
 }
 
-#error , #regError , #resetError{
-    margin :  10px ;
-    padding: 10px;
-    border : 0.5px solid #d33;
-    background-color: lightpink;
-    width: 90%;
-    height : 70px ;
+.form-pass-field span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logform .login #logBtn,
+.regform .signup #signupBtn,
+.resetForm .reset #ResetBtn {
     display: block;
-    color: black;
-    display: none ;
-    border-radius: 10px ;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px;
+    margin: 10px 0 5px;
+}
+
+.regform .signup > input {
+    margin: 2px 0 20px;
+}
+
+.regform .signup .signup-pass-field input {
+    margin: 2px 0 5px;
+}
+
+#passhint {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+#reset #form-tag-head {
+    font-size: 20px;
+}
+
+/* Style Of Error Box  */
+#error , #regError , #resetError{
+    margin: 10px 0 20px;
+    padding: 10px;
+    border: 0.5px solid #d33;
+    width: 100%;
+    color: #d33;
+    display: none;
 }
 
 #forget, #return {
     cursor: pointer;
-    color: #1e90ff;
-    font-weight: bold;
+    color: var(--secondary-color);
 }
 
-#RegisterNow{
-    cursor:pointer ;
-    color :black ;
-    font-weight: bold;
-    font-size: 18px ;
-}
-
-#signup > label{
-    font-weight: bold;
-    display: block;
-    margin-top: 10px ;
-}
-
- #logBtn , #resetBtn , #regBtn{
-    pointer-events: none ;
+#RegisterNow,
+#loginNow {
+    cursor:pointer;
+    color :var(--secondary-color);
 }
 
 #showReg , #showLog , #showReset {
     cursor: pointer ;
 }
-
-
-
-    @media (max-width : 800px) {
-        .login , .signup , .reset {
-            width: 100%;
-            padding : 20px ;
-            margin :20px ;
-            font-size: 14px ;
-        }
-        .user , .pass ,.btn ,.newPass , .fname , .lname ,.addr  {
-            height : 40px ;
-            width: 80%;
-            border :2px solid lightgray ;
-            margin :15px ;
-            padding-left: 20px;
-            
-        }
-
-        .login , .signup ,.reset {
-            padding: 30px ;
-            margin : 10px ;
-        }
-         
-        .note{
-            font-size: 18px;
-        }
-
-        #error , #regError , #resetError{
-            margin :  10px ;
-            padding: 10px;
-            border : 0.5px solid red;
-            background-color: lightpink;
-            width: 90%;
-            height : auto ;
-            display: block;
-            color: black;
-            display: none ;
-            border-radius: 10px;
-        }
-    }

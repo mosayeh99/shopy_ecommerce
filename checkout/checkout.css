@@ -1,27 +1,51 @@
-@media(max-width:699.999999999px) {
-    .CheckoutBig-div {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+.result-head-banner {
+    background-image: url(../assets/images/result-page-head-bg.webp);
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+    position: relative;
+    z-index: 1;
 }
 
-@media(min-width:700px) {
-    .CheckoutBig-div {
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 30px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+.result-head-banner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 0.6);
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-.checkout-Address {
+.CheckoutBig-div {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    margin: 30px 0; 
+}
+
+.checkout-section-head {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.CheckoutSmall-div {
+    flex: 1;
+}
+
+.checkout-Address,
+.checkout-payment {
     padding: 15px;
-    gap: 20px;
     border: 1px solid #777;
     border-radius: 5px;
     width: 100%;
-    margin-top: 20px;
     background-color: white;
     font-size: 1rem;
     font-weight: 400;
@@ -30,42 +54,36 @@
 
 }
 
-.form-control {
+.checkout-payment {
+    margin: 20px 0;
+}
+
+.input-type-text {
     border: 1px solid #ccc;
-    margin-bottom: 10px;
-    margin-right: 7px;
-    border-radius: 0.375rem;
-    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    border-radius: var(--btn--border-radius);
+    outline: 0;
+    flex: 3;
+    padding: 5px 10px;
+    caret-color: var(--caret-color);
 }
 
 .addAddress_btn {
-    margin-top: 10px;
     background-color: var(--main-color);
     color: white;
-    width: 50%;
-    padding: 5px;
-    cursor: pointer;
+    width: 100%;
+    padding: 10px;
     border-radius: var(--btn--border-radius);
-    align-self: center;
+    margin-top: 15px;
 }
 
-.next_btn {
-    margin: 5px;
-    background-color: var(--secondary-color);
-    color: white;
-    width: 50%;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: var(--btn--border-radius);
-    align-self: center;
-}
-
-.content {
-    padding: 0 18px;
-    background-color: white;
+.address-content {
+    display: flex;
+    gap: 10px;
+    height: auto;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    margin-top: 10px;
 }
 
 .last-btn-in-checkout-page {
@@ -79,7 +97,6 @@
 }
 
 .confirm-btn-in-checkout-page {
-    margin-top: 10px;
     background-color: var(--secondary-color);
     color: white;
     width: 100%;
@@ -89,21 +106,18 @@
 }
 
 .small-btns {
-    margin-top: 2px;
     background-color: var(--main-color);
     color: white;
-    /* width: 20%; */
-    padding: 5px;
-    cursor: pointer;
+    padding: 7px;
     border-radius: var(--btn--border-radius);
-    height: 100%;
+    flex: 1;
 }
 
-#address-list {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 5px;
+#address-list,
+.payment-method-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #address-list:checked {
@@ -111,19 +125,19 @@
     border-color: #0d6efd;
 }
 
+#checkout-radio-input {
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
 .checkout-Products {
     border: 1px solid #777;
     border-radius: 5px;
-    margin-top: 20px;
     background-color: white;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-}
-
-.checkout-Products > table {
-    padding: 20px;
 }
 
 .productsTable {
@@ -135,17 +149,36 @@
     background-color: #ccc;
     color: black;
 }
-.productsbody {
-    padding-left: 15px;
+.productsbody tr td {
+    font-size: 14px;
 }
+
+.productsbody .product-row:not(:first-of-type) {
+    border-top: 1px solid #eee;
+}
+
 .subTotal {
     text-align: center;
 }
 .productsTable td {
-    padding: 10px 10px 10px 30px;
+    padding: 10px;
 }
 
 .totalPriceList {
     font-weight: 600;
-    border-top: 1px solid;
+    border-top: 1px solid var(--main-color);
+}
+
+@media(max-width:991px) {
+    .CheckoutBig-div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .address-content {
+        flex-direction: column;
+    }
 }

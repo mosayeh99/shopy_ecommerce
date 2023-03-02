@@ -3,7 +3,7 @@
     -----Functions Declared In nav/nav.js-----
     - Set Id Product to localStorage on click
 */
-
+let IdProductsInWishlistArray = [];
 // -----------Print Products in home page with filteration conditiones--------------
 showShopyProducts();
 function showShopyProducts() {
@@ -13,16 +13,14 @@ function showShopyProducts() {
     fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/products.json')
     .then(res => res.json())
     .then((full) => {
-        let wishlistCounter = 0;
         if (localStorage.IdProductsInWishlist != null) {
+            IdProductsInWishlistArray = JSON.parse(localStorage.IdProductsInWishlist);
+            if (IdProductsInWishlistArray.length == 0) {
+                document.querySelector('.wishlist-empty').style.display = 'flex';
+            }
             full.products.forEach(e => {
             if (JSON.parse(localStorage.IdProductsInWishlist).indexOf((e.id).toString()) != -1) {
                 printShopyProducts();
-                document.querySelector('.wishlist-empty').style.display = 'none';
-                wishlistCounter++;
-            }
-            if (wishlistCounter == 0) {
-                document.querySelector('.wishlist-empty').style.display = 'flex';
             }
             function printShopyProducts() {
                 shopyProductListHead = `
@@ -81,7 +79,6 @@ function showShopyProducts() {
 }
 
 document.addEventListener('click', (e) => {
-    let IdProductsInWishlistArray = JSON.parse(localStorage.IdProductsInWishlist);
     if (e.target.getAttribute('id') == 'del-product-wishlist-icon') {
         IdProductsInWishlistArray.splice(IdProductsInWishlistArray.indexOf(e.target.dataset.productid), 1)
         localStorage.setItem('IdProductsInWishlist', JSON.stringify(IdProductsInWishlistArray));

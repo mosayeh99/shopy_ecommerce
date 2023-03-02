@@ -18,7 +18,7 @@
     <div class="mb-body-overlay"></div>
     <header>
         <div class="topbar">
-            <div class="content mycontainer">
+            <div class="shopy-topbar-content mycontainer">
                 <div class="links">
                     <a href="/" class="topbar-link">About Us</a>
                     <a href="/" class="topbar-link">Contact</a>
@@ -55,15 +55,15 @@
                     </a>
                 </div>
                 <div class="user-icon">
-                    <a href="login/login.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24"
+                    <span id="shopy-user-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user pe-none" width="24"
                             height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                             <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
                         </svg>
-                    </a>
+                    </span>
                 </div>
                 <div class="heart-icon">
                     <a href="wishlist/wishlist.html">
@@ -289,6 +289,53 @@
                 </div>
             </div>
         </div>
+        <div id="shopy-mession-section">
+            <div class="mycontainer">
+                <div id="mession-sec-row">
+                    <div id="mession-sec-text">
+                        <p>OUR MISSION</p>
+                        <p>With Less Do More</p>
+                        <p>In a world of hyper-convenience and overconsumption, our mission is to simplify modern life to allow you to do more with less.</p>
+                    </div>
+                    <div id="mession-sec-img">
+                        <img src="assets/images/flat-lay.jpg" alt="Flat Lay">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="shopy-brands-section">
+            <div class="mycontainer">
+                <div id="category-lider-head" class="text-center py-4">
+                    <h2>Success Partners</h2>
+                </div>
+                <div id="brands-section-items">
+                    <div id="brands-item">
+                        <img src="assets/images/DC-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                    <div id="brands-item">
+                        <img src="assets/images/Element-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                    <div id="brands-item">
+                        <img src="assets/images/Dickies-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                    <div id="brands-item">
+                        <img src="assets/images/Primitive-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                    <div id="brands-item">
+                        <img src="assets/images/SantaCruz-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                    <div id="brands-item">
+                        <img src="assets/images/Thrasher-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                    <div id="brands-item">
+                        <img src="assets/images/Vans-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                    <div id="brands-item">
+                        <img src="assets/images/Volcom-150x150-f9f9f9.gif" alt="Brand">
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <div class="menu-drawer">
@@ -418,8 +465,8 @@
             </a>
         </div>
         <div class="toolbar-accout toolbar-item">
-            <a href="login/login.html">
-                <span class="toolbar-icon">
+            <span id="shopy-user-icon">
+                <span class="toolbar-icon pe-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -429,7 +476,7 @@
                     </svg>
                 </span>
                 <span class="toolbar-label">Account</span>
-            </a>
+            </span>
         </div>
         <div class="toolbar-wishlist toolbar-item">
             <a href="wishlist/wishlist.html">

@@ -26,139 +26,111 @@
         <header></header>
 
         <!-- let's Start -->
-        <div class="CheckoutBig-div">
-            <!------ first div contain User Products------>
-            <div class="CheckoutSmall-div">
-                <div class="checkout-Products">
-                    <h6
-                        style="text-align:center; padding-top: 15px;
-                    padding-bottom:5px;">
-                        Your Product
-                    </h6>
-                    <!-- table of products -->
-                    <table class="productsTable">
-                        <thead class="productshead">
-                            <tr>
-                                <td>Products</td>
-                                <td class="subTotal">Sub-Total</td>
-                            </tr>
-                        </thead>
-                        <tbody class="productsbody">
-                            <!-- the products will be added here -->
-                            <!-- small example About what will be added-->
-                            <!-- <tr> <td> <span>Product Name</span> <span>product Size</span>
-                            <span>×product Qty</span> </td> <td class="subTotal">total price</td> </tr> <tr
-                            class="totalPriceList"> <td>Total Price</td> <td class="subTotal">total
-                            price</td> </tr> -->
-                        </tbody>
-                    </table>
-                </div>
+        <main>
+            <div class="result-head-banner">
+                <span>Checkout<span>
             </div>
-
-            <!------ Second div contain the Address & Payment ------>
-            <div class="CheckoutSmall-div">
-                <!-- first part of Address -->
-                <label class="checkout-Address">
-                    <h6 style="text-align: center;">
-                        Choose Your Address</h6>
-                    <ul
-                        class="list-group"
-                        style="display: flex; justify-content: left; border: 0cm;">
-                        <div id="address-list">
-
-                            <!-- new address will be added here -->
-                            <!-- small example About what will be added-->
-                            <!-- <li class="list-group-item"> <input class="form-check-input me-1"
-                            type="radio" name="listGroupRadio"> </input> <label class="form-check-label"
-                            >smoha-7 street behind hassan market</label> </li> -->
-
+            <div class="mycontainer">
+                <div class="CheckoutBig-div">
+                    <!------ first div contain User Products------>
+                    <div class="CheckoutSmall-div">
+                        <div class="checkout-Products">
+                            <h6 class="checkout-section-head mt-3">Your Product</h6>
+                            <!-- table of products -->
+                            <table class="productsTable">
+                                <thead class="productshead">
+                                    <tr>
+                                        <td>Product</td>
+                                        <td class="subTotal">Subtotal</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="productsbody">
+                                    <!-- the products will be added here -->
+                                    <!-- small example About what will be added-->
+                                    <!-- <tr> <td> <span>Product Name</span> <span>product Size</span>
+                                    <span>×product Qty</span> </td> <td class="subTotal">total price</td> </tr> <tr
+                                    class="totalPriceList"> <td>Total Price</td> <td class="subTotal">total
+                                    price</td> </tr> -->
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- the add btn -->
-                        <button type="button" class="addAddress_btn">
-                            <h6>
-                                + Add another address</h6>
-                        </button>
-                        <div class="content">
-                            <div style="display: flex;margin-top: 10px;">
-                                <input type="text" class="form-control" id="newAddress">
-                                <button onclick="addAddress()" class="small-btns" id="addAddressBtn">add</button>
-                            </div>
-                        </div>
-                    </ul>
-                </label>
-
-                <!-- Second part of Payment -->
-                <label class="checkout-Address">
-                    <h6 style="text-align: center;">
-                        Choose Your Payment Method
-                    </h6>
-                    <!---- Cash ---->
-                    <div class="form-check">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault2"
-                            checked="checked">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Cash
-                        </label>
                     </div>
-                    <!---- Credit Card ---->
-                    <div class="form-check">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault2">
-                        <div class="form-check-label" for="flexRadioDefault2">
-                            Credit / Debit Card
-                            <div>
-                                <label>Card Number *
+        
+                    <!------ Second div contain the Address & Payment ------>
+                    <div class="CheckoutSmall-div">
+                        <!-- first part of Address -->
+                        <div class="checkout-Address">
+                            <h6 class="checkout-section-head">Choose Your Address</h6>
+                            <ul class="list-group" style="display: flex; justify-content: left; border: 0cm;">
+                                <div id="address-list">
+                                    <!-- new address will be added here -->
+                                    <!-- small example About what will be added-->
+                                    <!-- <li class="list-group-item"> <input class="form-check-input me-1"
+                                    type="radio" name="listGroupRadio"> </input> <label class="form-check-label"
+                                    >smoha-7 street behind hassan market</label> </li> -->
+                                </div>
+                                <!-- the add btn -->
+                                <button type="button" class="addAddress_btn">+ Add New Address</button>
+                                <div class="address-content">
+                                    <input type="text" class="input-type-text" id="newAddress" placeholder="Type New Address">
+                                    <button onclick="addAddress()" class="small-btns" id="addAddressBtn">Add</button>
+                                </div>
+                            </ul>
+                        </div>
+        
+                        <!-- Second part of Payment -->
+                        <div class="checkout-payment">
+                            <h6 class="checkout-section-head">Choose Your Payment Method</h6>
+                            <!---- Cash ---->
+                            <div class="payment-method-list">
+                                <label id="checkout-radio-input" class="form-check-label">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="flexRadioDefault"
+                                        checked="checked">
+                                    Cash
                                 </label>
-                                <div style="display: flex;">
-                                    <input type="textarea" class="form-control" id="CardNumber" placeholder="1234 1234 1234 1234">
-                                    <button class="small-btns" id="savePaymentBtn">save</button>
+                            <!---- Credit Card ---->
+                                <label id="checkout-radio-input" class="form-check-label">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="flexRadioDefault">
+                                    Credit / Debit Card
+                                </label>
+                            <!---- PAYPAL ---->
+                                <label id="checkout-radio-input" class="form-check-label">
+                                    <input
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample"
+                                        aria-controls="collapseExample"
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="flexRadioDefault">
+                                    PAYPAL
+                                </label>
+                                <div class="collapse" id="collapseExample">
+                                    Pay securely with PayPal – you can pay with your credit or debit card if you
+                                    don’t have a PayPal account. Once payment is complete, you will automatically be
+                                    redirected back to Supereight.net
                                 </div>
                             </div>
                         </div>
+        
+                        <!-- Confirmation Button -->
+                        <button class="confirm-btn-in-checkout-page">
+                            Confirm Purchase
+                        </button>
                     </div>
-                    <!---- PAYPAL ---->
-                    <div class="form-check">
-                        <input
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseExample"
-                            aria-controls="collapseExample"
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            PAYPAL
-                        </label>
-                        <div class="collapse" id="collapseExample">
-                            Pay securely with PayPal – you can pay with your credit or debit card if you
-                            don’t have a PayPal account. Once payment is complete, you will automatically be
-                            redirected back to Supereight.net
-                        </div>
-                    </div>
-                </label>
-
-                <!-- Confirmation Button -->
-                <button class="confirm-btn-in-checkout-page" onclick="confirmation()">
-                    Confirm Purchase
-                </button>
-            </div>
+                </div>
         </div>
-
-        <!------ the Back to Cart btns ------>
-        <div style="display: flex;  justify-content: center; margin: 5px;">
-            <button class="last-btn-in-checkout-page">
-                <a href="/cart/cart.html" style="color: white;">
-                    Back to Cart
-                </a>
-            </button>
+        <div id="shopy-alert-overlay"></div>
+        <div id="shopy-alert-success">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+            <span>Successfully Purchased!</span>
         </div>
+    </main>
 
         <!-- some divs for all pages -->
         <div class="menu-drawer"></div>

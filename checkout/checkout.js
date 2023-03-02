@@ -1,35 +1,36 @@
-
-//----------------- only alert function & for editing after-----------------
-function confirmation() {alert(" Successfully purchased , \n Thank you for using our site . ")}
-
+let confirmPurchaseBtn = document.querySelector('.confirm-btn-in-checkout-page');
+confirmPurchaseBtn.addEventListener('click', () => {
+    shopyAlertSuccess();
+    localStorage.removeItem('productsInCart');
+})
 //-------------- To get selected item from cart page -----------------------
-let prodectsCartArr = JSON.parse(localStorage.productsInCart)
-fetch(
-    'https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/produc' + 'ts.json')
+let productsCartArr = [];
+if (localStorage.productsInCart != null) {
+    productsCartArr = JSON.parse(localStorage.productsInCart);
+}
+fetch('https://raw.githubusercontent.com/mosayeh99/products_json_api/main/data/produc' + 'ts.json')
     .then(res => res.json())
     .then((full) => {
         let productsTable = "";
         let prodInCart = "";
         let totalPrice = "";
         let subTotalPrice = 0;
-        full
-            .products
-            .forEach(e => {
-                prodectsCartArr.forEach(el => {
+        full.products.forEach(e => {
+                productsCartArr.forEach(el => {
                     if (el.productId == e.id) {
                         prodInCart += `
-                        <tr>
-                            <td>                        
+                        <tr class="product-row">
+                            <td>
                                 <span>${e.title}</span>
-                                <span>[${el.productSize}]</span>
-                                <span>×${el.productQty}</span>
+                                <span>- ${el.productSize}</span>
+                                <span> × ${el.productQty}</span>
                             </td>
                             <td class="subTotal">EGP ${el.productQty * e.price}</td>
                         </tr>`
                         totalPrice = `
                         <tr class="totalPriceList">
-                          <td>Total Price</td>
-                          <td class="subTotal">EGP ${subTotalPrice += el.productQty * e.price} </td>
+                            <td>Total Price</td>
+                        <td class="subTotal">EGP ${subTotalPrice += el.productQty * e.price} </td>
                         </tr>`
                     }
                 })
@@ -47,44 +48,46 @@ for (var i = 0; i < coll.length; i++) {
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
         } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = "100px";
         }
     });
 }
 
 //-------------- To get & set address from local Storge -----------------------
-let loginUserArr = JSON.parse(localStorage.User);
+let loginUserArr;
+if (localStorage.User != null) {
+    loginUserArr = JSON.parse(localStorage.User);
+}
+let userIndex = loginUserArr.findIndex(ele => ele.loginStatus == true);
 printAddress();
 function printAddress() {
     let addressOfUSer = "";
-    loginUserArr[0].Address.forEach(e => {
-            addressOfUSer += `<li class="list-group-item">
-                              <input class="form-check-input me-1" type="radio" name="listGroupRadio"></input>
-                              <label class="form-check-label"> ${e} </label>
-                              </li>`
-                                           })
+    let addessCounter = 0;
+    loginUserArr[userIndex].Address.forEach(e => {
+        if (addessCounter == 0) {
+            addressOfUSer += `
+            <label id="checkout-radio-input" class="form-check-label">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" checked></input>
+                ${e}</label>
+            `
+            addessCounter++;
+        }else {
+            addressOfUSer += `
+            <label id="checkout-radio-input" class="form-check-label">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio"></input>
+                ${e}</label>
+            `
+        }
+    })
     document.querySelector("#address-list").innerHTML = addressOfUSer;
 }
 let addAddressBtn = document.getElementById("addAddressBtn");
 let newAddressInput = document.getElementById("newAddress");
 addAddressBtn.addEventListener('click', () => {
     if (newAddressInput.value != "") {
-        loginUserArr[0]
-            .Address
-            .push(newAddressInput.value);
+        loginUserArr[userIndex].Address.push(newAddressInput.value);
         localStorage.setItem("User", JSON.stringify(loginUserArr));
         printAddress();
+        newAddressInput.value = "";
     }
 })
-
-//-------------- TO add Card Number in local Storage -----------------------------
-savePaymentBtn.onclick = function () {
-    var CardNO = document
-        .getElementById("CardNumber")
-        .value
-        console
-        .log(CardNO);
-    if (CardNO) {
-        localStorage.setItem("Card Number", CardNO);
-    }
-}
